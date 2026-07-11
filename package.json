@@ -1,0 +1,7 @@
+{
+    "name": "dev-loop",
+    "type": "module",
+    "dependencies": {
+        "dotenv": "^17.4.2"
+    }
+}

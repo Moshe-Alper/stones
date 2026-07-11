@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: "[Project Name] API"
+  version: 1.0.0
+  description: >
+    Defined by the Frontend Agent during the dev-loop for the current task.
+    The Backend Agent must implement this contract exactly.
+    This file is regenerated/extended per task — treat it as living documentation,
+    not a fixed spec.
+
+servers:
+  - url: http://localhost:3001
+    description: Local development
+
+paths: {}
+  # Add endpoints here as they are defined by the Frontend Agent.
+
+components:
+  schemas: {}
+    # Add shared schemas here as they are defined.
+
+# ─── Realtime / WebSocket Events (if applicable) ──────────────────────────────
+# Document any WebSocket/event-based transport here, e.g.:
+#
+# CLIENT → SERVER:
+#   <event_name>   { <payload shape> }
+#
+# SERVER → CLIENT:
+#   <event_name>   { <payload shape> }
