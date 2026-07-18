@@ -4,44 +4,54 @@
 - Define shared product intent so planning, architecture, and delivery stay aligned.
 
 ## Product Vision
-- Describe the long-term outcome the product should create for users and the business.
+- Give Alper Matzevot, a family-run memorial stone (matzevot) business, a simple, respectful website where prospective customers can browse the catalog of memorial stone designs and easily get in touch. The site is a digital storefront for discovery and inquiry, not a transactional shop.
 
 ## Target Users
 - Primary users:
-	- Who they are.
-	- What they are trying to accomplish.
+	- Families and individuals arranging a memorial stone, often during a difficult time.
+	- Trying to see available designs, understand materials/sizes/approximate pricing, and contact the business to discuss and order.
 - Secondary users:
-	- Supporting roles and their core needs.
+	- Funeral homes or community contacts referring customers to Alper Matzevot.
+	- The business owners/staff, who need the site to present the catalog accurately and route inquiries to them.
 
 ## Problem Statement
-- Define the core user problem in one clear paragraph.
-- Clarify current pain points and why existing solutions are insufficient.
+- Prospective customers currently have no easy way to see what memorial stone designs Alper Matzevot offers, or to reach the business, without an in-person visit or word of mouth. This creates friction at an already sensitive time and limits the business's reach beyond direct referrals.
 
 ## Value Proposition
-- State why users should choose this product.
-- Highlight differentiators relevant to target users.
+- A calm, clear catalog of memorial stone designs with real photos, materials, and sizing lets people research and shortlist options on their own time.
+- Multiple easy contact paths (phone, email, form, address/map) meet customers where they are, whether they want to call immediately or send a message first.
+- As a family business, the tone should feel personal and trustworthy rather than commercial.
 
 ## Product Scope
 - In scope:
-	- Core capabilities required for the current product stage.
+	- Homepage introducing the business.
+	- Catalog page listing memorial stone designs.
+	- Product Detail page per design (photos, material/finish, dimensions, price range).
+	- Contact page (phone, email, address/map, contact form).
 - Out of scope:
-	- Explicit exclusions to avoid ambiguity and scope creep.
+	- Online ordering, cart, checkout, or payment.
+	- User accounts/login.
+	- Inventory/stock management.
 
 ## Success Metrics
 - Business metrics:
-	- Activation, retention, conversion, or revenue signals.
+	- Number of inquiries generated via the contact form/phone/email attributable to the site.
 - Product metrics:
-	- Adoption, task completion, reliability, and satisfaction signals.
-- Define baseline and target values when available.
+	- Catalog and product page views; time to reach the Contact page from Homepage.
+- Baseline and target values to be defined once the site is live and traffic is measurable.
 
 ## Constraints and Assumptions
-- Key constraints (technical, compliance, operational, timeline).
-- Assumptions that should be validated during implementation.
+- Key constraints:
+	- No online payments — legally/operationally, memorial stone orders are finalized in person or by phone with the family.
+	- Content and imagery must remain respectful and appropriate for a bereavement context.
+- Assumptions:
+	- Catalog size is small enough to manage as static/managed content rather than requiring a full admin/inventory system (revisit if catalog grows significantly).
+	- Business staff will handle inquiries manually (phone/email), not through an automated pipeline.
 
 ## Prioritization Rules
-- Prioritize work that most improves user outcomes and core metrics.
+- Prioritize the Catalog → Product Detail → Contact path, since that is the core conversion flow.
 - Prefer changes that reduce operational complexity and support costs.
-- Defer low-impact features unless required for launch readiness.
+- Defer low-impact features (e.g. filtering, search) unless the catalog grows large enough to need them.
 
 ## Update Triggers
 - Update this file when core user segments, product scope, or success metrics change.
