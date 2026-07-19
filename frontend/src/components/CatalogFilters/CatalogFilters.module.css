@@ -1,0 +1,123 @@
+.sidebar {
+  width: 256px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.heading {
+  font-size: 24px;
+  color: #1b1c19;
+  text-align: right;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(114, 91, 39, 0.2);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: none;
+}
+
+.groupTitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: var(--color-text);
+  text-align: right;
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.optionLabel {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #747878;
+  border-radius: 2px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--color-accent);
+}
+
+.priceLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  color: var(--color-text-muted);
+}
+
+.ctaBox {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  padding: 24px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.ctaText {
+  font-size: 16px;
+  font-style: italic;
+  color: #99938f;
+  text-align: center;
+}
+
+.ctaButton {
+  width: 100%;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-align: center;
+  padding: 9px 1px;
+}
+
+.ctaButton:hover {
+  background: var(--color-accent);
+  color: var(--color-on-dark);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+  }
+}

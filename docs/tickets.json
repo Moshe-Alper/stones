@@ -1,0 +1,17 @@
+{
+  "frontend": {
+    "id": "MOS-8",
+    "issueId": "8a18d7f0-c7f1-4d51-8298-4229c5044f1c",
+    "url": "https://linear.app/moshik-alper/issue/MOS-8/devloopfe-product-detail-page"
+  },
+  "backend": {
+    "id": "MOS-9",
+    "issueId": "9a37c000-c390-4344-8aea-6ae23faa72b1",
+    "url": "https://linear.app/moshik-alper/issue/MOS-9/devloopbe-product-detail-page"
+  },
+  "qa": {
+    "id": "MOS-10",
+    "issueId": "d2c8b528-a8e1-413d-a1d6-34e9da61c0df",
+    "url": "https://linear.app/moshik-alper/issue/MOS-10/devloopqa-product-detail-page"
+  }
+}

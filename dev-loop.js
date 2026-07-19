@@ -246,7 +246,12 @@ function getNextBacklogTask() {
   const text = readFileSync(BACKLOG_FILE, "utf-8")
   const lines = text.split("\n")
 
-  for (let i = 0; i < lines.length; i += 1) {
+  // Real backlog items live under "Current queue:" — lines above that (format
+  // docs, "Example:" entries) match the same checkbox syntax and must be skipped.
+  const queueMarker = lines.findIndex((l) => /^\s*current queue:\s*$/i.test(l.trim()))
+  const startIndex = queueMarker === -1 ? 0 : queueMarker + 1
+
+  for (let i = startIndex; i < lines.length; i += 1) {
     const line = lines[i].trim()
     const m = line.match(/^\s*-\s*\[( |x|X)\]\s*(.+)$/)
     if (!m) continue

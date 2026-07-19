@@ -1,10 +1,28 @@
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import CatalogGrid from "@/components/CatalogGrid/CatalogGrid";
+import CatalogFilters from "@/components/CatalogFilters/CatalogFilters";
+import Pagination from "@/components/Pagination/Pagination";
 import styles from "./page.module.css";
 
-// Stub page — full Catalog implementation is a separate later backlog task.
 export default function CatalogPage() {
   return (
-    <main className={styles.main}>
-      <h1>קטלוג</h1>
-    </main>
+    <>
+      <Header />
+      <main className={styles.main}>
+        <div className={styles.container}>
+          <Breadcrumb />
+          <div className={styles.layout}>
+            <div className={styles.content}>
+              <CatalogGrid />
+              <Pagination />
+            </div>
+            <CatalogFilters />
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

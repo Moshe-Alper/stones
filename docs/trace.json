@@ -1,0 +1,38 @@
+[
+  {
+    "role": "orchestrator",
+    "label": "Orchestrator (planning)",
+    "inputTokens": 248,
+    "outputTokens": 18807,
+    "cacheReadTokens": 186637,
+    "costUsd": 1.1557884999999999,
+    "durationMs": 243625
+  },
+  {
+    "role": "frontend",
+    "label": "Frontend Agent",
+    "inputTokens": 1775,
+    "outputTokens": 37241,
+    "cacheReadTokens": 2479668,
+    "costUsd": 3.116492999999999,
+    "durationMs": 531587
+  },
+  {
+    "role": "backend",
+    "label": "Backend Agent",
+    "inputTokens": 8,
+    "outputTokens": 1954,
+    "cacheReadTokens": 71217,
+    "costUsd": 0.2664885,
+    "durationMs": 29123
+  },
+  {
+    "role": "qa",
+    "label": "QA Agent",
+    "inputTokens": 30,
+    "outputTokens": 10014,
+    "cacheReadTokens": 578067,
+    "costUsd": 0.9533695000000001,
+    "durationMs": 171013
+  }
+]
