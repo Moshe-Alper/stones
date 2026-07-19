@@ -1,4 +1,46 @@
 .main {
-  padding: 96px 40px;
-  text-align: center;
+  background: var(--color-bg);
+}
+
+.grid {
+  width: calc(100% - 80px);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.contactColumn {
+  grid-column: 6 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mapColumn {
+  grid-column: 1 / 6;
+  grid-row: 1;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactColumn,
+  .mapColumn {
+    grid-column: 1;
+  }
+
+  .mapColumn {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    width: calc(100% - 48px);
+  }
 }

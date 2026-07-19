@@ -16,6 +16,9 @@
 - `lat` and `lng`
 	- Canonical meaning: latitude and longitude values.
 	- Use: use short forms only.
+- `contact inquiry`
+	- Canonical meaning: a visitor request for the Alper family to make contact about memorial stone services.
+	- Use: use for the form payload and delivery flow; do not call it an order or purchase.
 
 ## Naming Alignment
 - Keep this glossary aligned with naming decisions in `../.rule/naming-rules.md`.

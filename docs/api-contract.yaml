@@ -1,29 +1,100 @@
 openapi: 3.0.3
 info:
-  title: "[Project Name] API"
+  title: Alper Marble Contact API
   version: 1.0.0
   description: >
-    Defined by the Frontend Agent during the dev-loop for the current task.
-    The Backend Agent must implement this contract exactly.
-    This file is regenerated/extended per task — treat it as living documentation,
-    not a fixed spec.
+    Local simulated-delivery contract for the Contact page. No inquiry is sent to
+    an external provider until the TODO seam in the route handler is replaced.
 
 servers:
-  - url: http://localhost:3001
-    description: Local development
+  - url: http://localhost:3000
+    description: Next.js local development server
 
-paths: {}
-  # Add endpoints here as they are defined by the Frontend Agent.
+paths:
+  /api/contact:
+    post:
+      summary: Submit a contact inquiry
+      operationId: createContactInquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactInquiry"
+      responses:
+        "200":
+          description: Inquiry accepted by the simulated delivery path
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactInquirySuccess"
+        "400":
+          description: Malformed JSON request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "422":
+          description: Missing or invalid inquiry fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 
 components:
-  schemas: {}
-    # Add shared schemas here as they are defined.
-
-# ─── Realtime / WebSocket Events (if applicable) ──────────────────────────────
-# Document any WebSocket/event-based transport here, e.g.:
-#
-# CLIENT → SERVER:
-#   <event_name>   { <payload shape> }
-#
-# SERVER → CLIENT:
-#   <event_name>   { <payload shape> }
+  schemas:
+    ContactInquiry:
+      type: object
+      required: [name, phone, preferredTime, message]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        phone:
+          type: string
+          pattern: "^[0-9+()\\-\\s]{7,20}$"
+        preferredTime:
+          type: string
+          enum:
+            - בוקר (08:00 - 12:00)
+            - צהריים (12:00 - 15:00)
+            - אחר הצהריים (15:00 - 17:30)
+        message:
+          type: string
+          minLength: 1
+    ContactInquirySuccess:
+      type: object
+      required: [data, requestId]
+      properties:
+        data:
+          type: object
+          required: [delivered, mode]
+          properties:
+            delivered:
+              type: boolean
+              const: true
+            mode:
+              type: string
+              const: simulated
+        requestId:
+          type: string
+          format: uuid
+    ErrorResponse:
+      type: object
+      required: [error, requestId]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+              additionalProperties:
+                type: string
+        requestId:
+          type: string
+          format: uuid

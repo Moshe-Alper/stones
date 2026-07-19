@@ -1,0 +1,113 @@
+.visuals {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mapPlaceholder {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+}
+
+.mapArtwork {
+  position: absolute;
+  inset: 0;
+  background-color: #e4e2dd;
+  background-image:
+    linear-gradient(32deg, transparent 47%, rgba(114, 91, 39, 0.18) 48% 51%, transparent 52%),
+    linear-gradient(145deg, transparent 43%, rgba(68, 71, 72, 0.16) 44% 47%, transparent 48%),
+    repeating-linear-gradient(90deg, transparent 0 74px, rgba(255, 255, 255, 0.46) 75px 79px),
+    repeating-linear-gradient(0deg, transparent 0 66px, rgba(255, 255, 255, 0.46) 67px 71px);
+}
+
+.mapPin {
+  position: absolute;
+  top: 36%;
+  left: 52%;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 50% 0;
+  background: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(24, 25, 25, 0.25);
+  transform: rotate(-45deg);
+}
+
+.mapPin span {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-on-dark);
+  border-radius: 50%;
+}
+
+.overlay {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(251, 249, 244, 0.94);
+  border: 1px solid rgba(196, 199, 199, 0.8);
+}
+
+.overlay div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.overlay strong {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 17px;
+}
+
+.overlay div span {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.overlay a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.workshopPlaceholder {
+  min-height: 256px;
+  padding: 32px;
+  display: flex;
+  align-items: flex-end;
+  color: var(--color-on-dark);
+  background:
+    linear-gradient(0deg, rgba(24, 25, 25, 0.64), rgba(24, 25, 25, 0.08)),
+    radial-gradient(circle at 28% 32%, #b7ac98 0 9%, transparent 10%),
+    linear-gradient(125deg, #5b554c, #aaa18f 48%, #57524b);
+}
+
+.workshopPlaceholder span {
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+@media (max-width: 640px) {
+  .mapPlaceholder {
+    min-height: 380px;
+  }
+
+  .overlay {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

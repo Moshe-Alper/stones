@@ -18,7 +18,7 @@ test.describe("Homepage", () => {
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
     await expect(
       page.getByRole("heading", { name: "כיבוד זיכרון יקיריכם בכבוד ובעדינות" })
-    ).toBeVisible();
+    ).toBeVisible()
 
     expect(consoleErrors).toEqual([]);
   });
@@ -58,6 +58,8 @@ test.describe("Homepage", () => {
 
     const contactResponse = await page.goto("/contact");
     expect(contactResponse?.status()).toBeLessThan(400);
-    await expect(page.getByRole("heading", { name: "צור קשר" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "ייעוץ אישי מהמשפחה שלנו" }),
+    ).toBeVisible();
   });
 });

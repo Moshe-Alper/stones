@@ -4,17 +4,42 @@
 - Provide a concise architecture reference for service boundaries, ownership, and major flows.
 
 ## System Overview
-- This document should describe the primary runtime components and how they interact.
-- Default runtime topology:
-  - `frontend/`: Next.js App Router application. It renders the user interface and may
-    make server-side calls to the backend.
-  - `backend/`: Node.js API application. It owns domain logic, authentication
-    enforcement, and database access.
-  - Database: persistent storage accessed by the backend; its credentials must remain
-    private and must not be exposed through `NEXT_PUBLIC_` environment variables.
-- Next.js includes a Node.js runtime for server rendering and Route Handlers, but it
-  does not replace a dedicated Node.js backend when that backend owns the API and data
-  layer. Keep the boundary explicit in the API contract.
+- `frontend/` is a Next.js App Router application that owns the current public website.
+- Catalog content is static and local to the frontend. There is no dedicated `backend/`
+  service or database in the current runtime.
+- The Contact page posts a contact inquiry to the frontend-owned Route Handler
+  `POST /api/contact`. The handler validates the payload and uses a local simulated-delivery
+  log; it does not persist data or call an email provider.
+- `docs/api-contract.yaml` is the source of truth for the Contact endpoint payload and
+  response shapes.
+
+## Data Flow
+
+1. A visitor completes the client-side Contact form.
+2. The form sends JSON to `POST /api/contact` on the same Next.js origin.
+3. The Route Handler repeats validation and returns the stable success or error shape.
+4. During development, accepted inquiries are logged server-side with a `requestId`.
+5. A future email provider replaces the marked simulated-delivery seam without exposing
+   provider credentials to the browser.
+
+## Auth and Org Boundaries
+
+- The public catalog and Contact page do not require authentication.
+- No org boundary exists in the current single-business public-site runtime.
+- If a backend or multi-org admin surface is introduced, authentication and org scoping
+  must be enforced there before database access.
+
+## Operational Concerns
+
+- API errors use a stable `error.code`, `error.message`, optional `error.details`, and
+  `requestId` response shape.
+- The simulated delivery path is development-only. Real delivery requires an approved
+  provider, private server-side credentials, bounded provider retries, and spam controls.
+- Contact inquiry logs can contain personal information and must not be exposed to the client.
+
+## Change Log
+
+- 2026-07-19: Added the frontend-owned Contact Route Handler and simulated-delivery boundary.
 
 ## Recommended Sections
 - `Context`

@@ -1,0 +1,81 @@
+.section {
+  width: 100%;
+  margin-top: 88px;
+  padding: 48px 40px;
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.highlight {
+  padding: 4px 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.highlight:first-child {
+  border-inline-start: 0;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  color: var(--color-accent);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+
+.highlight div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.highlight p {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .highlight {
+    padding: 0;
+    border-inline-start: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    margin-top: 56px;
+    padding: 40px 24px;
+  }
+}
