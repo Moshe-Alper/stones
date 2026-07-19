@@ -1,4 +1,4 @@
-# PRD — Matzevot (Alper Matzevot)
+# PRD — Alper Marble
 
 **Version:** 0.1
 **Author:** Moshik Alper
@@ -9,14 +9,14 @@
 
 ## Overview
 
-Matzevot is the informational website for Alper Matzevot, a family-run business that designs and produces memorial stones (matzevot/headstones). The site lets visitors browse a catalog of memorial stone designs and reach out to the business directly — there is no online ordering, cart, or payment. Its purpose is to showcase the catalog and drive inquiries by phone, email, contact form, or in-person visit.
+Alper Marble is the informational website for a family-run business that designs and produces memorial stones. The site lets visitors browse a catalog of memorial stone designs and reach out to the business directly — there is no online ordering, cart, or payment. Its purpose is to showcase the catalog and drive inquiries by phone, email, contact form, or in-person visit.
 
 ---
 
 ## Screens
 
 ### Screen 1 — Homepage
-- Introduces Alper Matzevot as a family business.
+- Introduces Alper Marble as a family business.
 - Highlights the catalog and invites visitors to browse or get in touch.
 - Entry points to Catalog and Contact pages.
 

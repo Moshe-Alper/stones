@@ -1,0 +1,111 @@
+.footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: 0 40px;
+}
+
+.top {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px 24px;
+  flex-wrap: wrap;
+}
+
+.linkColumns {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 160px;
+}
+
+.columnTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  list-style: none;
+}
+
+.listItem {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 340px;
+  text-align: right;
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-family: system-ui, sans-serif;
+}
+
+.brandBlurb {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-muted);
+}
+
+.bottom {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 33px 24px 32px;
+  flex-wrap: wrap;
+}
+
+.bottomLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.meta {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  font-family: system-ui, sans-serif;
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  font-family: system-ui, sans-serif;
+}

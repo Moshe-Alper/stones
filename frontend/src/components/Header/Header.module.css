@@ -1,0 +1,69 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 40px;
+  flex-wrap: wrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ctaButton {
+  background: var(--color-text);
+  color: var(--color-on-dark);
+  border: none;
+  padding: 8px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+}
+
+.langSwitcher {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  color: var(--color-text-muted);
+  font-family: system-ui, sans-serif;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.link {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  padding-bottom: 12px;
+}
+
+.linkActive {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+}

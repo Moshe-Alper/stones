@@ -4,18 +4,18 @@
 - Define shared product intent so planning, architecture, and delivery stay aligned.
 
 ## Product Vision
-- Give Alper Matzevot, a family-run memorial stone (matzevot) business, a simple, respectful website where prospective customers can browse the catalog of memorial stone designs and easily get in touch. The site is a digital storefront for discovery and inquiry, not a transactional shop.
+- Give Alper Marble, a family-run memorial stone business, a simple, respectful website where prospective customers can browse the catalog of memorial stone designs and easily get in touch. The site is a digital storefront for discovery and inquiry, not a transactional shop.
 
 ## Target Users
 - Primary users:
 	- Families and individuals arranging a memorial stone, often during a difficult time.
 	- Trying to see available designs, understand materials/sizes/approximate pricing, and contact the business to discuss and order.
 - Secondary users:
-	- Funeral homes or community contacts referring customers to Alper Matzevot.
+	- Funeral homes or community contacts referring customers to Alper Marble.
 	- The business owners/staff, who need the site to present the catalog accurately and route inquiries to them.
 
 ## Problem Statement
-- Prospective customers currently have no easy way to see what memorial stone designs Alper Matzevot offers, or to reach the business, without an in-person visit or word of mouth. This creates friction at an already sensitive time and limits the business's reach beyond direct referrals.
+- Prospective customers currently have no easy way to see what memorial stone designs Alper Marble offers, or to reach the business, without an in-person visit or word of mouth. This creates friction at an already sensitive time and limits the business's reach beyond direct referrals.
 
 ## Value Proposition
 - A calm, clear catalog of memorial stone designs with real photos, materials, and sizing lets people research and shortlist options on their own time.

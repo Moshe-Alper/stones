@@ -6,7 +6,7 @@ Last updated: 2026-07-18
 
 ## Goal
 
-Build the Matzevot (Alper Matzevot) marketing Homepage: a Hebrew/RTL informational
+Build the Alper Marble marketing Homepage: a Hebrew/RTL informational
 page that introduces the family business, showcases material/style categories, explains
 the service process, and drives visitors to the Catalog and Contact pages. No cart,
 checkout, or payment UI (PRD F5).
