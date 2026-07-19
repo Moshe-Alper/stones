@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Noto_Serif_Hebrew } from "next/font/google";
+import { Frank_Ruhl_Libre, Heebo } from "next/font/google";
 import "./globals.css";
 
-// NOTE: Figma design specifies "Liberation Serif" / "Noto Serif" — Liberation
-// Serif has no Hebrew glyph coverage, so we substitute Google Fonts
-// "Noto Serif Hebrew" for all serif text (see .plan/001-2026-07-18-homepage.md).
-const notoSerifHebrew = Noto_Serif_Hebrew({
-  variable: "--font-noto-serif-hebrew",
+const frankRuhlLibre = Frank_Ruhl_Libre({
+  variable: "--font-frank-ruhl-libre",
   subsets: ["hebrew", "latin"],
-  weight: ["400", "700"],
+  weight: "variable",
+});
+
+const heebo = Heebo({
+  variable: "--font-heebo",
+  subsets: ["hebrew", "latin"],
+  weight: "variable",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl" className={notoSerifHebrew.variable}>
+    <html
+      lang="he"
+      dir="rtl"
+      className={`${frankRuhlLibre.variable} ${heebo.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

@@ -9,7 +9,8 @@
   --color-border: #c4c7c7;
   --color-on-dark: #fbf9f4;
 
-  --font-serif: var(--font-noto-serif-hebrew), "Times New Roman", serif;
+  --font-display: var(--font-frank-ruhl-libre), "Times New Roman", serif;
+  --font-sans: var(--font-heebo), Arial, sans-serif;
 
   --max-content-width: 1200px;
 }
@@ -30,7 +31,7 @@ body {
   flex-direction: column;
   color: var(--color-text);
   background: var(--color-bg);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,6 +50,12 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
 }
 
 img {

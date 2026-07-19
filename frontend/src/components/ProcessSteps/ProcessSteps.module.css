@@ -67,7 +67,7 @@
 .stepNumber {
   font-size: 16px;
   color: var(--color-text-faint);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
 }
 
 .stepTitle {
