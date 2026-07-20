@@ -16,3 +16,5 @@ Current queue:
 - [x] Catalog page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-357
 - [x] Product Detail page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-133
 - [x] Contact page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-2
+- [ ] Contact inquiry email delivery
+- [x] Contact map/location experience improvement

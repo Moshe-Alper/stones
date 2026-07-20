@@ -29,6 +29,13 @@
 - If a backend or multi-org admin surface is introduced, authentication and org scoping
   must be enforced there before database access.
 
+## External Dependencies
+
+- The Contact page's `ContactMap` component embeds a Google Maps `output=embed` iframe to
+  show the studio's real location, plus static Google Maps and Waze deep links for
+  directions. This is a client-rendered, unauthenticated, no-API-key embed; no server-side
+  credentials or billing account are involved.
+
 ## Operational Concerns
 
 - API errors use a stable `error.code`, `error.message`, optional `error.details`, and
@@ -40,6 +47,8 @@
 ## Change Log
 
 - 2026-07-19: Added the frontend-owned Contact Route Handler and simulated-delivery boundary.
+- 2026-07-20: Replaced the Contact page's decorative CSS map illustration with a real Google
+  Maps embed iframe and added a Waze navigation link (`.plan/008-2026-07-20-contact-map-location-experience.md`).
 
 ## Recommended Sections
 - `Context`
