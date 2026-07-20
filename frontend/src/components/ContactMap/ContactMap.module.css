@@ -10,36 +10,54 @@
   overflow: hidden;
 }
 
-.mapArtwork {
+.mapFrame {
   position: absolute;
   inset: 0;
-  background-color: #e4e2dd;
-  background-image:
-    linear-gradient(32deg, transparent 47%, rgba(114, 91, 39, 0.18) 48% 51%, transparent 52%),
-    linear-gradient(145deg, transparent 43%, rgba(68, 71, 72, 0.16) 44% 47%, transparent 48%),
-    repeating-linear-gradient(90deg, transparent 0 74px, rgba(255, 255, 255, 0.46) 75px 79px),
-    repeating-linear-gradient(0deg, transparent 0 66px, rgba(255, 255, 255, 0.46) 67px 71px);
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
 }
 
-.mapPin {
+.mapFrameActive {
+  pointer-events: auto;
+}
+
+.mapActivate {
   position: absolute;
-  top: 36%;
-  left: 52%;
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 50% 50% 50% 0;
-  background: var(--color-accent);
-  box-shadow: 0 8px 20px rgba(24, 25, 25, 0.25);
-  transform: rotate(-45deg);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
-.mapPin span {
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--color-on-dark);
-  border-radius: 50%;
+.mapActivate span {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(251, 249, 244, 0.94);
+  border: 1px solid rgba(196, 199, 199, 0.8);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(24, 25, 25, 0.18);
+}
+
+.mapFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  background-color: #e4e2dd;
+  color: var(--color-text-muted);
+  font-size: 14px;
 }
 
 .overlay {
@@ -56,7 +74,7 @@
   border: 1px solid rgba(196, 199, 199, 0.8);
 }
 
-.overlay div {
+.overlayInfo {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -68,9 +86,15 @@
   font-size: 17px;
 }
 
-.overlay div span {
+.overlayInfo span {
   color: var(--color-text-muted);
   font-size: 14px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .overlay a {

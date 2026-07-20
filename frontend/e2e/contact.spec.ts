@@ -22,7 +22,7 @@ test.describe("Contact page", () => {
     ).toBeVisible()
     await expect(page.getByLabel("שם מלא")).toBeVisible()
     await expect(
-      page.getByRole("img", { name: "מפת מיקום הסטודיו בחולון" }),
+      page.getByTitle("מפת מיקום הסטודיו"),
     ).toBeVisible()
     await expect(
       page.getByRole("heading", { level: 2, name: "אחריות לדורות" }),
@@ -65,6 +65,19 @@ test.describe("Contact page", () => {
     ).toHaveCount(0)
   })
 
+  test("offers Google Maps and Waze navigation to the studio", async ({
+    page,
+  }) => {
+    await page.goto("/contact")
+
+    await expect(
+      page.getByRole("link", { name: "ניווט לסטודיו במפות Google" }),
+    ).toHaveAttribute("href", /^https:\/\/www\.google\.com\/maps\/dir\/\?/)
+    await expect(
+      page.getByRole("link", { name: "ניווט לסטודיו ב-Waze" }),
+    ).toHaveAttribute("href", /^https:\/\/waze\.com\/ul\?/)
+  })
+
   test("keeps the primary contact path usable on a mobile viewport", async ({
     page,
   }) => {
@@ -82,7 +95,7 @@ test.describe("Contact page", () => {
       page.getByRole("button", { name: "שליחת בקשה למשפחה" }),
     ).toBeVisible()
     await expect(
-      page.getByRole("img", { name: "מפת מיקום הסטודיו בחולון" }),
+      page.getByTitle("מפת מיקום הסטודיו"),
     ).toBeVisible()
   })
 })
