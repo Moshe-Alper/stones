@@ -106,18 +106,32 @@
 }
 
 .workshopPlaceholder {
+  position: relative;
+  overflow: hidden;
   min-height: 256px;
   padding: 32px;
   display: flex;
   align-items: flex-end;
   color: var(--color-on-dark);
-  background:
-    linear-gradient(0deg, rgba(24, 25, 25, 0.64), rgba(24, 25, 25, 0.08)),
-    radial-gradient(circle at 28% 32%, #b7ac98 0 9%, transparent 10%),
-    linear-gradient(125deg, #5b554c, #aaa18f 48%, #57524b);
+}
+
+.workshopImage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.workshopOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgba(24, 25, 25, 0.64), rgba(24, 25, 25, 0.08));
 }
 
 .workshopPlaceholder span {
+  position: relative;
+  z-index: 2;
   font-family: var(--font-display);
   font-size: 24px;
 }

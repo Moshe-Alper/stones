@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { CONTACT_DETAILS } from "@/data/contact"
 import styles from "./ContactMap.module.css"
@@ -72,11 +73,15 @@ export default function ContactMap() {
         </div>
       </div>
 
-      <div
-        className={styles.workshopPlaceholder}
-        role="img"
-        aria-label="תמונת אווירה של בית המלאכה"
-      >
+      <div className={styles.workshopPlaceholder}>
+        <Image
+          className={styles.workshopImage}
+          src="/images/contact-workshop.webp"
+          alt="תמונת אווירה של בית המלאכה"
+          fill
+          sizes="(max-width: 900px) 100vw, 40vw"
+        />
+        <div className={styles.workshopOverlay} />
         <span>בית המלאכה המשפחתי</span>
       </div>
     </section>

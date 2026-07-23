@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./MaterialsGrid.module.css";
 
@@ -8,17 +9,23 @@ const MATERIALS = [
   {
     id: "granite",
     title: "גרניט פרימיום",
-    image: "https://placehold.co/600x600/b7b7b3/222?text=Granite",
+    image: "/images/material-granite.webp",
+    width: 1200,
+    height: 800,
   },
   {
     id: "marble",
     title: "שיש איטלקי",
-    image: "https://placehold.co/600x600/d9d6ce/222?text=Marble",
+    image: "/images/material-marble.webp",
+    width: 800,
+    height: 1200,
   },
   {
     id: "basalt",
     title: "אבן טבעית ועיצוב אישי",
-    image: "https://placehold.co/600x600/8a8a86/222?text=Basalt",
+    image: "/images/material-basalt.webp",
+    width: 1200,
+    height: 798,
   },
 ];
 
@@ -33,10 +40,13 @@ export default function MaterialsGrid() {
         {MATERIALS.map((material) => (
           <article className={styles.card} key={material.id}>
             {/* TODO: replace with client-provided photography */}
-            <img
+            <Image
               className={styles.cardImage}
               src={material.image}
               alt={material.title}
+              width={material.width}
+              height={material.height}
+              sizes="(max-width: 900px) 100vw, 33vw"
             />
             <div className={styles.cardBody}>
               <h3 className={styles.cardTitle}>{material.title}</h3>

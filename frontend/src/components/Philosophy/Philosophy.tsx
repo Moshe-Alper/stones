@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Philosophy.module.css";
 
 const STATS = [
@@ -30,10 +31,13 @@ export default function Philosophy() {
         </div>
         <div className={styles.imageFrame}>
           {/* TODO: replace with client-provided photography */}
-          <img
+          <Image
             className={styles.image}
-            src="https://placehold.co/800x900/eae6da/44403a?text=Craftsmanship"
+            src="/images/craftsmanship-carving.webp"
             alt="אומן חורת מצבה"
+            width={1400}
+            height={933}
+            sizes="(max-width: 800px) 100vw, 42vw"
           />
         </div>
       </div>

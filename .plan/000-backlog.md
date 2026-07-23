@@ -18,3 +18,4 @@ Current queue:
 - [x] Contact page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-2
 - [ ] Contact inquiry email delivery
 - [x] Contact map/location experience improvement
+- [x] Replace placeholder images with real photography | plan:.plan/009-2026-07-20-real-photography-placeholders.md

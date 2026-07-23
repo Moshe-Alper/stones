@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./Hero.module.css";
 
@@ -6,10 +7,13 @@ export default function Hero() {
     <section className={styles.hero} aria-label="פתיחה">
       <div className={styles.imageLayer}>
         {/* TODO: replace with client-provided photography */}
-        <img
+        <Image
           className={styles.image}
-          src="https://placehold.co/1600x900/d8d3c4/44403a?text=Alper+Marble"
+          src="/images/hero-workshop.webp"
           alt=""
+          fill
+          sizes="100vw"
+          preload
         />
       </div>
       <div className={styles.gradient} />
