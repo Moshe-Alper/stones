@@ -1,8 +1,25 @@
 # Plan: Contact inquiry email delivery
 
-Status: draft
+Status: implemented (code-complete; production rollout pending)
 Owner: Orchestrator
-Last updated: 2026-07-19
+Last updated: 2026-07-23
+
+> User approved Resend as the provider on 2026-07-23; all other open questions adopted this
+> plan's own "Recommended" answers. Implemented: `frontend/src/lib/contact-inquiry-delivery.ts`
+> adapter (`email`/`simulate` modes, fail-closed on missing/unset config, one bounded retry on
+> 5xx/timeout reusing a Resend idempotency key derived from `requestId`, plain-text email only);
+> `frontend/.env.example` documenting `CONTACT_INQUIRY_DELIVERY_MODE`, `RESEND_API_KEY`,
+> `CONTACT_INQUIRY_FROM`, `CONTACT_INQUIRY_TO`; a `website` honeypot field wired through
+> `data/contact.ts`, `ContactForm.tsx`/`.module.css`, and `route.ts` (filled honeypot returns a
+> fake success, no delivery attempted); name/message length limits (100/2000 chars) and a 20KB
+> request body cap in `route.ts`; the raw-payload console log replaced with structured metadata
+> only; `docs/api-contract.yaml` and `.doc/architecture.md` updated for the new `mode` values,
+> field limits, and `503 CONTACT_DELIVERY_UNAVAILABLE` response. `npm run lint`, `npx vitest run`
+> (84 tests, including a new adapter test suite), `npm run build`, and
+> `npx playwright test --reporter=list` (24 tests, including a mocked-503-then-retry scenario)
+> all pass. Remaining before this can be marked fully done per the Rollout Order below: verify a
+> sender domain with Resend, deploy with real `email`-mode credentials to a non-production
+> environment, run one staging inquiry end-to-end, and obtain human QA approval.
 
 ## Goal
 

@@ -9,7 +9,10 @@ const INITIAL_VALUES: ContactInquiry = {
   phone: "",
   preferredTime: PREFERRED_TIME_OPTIONS[0],
   message: "",
+  website: "",
 }
+
+const REQUIRED_FIELDS = ["name", "phone", "preferredTime", "message"] as const
 
 type SubmissionState = {
   type: "idle" | "submitting" | "success" | "error"
@@ -41,8 +44,8 @@ export default function ContactForm() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    const hasMissingField = Object.values(values).some(
-      (value) => !value.trim(),
+    const hasMissingField = REQUIRED_FIELDS.some(
+      (field) => !values[field].trim(),
     )
 
     if (hasMissingField) {
@@ -151,6 +154,19 @@ export default function ContactForm() {
           required
         />
       </label>
+
+      <div className={styles.honeypotField} aria-hidden="true">
+        <label htmlFor="contact-website">אתר אינטרנט</label>
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          value={values.website}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       <button className={styles.submit} type="submit" disabled={isSubmitting}>
         {isSubmitting ? "שולחים..." : "שליחת בקשה למשפחה"}

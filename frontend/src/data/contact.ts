@@ -25,4 +25,6 @@ export type ContactInquiry = {
   phone: string
   preferredTime: string
   message: string
+  /** Honeypot: must stay empty. Filled in only by bots, never by real visitors. */
+  website: string
 }

@@ -31,7 +31,7 @@ test.describe("Contact page", () => {
     expect(consoleErrors).toEqual([])
   })
 
-  test("submits an inquiry through the simulated local delivery path", async ({
+  test("submits an inquiry through the simulate delivery mode", async ({
     page,
   }) => {
     await page.goto("/contact")
@@ -48,6 +48,70 @@ test.describe("Contact page", () => {
     await expect(
       page.getByText("בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם."),
     ).toBeVisible()
+  })
+
+  test("shows a retryable message on delivery failure and allows resubmission", async ({
+    page,
+  }) => {
+    let requestCount = 0
+    await page.route("**/api/contact", async (route) => {
+      requestCount += 1
+      if (requestCount === 1) {
+        await route.fulfill({
+          status: 503,
+          contentType: "application/json",
+          body: JSON.stringify({
+            error: {
+              code: "CONTACT_DELIVERY_UNAVAILABLE",
+              message:
+                "לא הצלחנו לשלוח את הבקשה כעת. נסו שוב בעוד מספר דקות או צרו קשר טלפוני.",
+            },
+            requestId: "00000000-0000-0000-0000-000000000000",
+          }),
+        })
+        return
+      }
+
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          data: { delivered: true, mode: "simulate" },
+          requestId: "00000000-0000-0000-0000-000000000001",
+        }),
+      })
+    })
+
+    const consoleErrors: string[] = []
+    page.on("console", (message) => {
+      if (message.type() === "error") consoleErrors.push(message.text())
+    })
+
+    await page.goto("/contact")
+    await page.getByLabel("שם מלא").fill("ישראל ישראלי")
+    await page.getByLabel("מספר טלפון").fill("050-1234567")
+    await page
+      .getByLabel("הודעה / בקשה מיוחדת")
+      .fill("אשמח לקבל פרטים על עיצוב אישי.")
+    await page.getByRole("button", { name: "שליחת בקשה למשפחה" }).click()
+
+    await expect(
+      page.getByText(
+        "לא הצלחנו לשלוח את הבקשה כעת. נסו שוב בעוד מספר דקות או צרו קשר טלפוני.",
+      ),
+    ).toBeVisible()
+    await expect(page.getByLabel("שם מלא")).toHaveValue("ישראל ישראלי")
+
+    await page.getByRole("button", { name: "שליחת בקשה למשפחה" }).click()
+
+    await expect(
+      page.getByText("בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם."),
+    ).toBeVisible()
+    expect(requestCount).toBe(2)
+
+    for (const message of consoleErrors) {
+      expect(message).not.toMatch(/RESEND_API_KEY|re_[a-zA-Z0-9]/)
+    }
   })
 
   test("exposes direct contact paths but no commerce UI", async ({ page }) => {

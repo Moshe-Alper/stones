@@ -3,8 +3,9 @@ info:
   title: Alper Marble Contact API
   version: 1.0.0
   description: >
-    Local simulated-delivery contract for the Contact page. No inquiry is sent to
-    an external provider until the TODO seam in the route handler is replaced.
+    Contract for the Contact page's inquiry endpoint. Accepted inquiries are
+    delivered by email via Resend (mode "email"); a "simulate" mode exists for
+    local/test environments and never calls the provider.
 
 servers:
   - url: http://localhost:3000
@@ -23,7 +24,12 @@ paths:
               $ref: "#/components/schemas/ContactInquiry"
       responses:
         "200":
-          description: Inquiry accepted by the simulated delivery path
+          description: >
+            Inquiry accepted for delivery. `data.mode` reflects whether the
+            provider actually sent the email ("email") or the request was
+            handled by non-production "simulate" configuration. A filled
+            honeypot field also returns this response without attempting
+            delivery.
           content:
             application/json:
               schema:
@@ -35,7 +41,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
         "422":
-          description: Missing or invalid inquiry fields
+          description: Missing or invalid inquiry fields, or oversized request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: >
+            Email delivery is unavailable (`CONTACT_DELIVERY_UNAVAILABLE`) due
+            to missing/invalid server configuration or a provider failure.
+            Visitors should retry or use a direct contact channel.
           content:
             application/json:
               schema:
@@ -50,6 +65,7 @@ components:
         name:
           type: string
           minLength: 1
+          maxLength: 100
         phone:
           type: string
           pattern: "^[0-9+()\\-\\s]{7,20}$"
@@ -62,6 +78,14 @@ components:
         message:
           type: string
           minLength: 1
+          maxLength: 2000
+        website:
+          type: string
+          maxLength: 0
+          description: >
+            Anti-spam honeypot. Must remain empty; real visitors never see or
+            fill this field. A non-empty value is accepted with a normal
+            success response but never delivered.
     ContactInquirySuccess:
       type: object
       required: [data, requestId]
@@ -75,7 +99,10 @@ components:
               const: true
             mode:
               type: string
-              const: simulated
+              enum: [email, simulate]
+              description: >
+                "email" when Resend accepted the message; "simulate" only
+                occurs in non-production configuration.
         requestId:
           type: string
           format: uuid

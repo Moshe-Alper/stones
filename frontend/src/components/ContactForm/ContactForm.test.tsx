@@ -41,7 +41,7 @@ describe("ContactForm", () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
       json: vi.fn().mockResolvedValue({
-        data: { delivered: true, mode: "simulated" },
+        data: { delivered: true, mode: "email" },
       }),
     })
     vi.stubGlobal("fetch", fetchMock)
@@ -65,9 +65,98 @@ describe("ContactForm", () => {
         headers: { "Content-Type": "application/json" },
       }),
     )
+    const [, requestInit] = fetchMock.mock.calls[0]
+    expect(JSON.parse(requestInit.body as string)).toEqual(
+      expect.objectContaining({ website: "" }),
+    )
     expect(
       await screen.findByText("בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם."),
     ).toBeInTheDocument()
+  })
+
+  it("keeps the honeypot field out of reach of real visitors", () => {
+    render(<ContactForm />)
+
+    const honeypot = document.getElementById(
+      "contact-website",
+    ) as HTMLInputElement
+
+    expect(honeypot).not.toBeNull()
+    expect(honeypot).toHaveAttribute("tabIndex", "-1")
+    expect(
+      screen.queryByRole("textbox", { name: "אתר אינטרנט" }),
+    ).not.toBeInTheDocument()
+  })
+
+  it("disables the submit button and sends only one request while pending", async () => {
+    const user = userEvent.setup()
+    let resolveFetch: (value: unknown) => void = () => {}
+    const fetchMock = vi.fn().mockReturnValue(
+      new Promise((resolve) => {
+        resolveFetch = resolve
+      }),
+    )
+    vi.stubGlobal("fetch", fetchMock)
+    render(<ContactForm />)
+
+    await user.type(screen.getByLabelText("שם מלא"), "ישראל ישראלי")
+    await user.type(screen.getByLabelText("מספר טלפון"), "050-1234567")
+    await user.type(
+      screen.getByLabelText("הודעה / בקשה מיוחדת"),
+      "אשמח לקבל פרטים נוספים.",
+    )
+
+    const submitButton = screen.getByRole("button", {
+      name: /שולחים|שליחת בקשה למשפחה/,
+    })
+    await user.click(submitButton)
+    await waitFor(() => expect(submitButton).toBeDisabled())
+    await user.click(submitButton)
+
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+
+    resolveFetch({
+      ok: true,
+      json: vi.fn().mockResolvedValue({
+        data: { delivered: true, mode: "email" },
+      }),
+    })
+  })
+
+  it("preserves entered values and shows a retryable message on 503", async () => {
+    const user = userEvent.setup()
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        json: vi.fn().mockResolvedValue({
+          error: {
+            code: "CONTACT_DELIVERY_UNAVAILABLE",
+            message: "לא הצלחנו לשלוח את הבקשה כעת. נסו שוב בעוד מספר דקות או צרו קשר טלפוני.",
+          },
+        }),
+      }),
+    )
+    render(<ContactForm />)
+
+    await user.type(screen.getByLabelText("שם מלא"), "ישראל ישראלי")
+    await user.type(screen.getByLabelText("מספר טלפון"), "050-1234567")
+    await user.type(
+      screen.getByLabelText("הודעה / בקשה מיוחדת"),
+      "אשמח לקבל פרטים נוספים.",
+    )
+    await user.click(
+      screen.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+    )
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "לא הצלחנו לשלוח את הבקשה כעת. נסו שוב בעוד מספר דקות או צרו קשר טלפוני.",
+    )
+    expect(screen.getByLabelText("שם מלא")).toHaveValue("ישראל ישראלי")
+    expect(screen.getByLabelText("מספר טלפון")).toHaveValue("050-1234567")
+    expect(screen.getByLabelText("הודעה / בקשה מיוחדת")).toHaveValue(
+      "אשמח לקבל פרטים נוספים.",
+    )
   })
 
   it("surfaces a safe endpoint error and lets the visitor retry", async () => {

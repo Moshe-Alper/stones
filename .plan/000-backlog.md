@@ -16,6 +16,6 @@ Current queue:
 - [x] Catalog page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-357
 - [x] Product Detail page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-133
 - [x] Contact page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-2
-- [ ] Contact inquiry email delivery
+- [ ] Contact inquiry email delivery | plan:.plan/007-2026-07-19-contact-inquiry-email-delivery.md (implemented, pending staging QA + domain verification)
 - [x] Contact map/location experience improvement
 - [x] Replace placeholder images with real photography | plan:.plan/009-2026-07-20-real-photography-placeholders.md
