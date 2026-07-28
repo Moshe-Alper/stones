@@ -62,6 +62,18 @@
 
 ## Change Log
 
+- 2026-07-28: Removed the `frontend/scripts/gallery-import.ts` Google Photos/Anthropic gallery
+  curation CLI added 2026-07-23 below. The account owner chose to blur engraved text manually
+  instead of relying on automated detection, which repeated real-photo testing showed missed
+  text often enough to require full manual review regardless — see
+  `.plan/011-2026-07-23-google-photos-gallery-headstone-blur.md` (status: abandoned) for the
+  outcome. `frontend/public/images/gallery/` now exists as a plain destination folder for
+  manually curated and manually blurred photos; no code or external integration is involved.
+- 2026-07-23: Added `frontend/scripts/gallery-import.ts`, a local-only CLI (Google Photos Picker
+  API OAuth + Anthropic vision classification/text-region detection + `sharp` blurring) that
+  stages privacy-reviewed candidate gallery images for manual promotion; no public route or
+  page was added (`.plan/011-2026-07-23-google-photos-gallery-headstone-blur.md`). Removed
+  2026-07-28, see above.
 - 2026-07-19: Added the frontend-owned Contact Route Handler and simulated-delivery boundary.
 - 2026-07-20: Replaced the Contact page's decorative CSS map illustration with a real Google
   Maps embed iframe and added a Waze navigation link (`.plan/008-2026-07-20-contact-map-location-experience.md`).

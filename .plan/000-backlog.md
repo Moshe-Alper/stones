@@ -20,3 +20,4 @@ Current queue:
 - [ ] Resend production email rollout | plan:.plan/010-2026-07-23-resend-production-email-rollout.md
 - [x] Contact map/location experience improvement
 - [x] Replace placeholder images with real photography | plan:.plan/009-2026-07-20-real-photography-placeholders.md
+- [x] Google Photos gallery import with headstone detection and name blurring | plan:.plan/011-2026-07-23-google-photos-gallery-headstone-blur.md (abandoned 2026-07-28 — automated text detection wasn't reliable enough on real photos; owner is blurring manually instead, see frontend/public/images/gallery/)
