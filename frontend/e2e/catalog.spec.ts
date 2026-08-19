@@ -78,3 +78,36 @@ test.describe("Catalog page", () => {
     );
   });
 });
+
+test.describe("Catalog category gallery", () => {
+  test("shows real installation photos and a working lightbox", async ({
+    page,
+  }) => {
+    const consoleErrors: string[] = [];
+    page.on("console", (msg) => {
+      if (msg.type() === "error") consoleErrors.push(msg.text());
+    });
+    page.on("pageerror", (err) => consoleErrors.push(err.message));
+
+    await page.goto("/catalog/turkish-marble");
+
+    const thumbs = page.getByRole("button", { name: /הגדלת תמונה/ });
+    await expect(thumbs.first()).toBeVisible();
+    expect(await thumbs.count()).toBeGreaterThan(0);
+
+    await thumbs.first().click();
+    await expect(page.getByRole("dialog")).toBeVisible();
+
+    await page.getByRole("button", { name: "סגירה" }).click();
+    await expect(page.getByRole("dialog")).toBeHidden();
+
+    expect(consoleErrors).toEqual([]);
+  });
+
+  test("has a consultation CTA linking to Contact", async ({ page }) => {
+    await page.goto("/catalog/hebron-marble");
+    await expect(
+      page.getByRole("main").getByRole("link", { name: "בקשת ייעוץ" })
+    ).toHaveAttribute("href", "/contact");
+  });
+});

@@ -1,6 +1,8 @@
+export type CategorySlug = "turkish-marble" | "hebron-marble" | "granite" | "special";
+
 export type Category = {
   id: string;
-  slug: string;
+  slug: CategorySlug;
   title: string;
   description: string;
 };
