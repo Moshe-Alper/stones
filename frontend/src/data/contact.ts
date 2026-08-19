@@ -12,7 +12,7 @@ export const CONTACT_DETAILS = {
   addressLine: "דרך השדה, צמוד לבית העלמין, פרדס חנה-כרכור",
   directPhone: "03-555-8291",
   phoneHref: "tel:+97235558291",
-  email: "dovalper16@gmail.com",
+  email: "moshe@alper-marble.co.il",
   hours: "פתוח בין השעות 08:30 - 17:30",
   studioLabel: "סטודיו ובית מלאכה",
   mapsUrl: `https://www.google.com/maps/dir/?api=1&destination=${ENCODED_MAP_QUERY}&destination_place_id=${MAP_PLACE_ID}`,

@@ -2,7 +2,7 @@
 
 Status: draft
 Owner: Orchestrator
-Last updated: 2026-07-23
+Last updated: 2026-07-31
 
 ## Goal
 
@@ -26,23 +26,23 @@ This is almost entirely account/DNS/deployment-configuration work outside the co
 ## Assumptions
 
 - `.plan/007` is implemented and merged/committed (it is — see that plan's status note).
-- The business has (or can register) a domain suitable for a `from` address (e.g. a subdomain like `mail.<domain>` is fine and often recommended so DNS changes don't touch the main domain's existing mail setup).
+- Sending domain confirmed as `alper-marble.co.il` (real mailbox `moshe@alper-marble.co.il` now exists there). Sender will use a subdomain, `mail.alper-marble.co.il`, so Resend's DNS records don't touch the main domain's existing mail (MX) setup.
 - Hosting platform is whatever the site deploys to today (confirm — the repo doesn't currently show a deploy target committed; note it in Step 3 below).
 - Nobody should ever set `CONTACT_INQUIRY_DELIVERY_MODE=simulate` in the real production environment — the adapter fails closed (`503`) rather than falling back to simulate, so this is a configuration discipline item, not something the code enforces automatically.
 
 ## Steps
 
-1. **Create a Resend account** at resend.com (or use an existing one) and generate a server-side API key scoped to sending.
-2. **Add and verify a sending domain** in the Resend dashboard: Resend will show DNS records (SPF/DKIM, typically TXT/CNAME) to add at the domain registrar/DNS host. Propagation can take minutes to a day; Resend's dashboard shows verification status.
-3. **Confirm the hosting platform** this site deploys to (Vercel, or otherwise) so env vars get added in the right place. If not yet decided, resolve this before Step 4.
-4. **Decide final addresses:**
-   - `CONTACT_INQUIRY_FROM`: an address on the verified domain, e.g. `"Alper Matzevot <inquiries@mail.alper-matzevot.co.il>"`.
-   - `CONTACT_INQUIRY_TO`: confirm `dovalper16@gmail.com` is still correct, or update.
-5. **Configure a non-production environment first** (staging/preview deployment) with:
+1. ~~**Create a Resend account** at resend.com and generate a server-side API key scoped to sending.~~ Done (2026-07-31) — account created, API key in hand.
+2. ~~**Add and verify a sending domain**~~ Done (2026-07-31) — `inquiries@mail.alper-marble.co.il` verified in Resend.
+3. ~~**Confirm the hosting platform**~~ Done (2026-07-31) — **Vercel**.
+4. **Decide final addresses** — Done (confirmed 2026-07-31):
+   - `CONTACT_INQUIRY_FROM`: `"Alper Marble <inquiries@mail.alper-marble.co.il>"`.
+   - `CONTACT_INQUIRY_TO`: `moshe@alper-marble.co.il` (replaces the earlier `dovalper16@gmail.com` placeholder).
+5. **Configure a non-production environment first** (staging/preview deployment) — in Vercel: Project → Settings → Environment Variables, add each var scoped to **Preview** only, then trigger a new deployment for it to take effect:
    - `CONTACT_INQUIRY_DELIVERY_MODE=email`
    - `RESEND_API_KEY=<real key>`
-   - `CONTACT_INQUIRY_FROM=<verified sender>`
-   - `CONTACT_INQUIRY_TO=<recipient>`
+   - `CONTACT_INQUIRY_FROM=Alper Marble <inquiries@mail.alper-marble.co.il>`
+   - `CONTACT_INQUIRY_TO=moshe@alper-marble.co.il`
 6. **Run one staging validation**: submit a uniquely identified contact inquiry through the real staging UI, confirm exactly one email arrives at the configured recipient with correct Hebrew content and the submitted `requestId`.
 7. **Run one staging failure check**: temporarily point `RESEND_API_KEY` at an invalid value (or otherwise force a provider/config failure) and confirm the visitor sees the safe retryable Hebrew message with their entered values preserved, and that no credential/provider payload leaks into the response or logs. Restore the valid key afterward.
 8. **Human QA approval**: get sign-off from whoever owns the business/product decision (per `.plan/007`'s rollout order) before touching production.
@@ -68,4 +68,4 @@ Set `CONTACT_INQUIRY_DELIVERY_MODE` to anything other than `email` (or remove it
 
 ## Next action
 
-Waiting on: a Resend account/API key and confirmation of the hosting platform (Step 3) before this can proceed past planning.
+Steps 1–4 done as of 2026-07-31 (Resend account/API key, verified domain/sender `inquiries@mail.alper-marble.co.il`, Vercel confirmed as host, addresses decided). Next: add the four env vars in Vercel scoped to **Preview** (Step 5), redeploy, then run the staging validation send (Step 6).

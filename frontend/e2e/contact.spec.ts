@@ -123,7 +123,7 @@ test.describe("Contact page", () => {
     )
     await expect(
       page.getByRole("link", { name: /דואר אלקטרוני/ }),
-    ).toHaveAttribute("href", "mailto:dovalper16@gmail.com")
+    ).toHaveAttribute("href", "mailto:moshe@alper-marble.co.il")
     await expect(
       page.getByText(/עגלה|לתשלום|checkout|cart|הוסף לסל/i),
     ).toHaveCount(0)
