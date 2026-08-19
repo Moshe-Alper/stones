@@ -16,7 +16,7 @@ describe("ContactForm", () => {
     expect(screen.getByLabelText("זמן מועדף ליצירת קשר")).toBeInTheDocument()
     expect(screen.getByLabelText("הודעה / בקשה מיוחדת")).toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+      screen.getByRole("button", { name: "שליחת הבקשה" }),
     ).toBeInTheDocument()
   })
 
@@ -27,7 +27,7 @@ describe("ContactForm", () => {
     render(<ContactForm />)
 
     await user.click(
-      screen.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+      screen.getByRole("button", { name: "שליחת הבקשה" }),
     )
 
     expect(screen.getByRole("alert")).toHaveTextContent(
@@ -54,7 +54,7 @@ describe("ContactForm", () => {
       "אשמח לקבל פרטים נוספים.",
     )
     await user.click(
-      screen.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+      screen.getByRole("button", { name: "שליחת הבקשה" }),
     )
 
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1))
@@ -70,7 +70,7 @@ describe("ContactForm", () => {
       expect.objectContaining({ website: "" }),
     )
     expect(
-      await screen.findByText("בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם."),
+      await screen.findByText("בקשתכם נשלחה בהצלחה. נחזור אליכם בהקדם."),
     ).toBeInTheDocument()
   })
 
@@ -107,7 +107,7 @@ describe("ContactForm", () => {
     )
 
     const submitButton = screen.getByRole("button", {
-      name: /שולחים|שליחת בקשה למשפחה/,
+      name: /שולחים|שליחת הבקשה/,
     })
     await user.click(submitButton)
     await waitFor(() => expect(submitButton).toBeDisabled())
@@ -146,7 +146,7 @@ describe("ContactForm", () => {
       "אשמח לקבל פרטים נוספים.",
     )
     await user.click(
-      screen.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+      screen.getByRole("button", { name: "שליחת הבקשה" }),
     )
 
     expect(await screen.findByRole("alert")).toHaveTextContent(
@@ -179,7 +179,7 @@ describe("ContactForm", () => {
       "אשמח לשוחח.",
     )
     await user.click(
-      screen.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+      screen.getByRole("button", { name: "שליחת הבקשה" }),
     )
 
     expect(await screen.findByRole("alert")).toHaveTextContent(

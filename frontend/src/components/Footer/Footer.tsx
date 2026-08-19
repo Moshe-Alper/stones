@@ -16,8 +16,7 @@ export default function Footer() {
         <div className={styles.branding}>
           <span className={styles.brandName}>שיש אלפר</span>
           <p className={styles.brandBlurb}>
-            עסק משפחתי המוביל את תרבות ההנצחה בישראל, עם דגש על איכות, רגישות ועיצוב נצחי שעובר
-            מדור לדור.
+            מובילים את תרבות ההנצחה בישראל למעלה מ-50 שנה, עם דגש על איכות, רגישות ועיצוב נצחי.
           </p>
           <div className={styles.socials} aria-label="קישורים לרשתות חברתיות">
             <span className={styles.socialIcon} aria-hidden="true">

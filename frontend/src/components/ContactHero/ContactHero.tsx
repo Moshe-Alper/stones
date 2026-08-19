@@ -4,7 +4,7 @@ export default function ContactHero() {
   return (
     <section className={styles.hero} aria-labelledby="contact-heading">
       <h1 id="contact-heading" className={styles.heading}>
-        ייעוץ אישי מהמשפחה שלנו
+        ייעוץ אישי ומקצועי
       </h1>
       <span className={styles.divider} aria-hidden="true" />
       <p className={styles.subtitle}>

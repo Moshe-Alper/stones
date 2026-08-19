@@ -81,7 +81,7 @@ export default function CatalogFilters() {
       </section>
 
       <div className={styles.ctaBox}>
-        <p className={styles.ctaText}>המשפחה שלנו כאן בשבילכם.</p>
+        <p className={styles.ctaText}>כאן בשבילכם בכל שלב בתהליך.</p>
         <Link href="/contact" className={styles.ctaButton}>
           ייעוץ אישי מהלב
         </Link>

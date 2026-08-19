@@ -17,7 +17,7 @@ const heebo = Heebo({
 export const metadata: Metadata = {
   title: "שיש אלפר",
   description:
-    "עסק משפחתי המוביל את תרבות ההנצחה בישראל, עם דגש על איכות, רגישות ועיצוב נצחי שעובר מדור לדור.",
+    "מובילים את תרבות ההנצחה בישראל למעלה מ-50 שנה, עם דגש על איכות, רגישות ועיצוב נצחי.",
 };
 
 export default function RootLayout({

@@ -15,6 +15,6 @@ describe("Philosophy", () => {
   it("renders the stat callouts", () => {
     render(<Philosophy />);
     expect(screen.getByText("נצחיות")).toBeInTheDocument();
-    expect(screen.getByText("40+")).toBeInTheDocument();
+    expect(screen.getByText("50+")).toBeInTheDocument();
   });
 });

@@ -9,7 +9,7 @@ describe("ContactHero", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "ייעוץ אישי מהמשפחה שלנו",
+        name: "ייעוץ אישי ומקצועי",
       }),
     ).toBeInTheDocument()
     expect(

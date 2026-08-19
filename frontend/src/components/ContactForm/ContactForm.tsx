@@ -75,7 +75,7 @@ export default function ContactForm() {
 
       setSubmission({
         type: "success",
-        message: "בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם.",
+        message: "בקשתכם נשלחה בהצלחה. נחזור אליכם בהקדם.",
       })
       setValues(INITIAL_VALUES)
     } catch (error) {
@@ -169,7 +169,7 @@ export default function ContactForm() {
       </div>
 
       <button className={styles.submit} type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "שולחים..." : "שליחת בקשה למשפחה"}
+        {isSubmitting ? "שולחים..." : "שליחת הבקשה"}
       </button>
 
       <p

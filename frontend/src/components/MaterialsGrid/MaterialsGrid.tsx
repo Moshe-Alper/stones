@@ -15,7 +15,7 @@ const MATERIALS = [
   },
   {
     id: "marble",
-    title: "שיש איטלקי",
+    title: "שיש טורקי",
     image: "/images/material-marble.webp",
     width: 800,
     height: 1200,
