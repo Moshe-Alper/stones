@@ -15,4 +15,9 @@ describe("FAQ", () => {
       screen.getByText("כמה זמן לוקח תהליך ההזמנה וההצבה של מצבה?")
     ).toBeInTheDocument();
   });
+
+  it("renders the service area question", () => {
+    render(<FAQ />);
+    expect(screen.getByText("באילו אזורים אתם פעילים?")).toBeInTheDocument();
+  });
 });

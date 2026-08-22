@@ -20,6 +20,11 @@ export const CONTACT_DETAILS = {
   wazeUrl: `https://waze.com/ul?q=${ENCODED_MAP_QUERY}&navigate=yes`,
 } as const
 
+export const SERVICE_AREA = {
+  towns: ["פרדס חנה-כרכור", "חדרה", "עין שמר", "ישובי אלונה"],
+  summary: "פועלים באזור פרדס חנה-כרכור, חדרה, עין שמר וישובי אלונה וסביבתן",
+} as const
+
 export type ContactInquiry = {
   name: string
   phone: string

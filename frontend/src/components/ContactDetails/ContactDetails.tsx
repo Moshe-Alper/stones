@@ -1,4 +1,4 @@
-import { CONTACT_DETAILS } from "@/data/contact"
+import { CONTACT_DETAILS, SERVICE_AREA } from "@/data/contact"
 import styles from "./ContactDetails.module.css"
 
 function PinIcon() {
@@ -6,6 +6,15 @@ function PinIcon() {
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
       <circle cx="12" cy="9" r="2.4" />
+    </svg>
+  )
+}
+
+function AreaIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="8.5" strokeDasharray="2.5 3.2" />
+      <circle cx="12" cy="12" r="2" />
     </svg>
   )
 }
@@ -64,6 +73,16 @@ export default function ContactDetails() {
           <span dir="ltr">{CONTACT_DETAILS.email}</span>
         </span>
       </a>
+
+      <div className={styles.email}>
+        <span className={styles.icon}>
+          <AreaIcon />
+        </span>
+        <span>
+          <strong>אזור שירות</strong>
+          <span>{SERVICE_AREA.towns.join(", ")}</span>
+        </span>
+      </div>
     </section>
   )
 }

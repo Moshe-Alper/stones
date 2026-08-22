@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
-import { CONTACT_DETAILS } from "@/data/contact"
+import { CONTACT_DETAILS, SERVICE_AREA } from "@/data/contact"
 import ContactDetails from "./ContactDetails"
 
 describe("ContactDetails", () => {
@@ -16,5 +16,14 @@ describe("ContactDetails", () => {
     expect(
       screen.getByRole("link", { name: /דואר אלקטרוני/ }),
     ).toHaveAttribute("href", `mailto:${CONTACT_DETAILS.email}`)
+  })
+
+  it("renders the service area towns", () => {
+    render(<ContactDetails />)
+
+    expect(screen.getByText("אזור שירות")).toBeInTheDocument()
+    expect(
+      screen.getByText(SERVICE_AREA.towns.join(", ")),
+    ).toBeInTheDocument()
   })
 })
