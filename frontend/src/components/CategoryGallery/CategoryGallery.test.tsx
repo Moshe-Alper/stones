@@ -43,4 +43,39 @@ describe("CategoryGallery", () => {
     await user.click(screen.getByRole("button", { name: "סגירה" }));
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
+
+  it("narrows the grid to only classic-tagged photos when the style filter is used", async () => {
+    const user = userEvent.setup();
+    render(
+      <CategoryGallery category="hebron-marble" categoryTitle="שיש חברוני" />
+    );
+
+    const classicCount = GALLERY_PHOTOS.filter(
+      (photo) => photo.category === "hebron-marble" && photo.style === "classic"
+    ).length;
+
+    await user.click(screen.getByRole("button", { name: "קלאסי" }));
+
+    expect(
+      screen.getAllByRole("button", { name: /הגדלת תמונה/ })
+    ).toHaveLength(classicCount);
+  });
+
+  it("resets back to all photos when 'הכל' is clicked again", async () => {
+    const user = userEvent.setup();
+    render(
+      <CategoryGallery category="hebron-marble" categoryTitle="שיש חברוני" />
+    );
+
+    const totalCount = GALLERY_PHOTOS.filter(
+      (photo) => photo.category === "hebron-marble"
+    ).length;
+
+    await user.click(screen.getByRole("button", { name: "מודרני" }));
+    await user.click(screen.getByRole("button", { name: "הכל" }));
+
+    expect(
+      screen.getAllByRole("button", { name: /הגדלת תמונה/ })
+    ).toHaveLength(totalCount);
+  });
 });

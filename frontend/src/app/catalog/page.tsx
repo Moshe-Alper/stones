@@ -3,9 +3,10 @@ import Footer from "@/components/Footer/Footer";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import CatalogGrid from "@/components/CatalogGrid/CatalogGrid";
 import CatalogFilters from "@/components/CatalogFilters/CatalogFilters";
-import Pagination from "@/components/Pagination/Pagination";
 import styles from "./page.module.css";
 
+// No <Pagination /> here: the catalog is a fixed set of 4 categories, so there
+// will never be a second page — see .plan/013-2026-08-21-catalog-page-fixes.md.
 export default function CatalogPage() {
   return (
     <>
@@ -16,7 +17,6 @@ export default function CatalogPage() {
           <div className={styles.layout}>
             <div className={styles.content}>
               <CatalogGrid />
-              <Pagination />
             </div>
             <CatalogFilters />
           </div>

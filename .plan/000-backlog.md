@@ -21,4 +21,6 @@ Current queue:
 - [x] Contact map/location experience improvement
 - [x] Replace placeholder images with real photography | plan:.plan/009-2026-07-20-real-photography-placeholders.md
 - [x] Google Photos gallery import with headstone detection and name blurring | plan:.plan/011-2026-07-23-google-photos-gallery-headstone-blur.md (abandoned 2026-07-28 — automated text detection wasn't reliable enough on real photos; owner is blurring manually instead, see frontend/public/images/gallery/)
-- [ ] Real installation photos on per-material Catalog category pages | plan:.plan/012-2026-07-30-catalog-material-gallery.md
+- [x] Real installation photos on per-material Catalog category pages | plan:.plan/012-2026-07-30-catalog-material-gallery.md
+- [x] Fix non-functional Catalog filters/pagination | plan:.plan/013-2026-08-21-catalog-page-fixes.md
+- [ ] Decide fate of orphaned `/product/[slug]` route (unreachable, broken related-product links) — see .plan/013-2026-08-21-catalog-page-fixes.md context

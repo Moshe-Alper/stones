@@ -110,4 +110,20 @@ test.describe("Catalog category gallery", () => {
       page.getByRole("main").getByRole("link", { name: "בקשת ייעוץ" })
     ).toHaveAttribute("href", "/contact");
   });
+
+  test("style filter narrows the visible photos", async ({ page }) => {
+    await page.goto("/catalog/hebron-marble");
+
+    const thumbs = page.getByRole("button", { name: /הגדלת תמונה/ });
+    const totalCount = await thumbs.count();
+
+    await page.getByRole("button", { name: "קלאסי" }).click();
+    const classicCount = await thumbs.count();
+
+    expect(classicCount).toBeGreaterThan(0);
+    expect(classicCount).toBeLessThanOrEqual(totalCount);
+
+    await page.getByRole("button", { name: "הכל" }).click();
+    await expect(thumbs).toHaveCount(totalCount);
+  });
 });

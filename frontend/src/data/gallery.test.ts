@@ -29,4 +29,10 @@ describe("GALLERY_PHOTOS manifest", () => {
     const files = GALLERY_PHOTOS.map((photo) => photo.file);
     expect(new Set(files).size).toBe(files.length);
   });
+
+  it("only uses valid style tags", () => {
+    GALLERY_PHOTOS.forEach((photo) => {
+      expect(["classic", "modern"]).toContain(photo.style);
+    });
+  });
 });
