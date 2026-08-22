@@ -24,4 +24,4 @@ Current queue:
 - [x] Real installation photos on per-material Catalog category pages | plan:.plan/012-2026-07-30-catalog-material-gallery.md
 - [x] Fix non-functional Catalog filters/pagination | plan:.plan/013-2026-08-21-catalog-page-fixes.md
 - [ ] Decide fate of orphaned `/product/[slug]` route (unreachable, broken related-product links) — see .plan/013-2026-08-21-catalog-page-fixes.md context
-- [ ] Vercel deployment (first publish) | plan:.plan/014-2026-08-22-vercel-deployment.md (live on Vercel, email confirmed working in production; only custom domain step remains)
+- [x] Vercel deployment (first publish) | plan:.plan/014-2026-08-22-vercel-deployment.md — live at https://www.alper-marble.co.il

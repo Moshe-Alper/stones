@@ -1,6 +1,6 @@
 # Plan: Vercel deployment (first publish)
 
-Status: draft
+Status: done
 Owner: Orchestrator
 Last updated: 2026-08-22
 
@@ -35,7 +35,7 @@ Get the `frontend/` Next.js app hosted on Vercel for the first time: a linked Ve
 1. **Which Vercel account/team should own this project?** Recommend: whichever Vercel account you already used to get the Resend-related "hosting platform is Vercel" confirmation in `.plan/010` — likely your personal account. Confirm before Step 1.
 2. **Merge to `main` first, or point Vercel's Production branch at `feat/contact-inquiry-email-delivery` directly?** Recommend: merge to `main` (Step 5 below) since it's a clean fast-forward with zero risk, then let Vercel's Production track `main` as usual. Keeps Vercel's branch model simple for future PRs.
 3. **When to add the custom domain `alper-marble.co.il`?** Recommend: not immediately. Add it only after `.plan/010`'s Resend rollout is validated (its Step 6/7 staging checks pass), so the first time real visitors hit the real domain, the contact form actually works end-to-end instead of returning a 503. Until then, use Vercel's free `*.vercel.app` URL for review/QA.
-4. **Who manages DNS for `alper-marble.co.il`?** Needed for Step 8 (pointing the domain at Vercel — typically an `A`/`ALIAS` record on the apex plus a `CNAME` for `www`). Not yet known from anything in this repo; confirm before Step 8.
+4. ~~**Who manages DNS for `alper-marble.co.il`?**~~ Answered 2026-08-22 via `dig`: nameservers are `ns1.sitesdepot.com` / `ns2.sitesdepot.com` — **SitesDepot** manages DNS. MX records point to `mx1.improvmx.com` / `mx2.improvmx.com` (ImprovMX email forwarding) — when adding the Vercel `A`/`CNAME` records in Step 8, do not touch the existing MX records, or email forwarding for `moshe@alper-marble.co.il` breaks.
 
 ## Steps
 
@@ -79,4 +79,6 @@ Get the `frontend/` Next.js app hosted on Vercel for the first time: a linked Ve
 
 Steps 1–7 done as of 2026-08-22: project imported under the **Alper-Marble** Vercel team (free Hobby tier, see [Decisions](#decisions)), Root Directory set to `frontend`, first Production deploy hit a Next.js 16 + Turbopack path-doubling build bug from the local-only `outputFileTracingRoot`/`turbopack.root` override (fixed by skipping it when `process.env.VERCEL` is set), `main` fast-forwarded and pushed, build succeeded. `.plan/010`'s Resend rollout was then completed on top of this (Preview validated, Production validated, real email confirmed both places).
 
-Remaining: Step 8, the custom domain (`alper-marble.co.il` + `www`) — now unblocked, since production email delivery is confirmed working. Still need: which Vercel account already answered (Alper-Marble team); still need to confirm who manages DNS for `alper-marble.co.il` before adding the domain (Open Question 4).
+Step 8 done as of 2026-08-22: domain was registered via Internic, DNS zone hosted at SitesDepot (`ns1`/`ns2.sitesdepot.com`) and directly editable through the Internic panel. Added `alper-marble.co.il` and `www.alper-marble.co.il` in Vercel (apex redirects to `www`, both connected to Production). Updated exactly two DNS records — apex `A` record to `216.198.79.1`, `www` `CNAME` to `52fc7e5f1679c378.vercel-dns-017.com.` — leaving the NS, MX (both apex and `send.mail` subdomain), SPF/TXT, Resend DKIM TXT, and Google verification CNAME records untouched. DNS propagated within minutes; both domains show "Valid Configuration" in Vercel, and `https://www.alper-marble.co.il` (200) / `https://alper-marble.co.il` (308 → www) both verified working over HTTPS.
+
+**Plan complete.** No further action needed — the site is live on the real domain with working contact-form email delivery.
