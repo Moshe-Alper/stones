@@ -18,14 +18,7 @@ export default function Header() {
         <ul className={styles.links}>
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <Link
-                href={link.href}
-                className={
-                  link.active
-                    ? `${styles.link} ${styles.linkActive}`
-                    : styles.link
-                }
-              >
+              <Link href={link.href} className={styles.link}>
                 {link.label}
               </Link>
             </li>
