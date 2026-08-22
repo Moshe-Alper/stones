@@ -17,11 +17,11 @@ Current queue:
 - [x] Product Detail page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-133
 - [x] Contact page | figma:https://www.figma.com/design/AUIumATzMjmGOSLtUWbzqG/stones?node-id=12-2
 - [ ] Contact inquiry email delivery | plan:.plan/007-2026-07-19-contact-inquiry-email-delivery.md (implemented, pending staging QA + domain verification)
-- [ ] Resend production email rollout | plan:.plan/010-2026-07-23-resend-production-email-rollout.md
+- [x] Resend production email rollout | plan:.plan/010-2026-07-23-resend-production-email-rollout.md
 - [x] Contact map/location experience improvement
 - [x] Replace placeholder images with real photography | plan:.plan/009-2026-07-20-real-photography-placeholders.md
 - [x] Google Photos gallery import with headstone detection and name blurring | plan:.plan/011-2026-07-23-google-photos-gallery-headstone-blur.md (abandoned 2026-07-28 — automated text detection wasn't reliable enough on real photos; owner is blurring manually instead, see frontend/public/images/gallery/)
 - [x] Real installation photos on per-material Catalog category pages | plan:.plan/012-2026-07-30-catalog-material-gallery.md
 - [x] Fix non-functional Catalog filters/pagination | plan:.plan/013-2026-08-21-catalog-page-fixes.md
 - [ ] Decide fate of orphaned `/product/[slug]` route (unreachable, broken related-product links) — see .plan/013-2026-08-21-catalog-page-fixes.md context
-- [ ] Vercel deployment (first publish) | plan:.plan/014-2026-08-22-vercel-deployment.md
+- [ ] Vercel deployment (first publish) | plan:.plan/014-2026-08-22-vercel-deployment.md (live on Vercel, email confirmed working in production; only custom domain step remains)

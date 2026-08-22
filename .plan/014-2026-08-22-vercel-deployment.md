@@ -77,4 +77,6 @@ Get the `frontend/` Next.js app hosted on Vercel for the first time: a linked Ve
 
 ## Next action
 
-Confirm the four Open Questions above (Vercel account, branch-merge approach, domain timing, DNS owner), then execute Steps 1–7 to get a working Preview deployment.
+Steps 1–7 done as of 2026-08-22: project imported under the **Alper-Marble** Vercel team (free Hobby tier, see [Decisions](#decisions)), Root Directory set to `frontend`, first Production deploy hit a Next.js 16 + Turbopack path-doubling build bug from the local-only `outputFileTracingRoot`/`turbopack.root` override (fixed by skipping it when `process.env.VERCEL` is set), `main` fast-forwarded and pushed, build succeeded. `.plan/010`'s Resend rollout was then completed on top of this (Preview validated, Production validated, real email confirmed both places).
+
+Remaining: Step 8, the custom domain (`alper-marble.co.il` + `www`) — now unblocked, since production email delivery is confirmed working. Still need: which Vercel account already answered (Alper-Marble team); still need to confirm who manages DNS for `alper-marble.co.il` before adding the domain (Open Question 4).

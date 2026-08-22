@@ -1,8 +1,8 @@
 # Plan: Resend production email rollout
 
-Status: draft
+Status: done
 Owner: Orchestrator
-Last updated: 2026-07-31
+Last updated: 2026-08-22
 
 ## Goal
 
@@ -68,4 +68,4 @@ Set `CONTACT_INQUIRY_DELIVERY_MODE` to anything other than `email` (or remove it
 
 ## Next action
 
-Steps 1–4 done as of 2026-07-31 (Resend account/API key, verified domain/sender `inquiries@mail.alper-marble.co.il`, Vercel confirmed as host, addresses decided). Next: add the four env vars in Vercel scoped to **Preview** (Step 5), redeploy, then run the staging validation send (Step 6).
+Done as of 2026-08-22: the Vercel project was created (see `.plan/014-2026-08-22-vercel-deployment.md`), the four env vars were added scoped to Preview, a redeploy picked them up, and a real test inquiry through the Preview URL's Contact form arrived at `moshe@alper-marble.co.il`. The same vars were then added to Production, redeployed, and a second live test confirmed delivery in production too. The fail-closed retry-message behavior (Step 7) was also incidentally observed and confirmed safe before the Preview vars were first picked up. Rollout complete — no further action needed here; `.plan/014` continues with the custom domain step.
