@@ -4,7 +4,6 @@ import styles from "./Header.module.css";
 const NAV_LINKS = [
   { href: "/", label: "בית", active: true },
   { href: "/catalog", label: "קטלוג" },
-  { href: "/#brand-story", label: "האומנות המשפחתית" },
   { href: "/#faq", label: "שאלות נפוצות" },
   { href: "/contact", label: "צור קשר" },
 ];

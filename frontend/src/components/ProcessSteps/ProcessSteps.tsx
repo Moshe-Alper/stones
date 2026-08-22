@@ -37,8 +37,8 @@ export default function ProcessSteps() {
               איכות ואומנות.
             </p>
           </div>
-          <Link href="/#services" className={styles.allServices}>
-            כל השירותים
+          <Link href="/renovation" className={styles.allServices}>
+            שיקום ותחזוקת מצבות
           </Link>
         </div>
         <ol className={styles.steps}>

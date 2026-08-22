@@ -17,9 +17,9 @@ describe("Hero", () => {
     expect(catalogLink).toHaveAttribute("href", "/catalog");
   });
 
-  it("renders a CTA linking to the brand story anchor", () => {
+  it("renders a CTA linking to the FAQ anchor", () => {
     render(<Hero />);
-    const brandStoryLink = screen.getByRole("link", { name: "סיפור המותג" });
-    expect(brandStoryLink).toHaveAttribute("href", "#brand-story");
+    const faqLink = screen.getByRole("link", { name: "שאלות נפוצות" });
+    expect(faqLink).toHaveAttribute("href", "#faq");
   });
 });

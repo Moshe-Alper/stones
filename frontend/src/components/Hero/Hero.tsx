@@ -28,8 +28,8 @@ export default function Hero() {
             <Link href="/catalog" className={styles.buttonPrimary}>
               לצפייה בקטלוג
             </Link>
-            <Link href="#brand-story" className={styles.buttonSecondary}>
-              סיפור המותג
+            <Link href="#faq" className={styles.buttonSecondary}>
+              שאלות נפוצות
             </Link>
           </div>
         </div>

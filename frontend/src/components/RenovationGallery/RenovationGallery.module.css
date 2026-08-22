@@ -1,0 +1,44 @@
+.section {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.intro {
+  margin: 12px 0 32px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+.grid {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-faint);
+  font-size: 14px;
+}

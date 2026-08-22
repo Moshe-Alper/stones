@@ -5,8 +5,8 @@ const INFO_LINKS = ["מדיניות פרטיות", "תנאי שימוש", "נג�
 const NAV_LINKS = [
   { label: "קטלוג מוצרים", href: "/catalog" },
   { label: "סוגי אבנים", href: "/catalog" },
-  { label: "שירותי תחזוקה", href: "/#services" },
-  { label: "אודות המפעל", href: "/#brand-story" },
+  { label: "שירותי תחזוקה", href: "/renovation" },
+  { label: "שאלות נפוצות", href: "/#faq" },
 ];
 
 export default function Footer() {
