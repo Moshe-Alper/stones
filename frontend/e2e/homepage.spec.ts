@@ -34,7 +34,9 @@ test.describe("Homepage", () => {
       page.getByRole("navigation").getByRole("link", { name: "קטלוג" })
     ).toHaveAttribute("href", "/catalog");
     await expect(
-      page.getByRole("navigation").getByRole("link", { name: "בית" })
+      page
+        .getByRole("navigation")
+        .getByRole("link", { name: "שיש אלפר, לעמוד הבית" })
     ).toHaveAttribute("href", "/");
   });
 

@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 
 const NAV_LINKS = [
-  { href: "/", label: "בית", active: true },
   { href: "/catalog", label: "קטלוג" },
   { href: "/renovation", label: "שיקום מצבות" },
   { href: "/#faq", label: "שאלות נפוצות" },
@@ -12,7 +11,10 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="ניווט ראשי">
-        <span className={styles.brand}>שיש אלפר</span>
+        <Link href="/" className={styles.brand} aria-label="שיש אלפר, לעמוד הבית">
+          <span className={styles.brandMark} aria-hidden="true" />
+          שיש אלפר
+        </Link>
         <ul className={styles.links}>
           {NAV_LINKS.map((link) => (
             <li key={link.label}>

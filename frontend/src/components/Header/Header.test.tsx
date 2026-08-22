@@ -14,16 +14,19 @@ describe("Header", () => {
     expect(cta).toHaveAttribute("href", "/contact");
   });
 
-  it("renders nav links including catalog and home", () => {
+  it("renders nav links including catalog", () => {
     render(<Header />);
     expect(screen.getByRole("link", { name: "קטלוג" })).toHaveAttribute(
       "href",
       "/catalog"
     );
-    expect(screen.getByRole("link", { name: "בית" })).toHaveAttribute(
-      "href",
-      "/"
-    );
+  });
+
+  it("links the brand/logo to the homepage", () => {
+    render(<Header />);
+    expect(
+      screen.getByRole("link", { name: "שיש אלפר, לעמוד הבית" })
+    ).toHaveAttribute("href", "/");
   });
 
   it("renders a disabled, visual-only language switcher", () => {
