@@ -7,7 +7,7 @@ describe("Footer", () => {
     render(<Footer />);
     expect(screen.getByText("שיש אלפר")).toBeInTheDocument();
     expect(
-      screen.getByText("© 2024 שיש אלפר. כל הזכויות שמורות.")
+      screen.getByText(`© ${new Date().getFullYear()} שיש אלפר. כל הזכויות שמורות.`)
     ).toBeInTheDocument();
   });
 

@@ -70,17 +70,6 @@
   color: var(--color-text-muted);
 }
 
-.socials {
-  display: flex;
-  gap: 16px;
-}
-
-.socialIcon {
-  width: 18px;
-  height: 18px;
-  color: var(--color-text-muted);
-}
-
 .bottom {
   max-width: var(--max-content-width);
   margin: 0 auto;

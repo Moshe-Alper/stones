@@ -4,8 +4,8 @@ import styles from "./Header.module.css";
 const NAV_LINKS = [
   { href: "/", label: "בית", active: true },
   { href: "/catalog", label: "קטלוג" },
+  { href: "/renovation", label: "שיקום מצבות" },
   { href: "/#faq", label: "שאלות נפוצות" },
-  { href: "/contact", label: "צור קשר" },
 ];
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
             RU | EN | עברית
           </button>
           <Link href="/contact" className={styles.ctaButton}>
-            בקשת ייעוץ
+            צור קשר
           </Link>
         </div>
       </nav>

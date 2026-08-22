@@ -8,9 +8,9 @@ describe("Header", () => {
     expect(screen.getByText("שיש אלפר")).toBeInTheDocument();
   });
 
-  it("renders the consultation request CTA linking to /contact", () => {
+  it("renders the contact CTA linking to /contact", () => {
     render(<Header />);
-    const cta = screen.getByRole("link", { name: "בקשת ייעוץ" });
+    const cta = screen.getByRole("link", { name: "צור קשר" });
     expect(cta).toHaveAttribute("href", "/contact");
   });
 

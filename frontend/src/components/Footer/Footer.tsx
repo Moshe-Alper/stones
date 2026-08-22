@@ -18,17 +18,6 @@ export default function Footer() {
           <p className={styles.brandBlurb}>
             מובילים את תרבות ההנצחה בישראל למעלה מ-50 שנה, עם דגש על איכות, רגישות ועיצוב נצחי.
           </p>
-          <div className={styles.socials} aria-label="קישורים לרשתות חברתיות">
-            <span className={styles.socialIcon} aria-hidden="true">
-              f
-            </span>
-            <span className={styles.socialIcon} aria-hidden="true">
-              in
-            </span>
-            <span className={styles.socialIcon} aria-hidden="true">
-              @
-            </span>
-          </div>
         </div>
         <div className={styles.linkColumns}>
           <div className={styles.column}>
@@ -59,7 +48,7 @@ export default function Footer() {
           {/* Static placeholder text only — no real visitor tracking (out of scope). */}
           <span className={styles.meta}>מבקרים: 12,482</span>
         </div>
-        <span className={styles.copyright}>© 2024 שיש אלפר. כל הזכויות שמורות.</span>
+        <span className={styles.copyright}>© {new Date().getFullYear()} שיש אלפר. כל הזכויות שמורות.</span>
       </div>
     </footer>
   );
