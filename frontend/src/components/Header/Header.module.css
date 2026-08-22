@@ -63,8 +63,25 @@
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-display);
   font-size: 24px;
   font-weight: 700;
+  letter-spacing: 0.4px;
   color: var(--color-text);
+  transition: color 0.15s ease;
+}
+
+.brand:hover {
+  color: var(--color-accent);
+}
+
+.brandMark {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  background: var(--color-accent-light);
+  transform: rotate(45deg);
 }
