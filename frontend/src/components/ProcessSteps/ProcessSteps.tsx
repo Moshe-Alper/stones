@@ -1,44 +1,27 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import styles from "./ProcessSteps.module.css";
 
-const STEPS = [
-  {
-    number: "01",
-    title: "פגישת ייעוץ",
-    desc: "הצוות שלנו מלווה את המשפחות באופן אישי, מרגע התכנון ועד להקמה הסופית, תוך הקפדה על הפרטים הקטנים ביותר.",
-  },
-  {
-    number: "02",
-    title: "תכנון ועיצוב",
-    desc: "התאמה מדויקת של סוג האבן, הכיתוב והאלמנטים האומנותיים לפי רצון המשפחה וזכרו של הנפטר.",
-  },
-  {
-    number: "03",
-    title: "ייצור אומנותי",
-    desc: "עבודה ידנית קפדנית המשלבת טכנולוגיה מודרנית עם אומנות סיתת מסורתית רבת שנים.",
-  },
-  {
-    number: "04",
-    title: "הצבה בשטח",
-    desc: "הקמה מקצועית ויציבה בבתי העלמין, תוך הקפדה על גימור מושלם ועמידות לאורך זמן.",
-  },
-];
-
 export default function ProcessSteps() {
+  const t = useTranslations("ProcessSteps");
+
+  const STEPS = [
+    { number: "01", title: t("step1Title"), desc: t("step1Desc") },
+    { number: "02", title: t("step2Title"), desc: t("step2Desc") },
+    { number: "03", title: t("step3Title"), desc: t("step3Desc") },
+    { number: "04", title: t("step4Title"), desc: t("step4Desc") },
+  ];
+
   return (
-    <section className={styles.section} aria-label="תהליך הליווי שלנו">
+    <section className={styles.section} aria-label={t("sectionAriaLabel")}>
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.headingCol}>
-            <h2 className={styles.heading}>תהליך הליווי שלנו</h2>
-            <p className={styles.intro}>
-              {'ב"שיש אלפר", אנו מבינים שכל מצבה היא סיפור חיים שלם. הצוות שלנו מלווה אתכם '}
-              ברגישות ובמסירות, מרגע התכנון ועד להקמה הסופית, תוך שמירה על מסורת ארוכת שנים של
-              איכות ואומנות.
-            </p>
+            <h2 className={styles.heading}>{t("heading")}</h2>
+            <p className={styles.intro}>{t("intro")}</p>
           </div>
           <Link href="/renovation" className={styles.allServices}>
-            שיקום ותחזוקת מצבות
+            {t("allServicesLink")}
           </Link>
         </div>
         <ol className={styles.steps}>

@@ -1,23 +1,24 @@
+import { useTranslations } from "next-intl";
 import styles from "./RenovationGallery.module.css";
 
 // TODO: replace with real before/after photography from client
 const PLACEHOLDERS = [1, 2, 3];
 
 export default function RenovationGallery() {
+  const t = useTranslations("RenovationGallery");
+
   return (
-    <section className={styles.section} aria-label="לפני ואחרי">
-      <h2 className={styles.heading}>לפני ואחרי</h2>
-      <p className={styles.intro}>
-        בקרוב נציג כאן דוגמאות אמיתיות משיקומים שביצענו.
-      </p>
+    <section className={styles.section} aria-label={t("sectionAriaLabel")}>
+      <h2 className={styles.heading}>{t("heading")}</h2>
+      <p className={styles.intro}>{t("intro")}</p>
       <div className={styles.grid}>
         {PLACEHOLDERS.map((id) => (
           <div className={styles.pair} key={id}>
             <div className={styles.placeholder}>
-              <span>לפני</span>
+              <span>{t("beforeLabel")}</span>
             </div>
             <div className={styles.placeholder}>
-              <span>אחרי</span>
+              <span>{t("afterLabel")}</span>
             </div>
           </div>
         ))}

@@ -1,0 +1,35 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  font-family: var(--font-sans);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.separator {
+  color: var(--color-text-faint);
+}
+
+.option {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--color-text-muted);
+}
+
+.option:not(:disabled) {
+  cursor: pointer;
+}
+
+.optionActive {
+  color: var(--color-text);
+  font-weight: 700;
+}

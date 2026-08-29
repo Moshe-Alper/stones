@@ -76,6 +76,20 @@
   line-height: 1;
 }
 
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
 .cardBody {
   display: flex;
   flex-direction: column;

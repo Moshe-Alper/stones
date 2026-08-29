@@ -13,6 +13,16 @@ export default defineConfig({
       "server-only": fileURLToPath(
         new URL("./node_modules/server-only/empty.js", import.meta.url),
       ),
+      // next/navigation's hooks require Next's App Router runtime, which
+      // Vitest/jsdom never mounts — see src/test/next-navigation-stub.ts.
+      "next/navigation": fileURLToPath(
+        new URL("./src/test/next-navigation-stub.ts", import.meta.url),
+      ),
+      // next-intl/server's getTranslations/setRequestLocale are RSC-only —
+      // see src/test/next-intl-server-stub.ts.
+      "next-intl/server": fileURLToPath(
+        new URL("./src/test/next-intl-server-stub.ts", import.meta.url),
+      ),
     },
   },
   test: {
@@ -20,5 +30,15 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
     exclude: ["node_modules", "e2e", ".next"],
+    server: {
+      // Without this, Vitest externalizes next-intl and Node's native (strict)
+      // ESM resolver loads its compiled files directly — which fails on their
+      // extensionless `next/navigation` import and skips the alias above,
+      // since that's a Vite-transform-time feature. Inlining routes next-intl
+      // through Vite's resolver instead, where both apply.
+      deps: {
+        inline: ["next-intl"],
+      },
+    },
   },
 });

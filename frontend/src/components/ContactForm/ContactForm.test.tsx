@@ -1,4 +1,5 @@
-import { render, screen, waitFor } from "@testing-library/react"
+import { screen, waitFor } from "@testing-library/react"
+import { renderWithIntl as render } from "@/test/renderWithIntl"
 import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it, vi } from "vitest"
 import ContactForm from "./ContactForm"
@@ -62,7 +63,7 @@ describe("ContactForm", () => {
       "/api/contact",
       expect.objectContaining({
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: expect.objectContaining({ "Content-Type": "application/json" }),
       }),
     )
     const [, requestInit] = fetchMock.mock.calls[0]

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import RenovationHero from "@/components/RenovationHero/RenovationHero";
@@ -8,6 +9,8 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 import styles from "./page.module.css";
 
 export default function RenovationPage() {
+  const t = useTranslations("RenovationPage");
+
   return (
     <>
       <Header />
@@ -16,12 +19,10 @@ export default function RenovationPage() {
         <RenovationProblems />
         <RenovationProcess />
         <RenovationGallery />
-        <section className={styles.requestSection} aria-label="בקשת הערכת מחיר">
+        <section className={styles.requestSection} aria-label={t("requestSectionAriaLabel")}>
           <div className={styles.requestInner}>
-            <h2 className={styles.requestHeading}>בקשת הערכת מחיר לשיקום מצבה</h2>
-            <p className={styles.requestIntro}>
-              ספרו לנו על מצב המצבה ומיקומה, ונחזור אליכם עם הערכה ראשונית.
-            </p>
+            <h2 className={styles.requestHeading}>{t("requestHeading")}</h2>
+            <p className={styles.requestIntro}>{t("requestIntro")}</p>
             <ContactForm />
           </div>
         </section>

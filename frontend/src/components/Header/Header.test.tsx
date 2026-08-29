@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithIntl as render } from "@/test/renderWithIntl";
 import Header from "./Header";
 
 describe("Header", () => {
@@ -29,9 +30,12 @@ describe("Header", () => {
     ).toHaveAttribute("href", "/");
   });
 
-  it("renders a disabled, visual-only language switcher", () => {
+  it("renders a language switcher with the current locale disabled", () => {
     render(<Header />);
-    const langSwitcher = screen.getByRole("button", { name: "בחירת שפה" });
-    expect(langSwitcher).toBeDisabled();
+    const group = screen.getByRole("group", { name: "בחירת שפה" });
+    expect(group).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "עברית" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "EN" })).not.toBeDisabled();
+    expect(screen.getByRole("button", { name: "RU" })).not.toBeDisabled();
   });
 });

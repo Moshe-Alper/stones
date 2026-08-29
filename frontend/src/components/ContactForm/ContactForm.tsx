@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, type ChangeEvent, type FormEvent } from "react"
-import { PREFERRED_TIME_OPTIONS, type ContactInquiry } from "@/data/contact"
+import { useLocale, useTranslations } from "next-intl"
+import { PREFERRED_TIME_OPTION_IDS, type ContactInquiry } from "@/data/contact"
 import styles from "./ContactForm.module.css"
 
 const INITIAL_VALUES: ContactInquiry = {
   name: "",
   phone: "",
-  preferredTime: PREFERRED_TIME_OPTIONS[0],
+  preferredTime: PREFERRED_TIME_OPTION_IDS[0],
   message: "",
   website: "",
 }
@@ -25,6 +26,8 @@ const INITIAL_SUBMISSION_STATE: SubmissionState = {
 }
 
 export default function ContactForm() {
+  const t = useTranslations("ContactForm")
+  const locale = useLocale()
   const [values, setValues] = useState<ContactInquiry>(INITIAL_VALUES)
   const [submission, setSubmission] = useState<SubmissionState>(
     INITIAL_SUBMISSION_STATE,
@@ -51,40 +54,34 @@ export default function ContactForm() {
     if (hasMissingField) {
       setSubmission({
         type: "error",
-        message: "אנא מלאו את כל השדות כדי שנוכל לחזור אליכם.",
+        message: t("errorMissingFields"),
       })
       return
     }
 
-    setSubmission({ type: "submitting", message: "שולחים את הבקשה..." })
+    setSubmission({ type: "submitting", message: t("submittingStatus") })
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "x-locale": locale },
         body: JSON.stringify(values),
       })
       const payload = await response.json().catch(() => null)
 
       if (!response.ok) {
-        throw new Error(
-          payload?.error?.message ??
-            "לא הצלחנו לשלוח את הבקשה. נסו שוב בעוד כמה רגעים.",
-        )
+        throw new Error(payload?.error?.message ?? t("errorGeneric"))
       }
 
       setSubmission({
         type: "success",
-        message: "בקשתכם נשלחה בהצלחה. נחזור אליכם בהקדם.",
+        message: t("successMessage"),
       })
       setValues(INITIAL_VALUES)
     } catch (error) {
       setSubmission({
         type: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "לא הצלחנו לשלוח את הבקשה. נסו שוב בעוד כמה רגעים.",
+        message: error instanceof Error ? error.message : t("errorGeneric"),
       })
     }
   }
@@ -95,28 +92,28 @@ export default function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.row}>
         <label className={styles.field} htmlFor="contact-name">
-          <span>שם מלא</span>
+          <span>{t("nameLabel")}</span>
           <input
             id="contact-name"
             name="name"
             type="text"
             value={values.name}
             onChange={handleChange}
-            placeholder="ישראל ישראלי"
+            placeholder={t("namePlaceholder")}
             autoComplete="name"
             required
           />
         </label>
 
         <label className={styles.field} htmlFor="contact-phone">
-          <span>מספר טלפון</span>
+          <span>{t("phoneLabel")}</span>
           <input
             id="contact-phone"
             name="phone"
             type="tel"
             value={values.phone}
             onChange={handleChange}
-            placeholder="050-0000000"
+            placeholder={t("phonePlaceholder")}
             autoComplete="tel"
             inputMode="tel"
             dir="ltr"
@@ -126,7 +123,7 @@ export default function ContactForm() {
       </div>
 
       <label className={styles.field} htmlFor="contact-preferred-time">
-        <span>זמן מועדף ליצירת קשר</span>
+        <span>{t("preferredTimeLabel")}</span>
         <select
           id="contact-preferred-time"
           name="preferredTime"
@@ -134,29 +131,29 @@ export default function ContactForm() {
           onChange={handleChange}
           required
         >
-          {PREFERRED_TIME_OPTIONS.map((option) => (
-            <option key={option} value={option}>
-              {option}
+          {PREFERRED_TIME_OPTION_IDS.map((id) => (
+            <option key={id} value={id}>
+              {t(`preferredTimeOptions.${id}`)}
             </option>
           ))}
         </select>
       </label>
 
       <label className={styles.field} htmlFor="contact-message">
-        <span>הודעה / בקשה מיוחדת</span>
+        <span>{t("messageLabel")}</span>
         <textarea
           id="contact-message"
           name="message"
           value={values.message}
           onChange={handleChange}
-          placeholder="כיצד נוכל לעזור?"
+          placeholder={t("messagePlaceholder")}
           rows={5}
           required
         />
       </label>
 
       <div className={styles.honeypotField} aria-hidden="true">
-        <label htmlFor="contact-website">אתר אינטרנט</label>
+        <label htmlFor="contact-website">{t("honeypotLabel")}</label>
         <input
           id="contact-website"
           name="website"
@@ -169,7 +166,7 @@ export default function ContactForm() {
       </div>
 
       <button className={styles.submit} type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "שולחים..." : "שליחת הבקשה"}
+        {isSubmitting ? t("submittingLabel") : t("submitLabel")}
       </button>
 
       <p

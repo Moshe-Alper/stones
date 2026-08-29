@@ -1,24 +1,9 @@
+import { useTranslations } from "next-intl"
 import styles from "./TrustHighlights.module.css"
 
-const HIGHLIGHTS = [
-  {
-    title: "עיצוב אישי",
-    description: "כל אנדרטה מתוכננת יחד אתכם כדי להנציח את הסיפור האישי.",
-    icon: "design",
-  },
-  {
-    title: "שקיפות מלאה",
-    description: "עדכונים שוטפים וצילומים לאורך כל תהליך הייצור וההקמה.",
-    icon: "visibility",
-  },
-  {
-    title: "אחריות לדורות",
-    description: "אנו מתחייבים לאיכות האבן והעבודה לאורך עשרות שנים.",
-    icon: "shield",
-  },
-] as const
+const ICONS = ["design", "visibility", "shield"] as const
 
-function HighlightIcon({ icon }: { icon: (typeof HIGHLIGHTS)[number]["icon"] }) {
+function HighlightIcon({ icon }: { icon: (typeof ICONS)[number] }) {
   if (icon === "design") {
     return (
       <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
@@ -46,8 +31,16 @@ function HighlightIcon({ icon }: { icon: (typeof HIGHLIGHTS)[number]["icon"] }) 
 }
 
 export default function TrustHighlights() {
+  const t = useTranslations("TrustHighlights")
+
+  const HIGHLIGHTS = [
+    { title: t("highlight1Title"), description: t("highlight1Desc"), icon: ICONS[0] },
+    { title: t("highlight2Title"), description: t("highlight2Desc"), icon: ICONS[1] },
+    { title: t("highlight3Title"), description: t("highlight3Desc"), icon: ICONS[2] },
+  ]
+
   return (
-    <section className={styles.section} aria-label="הערכים שלנו">
+    <section className={styles.section} aria-label={t("sectionAriaLabel")}>
       <div className={styles.container}>
         {HIGHLIGHTS.map((highlight) => (
           <article className={styles.highlight} key={highlight.title}>

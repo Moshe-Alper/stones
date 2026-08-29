@@ -1,38 +1,22 @@
+import { useTranslations } from "next-intl";
 import styles from "./RenovationProcess.module.css";
 
-const STEPS = [
-  {
-    number: "01",
-    title: "אבחון בשטח",
-    desc: "ביקור בבית העלמין להערכת מצב האבן, היסודות והכיתוב וקביעת היקף העבודה הנדרש.",
-  },
-  {
-    number: "02",
-    title: "ניקוי וחיטוי",
-    desc: "הסרת כתמי לחות, טחב ואבנית בשיטות מקצועיות שאינן פוגעות באבן המקורית.",
-  },
-  {
-    number: "03",
-    title: "יישור וחיזוק",
-    desc: "תיקון יסודות, יישור המצבה וסגירת סדקים במקרה הצורך.",
-  },
-  {
-    number: "04",
-    title: "שיקום כיתוב וגימור",
-    desc: "חידוש צבע האותיות, וציפוי מגן למניעת נזק חוזר בעתיד.",
-  },
-];
-
 export default function RenovationProcess() {
+  const t = useTranslations("RenovationProcess");
+
+  const STEPS = [
+    { number: "01", title: t("step1Title"), desc: t("step1Desc") },
+    { number: "02", title: t("step2Title"), desc: t("step2Desc") },
+    { number: "03", title: t("step3Title"), desc: t("step3Desc") },
+    { number: "04", title: t("step4Title"), desc: t("step4Desc") },
+  ];
+
   return (
-    <section className={styles.section} aria-label="תהליך השיקום">
+    <section className={styles.section} aria-label={t("sectionAriaLabel")}>
       <div className={styles.inner}>
         <div className={styles.headingCol}>
-          <h2 className={styles.heading}>תהליך השיקום</h2>
-          <p className={styles.intro}>
-            כל שיקום מתחיל בביקור ואבחון אישי בשטח, כדי שנוכל להתאים את
-            הטיפול הנכון למצב הספציפי של המצבה.
-          </p>
+          <h2 className={styles.heading}>{t("heading")}</h2>
+          <p className={styles.intro}>{t("intro")}</p>
         </div>
         <ol className={styles.steps}>
           {STEPS.map((step) => (

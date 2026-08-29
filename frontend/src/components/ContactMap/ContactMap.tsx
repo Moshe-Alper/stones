@@ -2,21 +2,23 @@
 
 import Image from "next/image"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { CONTACT_DETAILS } from "@/data/contact"
 import styles from "./ContactMap.module.css"
 
 export default function ContactMap() {
+  const t = useTranslations("ContactMap")
   const [mapActive, setMapActive] = useState(false)
   const [mapFailed, setMapFailed] = useState(false)
 
   return (
-    <section className={styles.visuals} aria-label="מיקום הסטודיו">
+    <section className={styles.visuals} aria-label={t("sectionAriaLabel")}>
       <div className={styles.mapPlaceholder}>
         {mapFailed ? (
           <div
             className={styles.mapFallback}
             role="img"
-            aria-label="מפת מיקום הסטודיו"
+            aria-label={t("mapFallbackAriaLabel")}
           >
             <span>{CONTACT_DETAILS.addressLine}</span>
           </div>
@@ -29,7 +31,7 @@ export default function ContactMap() {
                   : styles.mapFrame
               }
               src={CONTACT_DETAILS.mapsEmbedUrl}
-              title="מפת מיקום הסטודיו"
+              title={t("mapTitle")}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               onError={() => setMapFailed(true)}
@@ -40,33 +42,33 @@ export default function ContactMap() {
                 className={styles.mapActivate}
                 onClick={() => setMapActive(true)}
               >
-                <span>הקש למפה אינטראקטיבית</span>
+                <span>{t("activateMapLabel")}</span>
               </button>
             )}
           </>
         )}
         <div className={styles.overlay}>
           <div className={styles.overlayInfo}>
-            <strong>{CONTACT_DETAILS.studioLabel}</strong>
-            <span>{CONTACT_DETAILS.hours}</span>
+            <strong>{t("studioLabel")}</strong>
+            <span>{t("hours")}</span>
           </div>
           <div className={styles.navLinks}>
             <a
               href={CONTACT_DETAILS.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="ניווט לסטודיו במפות Google"
+              aria-label={t("navigateAriaLabel")}
             >
-              ניווט
+              {t("navigateLabel")}
               <span aria-hidden="true">↗</span>
             </a>
             <a
               href={CONTACT_DETAILS.wazeUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="ניווט לסטודיו ב-Waze"
+              aria-label={t("wazeAriaLabel")}
             >
-              Waze
+              {t("wazeLabel")}
               <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -77,12 +79,12 @@ export default function ContactMap() {
         <Image
           className={styles.workshopImage}
           src="/images/contact-workshop.webp"
-          alt="תמונת אווירה של בית המלאכה"
+          alt={t("workshopAlt")}
           fill
           sizes="(max-width: 900px) 100vw, 40vw"
         />
         <div className={styles.workshopOverlay} />
-        <span>בית המלאכה המשפחתי</span>
+        <span>{t("workshopLabel")}</span>
       </div>
     </section>
   )

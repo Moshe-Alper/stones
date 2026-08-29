@@ -1,39 +1,44 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import styles from "./MaterialsGrid.module.css";
+import { getCategoryThumbnail } from "@/data/gallery";
 
-const EXCERPT =
-  'ב"שיש אלפר", אנו מבינים שכל מצבה היא סיפור חיים שלם. הצוות שלנו מלווה את המשפחות באופן אישי, מרגע התכנון ועד…';
-
-const MATERIALS = [
-  {
-    id: "granite",
-    title: "גרניט פרימיום",
-    image: "/images/material-granite.webp",
-    width: 1200,
-    height: 800,
-  },
-  {
-    id: "marble",
-    title: "שיש טורקי",
-    image: "/images/material-marble.webp",
-    width: 800,
-    height: 1200,
-  },
-  {
-    id: "basalt",
-    title: "אבן טבעית ועיצוב אישי",
-    image: "/images/material-basalt.webp",
-    width: 1200,
-    height: 798,
-  },
-];
+const hebronThumbnail = getCategoryThumbnail("hebron-marble");
 
 export default function MaterialsGrid() {
+  const t = useTranslations("MaterialsGrid");
+
+  const MATERIALS = [
+    {
+      id: "hebron-marble",
+      title: t("hebronMarbleTitle"),
+      image: hebronThumbnail
+        ? `/images/gallery/${hebronThumbnail.file}`
+        : "/images/material-marble.webp",
+      width: 2040,
+      height: 1536,
+    },
+    {
+      id: "granite",
+      title: t("granitePremiumTitle"),
+      image: "/images/material-granite.webp",
+      width: 1200,
+      height: 800,
+    },
+    {
+      id: "basalt",
+      title: t("basaltTitle"),
+      image: "/images/material-basalt.webp",
+      width: 1200,
+      height: 798,
+    },
+  ];
+
   return (
-    <section className={styles.section} aria-label="חומרים וסגנונות">
+    <section className={styles.section} aria-label={t("sectionAriaLabel")}>
       <div className={styles.header}>
-        <h2 className={styles.heading}>חומרים וסגנונות</h2>
+        <h2 className={styles.heading}>{t("heading")}</h2>
         <div className={styles.divider} />
       </div>
       <div className={styles.grid}>
@@ -50,9 +55,9 @@ export default function MaterialsGrid() {
             />
             <div className={styles.cardBody}>
               <h3 className={styles.cardTitle}>{material.title}</h3>
-              <p className={styles.cardExcerpt}>{EXCERPT}</p>
+              <p className={styles.cardExcerpt}>{t("excerpt")}</p>
               <Link href="/catalog" className={styles.cardLink}>
-                לכל הדגמים
+                {t("viewAll")}
               </Link>
             </div>
           </article>

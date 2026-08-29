@@ -1,34 +1,9 @@
+import { useTranslations } from "next-intl";
 import styles from "./RenovationProblems.module.css";
 
-const PROBLEMS = [
-  {
-    title: "כתמי לחות ומים",
-    description: "חדירת רטיבות גורמת להכתמה ולשינוי גוון האבן לאורך זמן.",
-    icon: "droplet",
-  },
-  {
-    title: "טחב ואבנית",
-    description: "הצטברות טחב ומשקעים המכהים את המראה המקורי של המצבה.",
-    icon: "moss",
-  },
-  {
-    title: "שקיעה ונטייה",
-    description: "תזוזת יסודות הגורמת להטיה או לשקיעה של המצבה בקרקע.",
-    icon: "tilt",
-  },
-  {
-    title: "דהיית כיתוב",
-    description: "התכהות או דהייה של צבע האותיות והפרטים החרוטים.",
-    icon: "text",
-  },
-  {
-    title: "סדקים ושברים",
-    description: "נזקי מזג אוויר או פגיעה מכנית שיצרו סדק באבן.",
-    icon: "crack",
-  },
-] as const;
+const ICONS = ["droplet", "moss", "tilt", "text", "crack"] as const;
 
-function ProblemIcon({ icon }: { icon: (typeof PROBLEMS)[number]["icon"] }) {
+function ProblemIcon({ icon }: { icon: (typeof ICONS)[number] }) {
   if (icon === "droplet") {
     return (
       <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
@@ -71,9 +46,19 @@ function ProblemIcon({ icon }: { icon: (typeof PROBLEMS)[number]["icon"] }) {
 }
 
 export default function RenovationProblems() {
+  const t = useTranslations("RenovationProblems");
+
+  const PROBLEMS = [
+    { title: t("problem1Title"), description: t("problem1Desc"), icon: ICONS[0] },
+    { title: t("problem2Title"), description: t("problem2Desc"), icon: ICONS[1] },
+    { title: t("problem3Title"), description: t("problem3Desc"), icon: ICONS[2] },
+    { title: t("problem4Title"), description: t("problem4Desc"), icon: ICONS[3] },
+    { title: t("problem5Title"), description: t("problem5Desc"), icon: ICONS[4] },
+  ];
+
   return (
-    <section className={styles.section} aria-label="נזקים נפוצים">
-      <h2 className={styles.heading}>נזקים נפוצים שאנו מטפלים בהם</h2>
+    <section className={styles.section} aria-label={t("sectionAriaLabel")}>
+      <h2 className={styles.heading}>{t("heading")}</h2>
       <div className={styles.grid}>
         {PROBLEMS.map((problem) => (
           <article className={styles.card} key={problem.title}>

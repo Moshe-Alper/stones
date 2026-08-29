@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest"
-import { PREFERRED_TIME_OPTIONS } from "@/data/contact"
+import { PREFERRED_TIME_OPTION_IDS, getPreferredTimeLabelHe } from "@/data/contact"
 
 const deliverContactInquiryMock = vi.fn()
 
@@ -12,7 +12,7 @@ const { POST } = await import("./route")
 const VALID_INQUIRY = {
   name: "ישראל ישראלי",
   phone: "050-1234567",
-  preferredTime: PREFERRED_TIME_OPTIONS[0],
+  preferredTime: PREFERRED_TIME_OPTION_IDS[0],
   message: "אשמח לקבל פרטים נוספים.",
 }
 
@@ -53,7 +53,7 @@ describe("POST /api/contact", () => {
       expect.objectContaining({
         name: VALID_INQUIRY.name,
         phone: VALID_INQUIRY.phone,
-        preferredTime: VALID_INQUIRY.preferredTime,
+        preferredTime: getPreferredTimeLabelHe(VALID_INQUIRY.preferredTime),
         message: VALID_INQUIRY.message,
       }),
     )
