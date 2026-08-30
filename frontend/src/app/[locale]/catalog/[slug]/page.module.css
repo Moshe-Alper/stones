@@ -15,6 +15,13 @@
   text-align: right;
 }
 
+.topNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
 .title {
   font-size: 40px;
   font-weight: 700;

@@ -11,10 +11,10 @@ export type BreadcrumbItem = {
 export default function Breadcrumb({ items }: { items?: BreadcrumbItem[] }) {
   const t = useTranslations("Breadcrumb");
 
-  // Default trail keeps the Catalog page's original 2-level breadcrumb working.
+  // Default trail for the Catalog page: highest level first (Home), current page last.
   const resolvedItems: BreadcrumbItem[] = items ?? [
-    { label: t("defaultCatalogLabel") },
     { label: t("homeLabel"), href: "/" },
+    { label: t("defaultCatalogLabel") },
   ];
 
   return (
@@ -23,9 +23,7 @@ export default function Breadcrumb({ items }: { items?: BreadcrumbItem[] }) {
         {resolvedItems.map((item, index) => (
           <li className={styles.group} key={`${item.label}-${index}`}>
             {index > 0 && (
-              <span className={styles.separator} aria-hidden="true">
-                ›
-              </span>
+              <span className={styles.separator} aria-hidden="true" />
             )}
             {item.href ? (
               <Link href={item.href} className={styles.link}>

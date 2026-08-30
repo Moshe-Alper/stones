@@ -13,8 +13,13 @@ describe("FAQ", () => {
   it("renders each question as a collapsible item", () => {
     render(<FAQ />);
     expect(
-      screen.getByText("כמה זמן לוקח תהליך ההזמנה וההצבה של מצבה?")
+      screen.getByText("האם אתם מטפלים גם באישורים מול בית העלמין?")
     ).toBeInTheDocument();
+  });
+
+  it("renders the pricing question", () => {
+    render(<FAQ />);
+    expect(screen.getByText("מה כלול במחיר?")).toBeInTheDocument();
   });
 
   it("renders the service area question", () => {

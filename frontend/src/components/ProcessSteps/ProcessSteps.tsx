@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import styles from "./ProcessSteps.module.css";
 
 export default function ProcessSteps() {
@@ -15,14 +14,9 @@ export default function ProcessSteps() {
   return (
     <section className={styles.section} aria-label={t("sectionAriaLabel")}>
       <div className={styles.inner}>
-        <div className={styles.top}>
-          <div className={styles.headingCol}>
-            <h2 className={styles.heading}>{t("heading")}</h2>
-            <p className={styles.intro}>{t("intro")}</p>
-          </div>
-          <Link href="/renovation" className={styles.allServices}>
-            {t("allServicesLink")}
-          </Link>
+        <div className={styles.headingCol}>
+          <h2 className={styles.heading}>{t("heading")}</h2>
+          <p className={styles.intro}>{t("intro")}</p>
         </div>
         <ol className={styles.steps}>
           {STEPS.map((step) => (

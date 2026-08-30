@@ -13,6 +13,14 @@ describe("Breadcrumb", () => {
     );
   });
 
+  it("orders the default trail Home first, current page last", () => {
+    const { container } = render(<Breadcrumb />);
+    const labels = Array.from(container.querySelectorAll("li")).map((li) =>
+      li.textContent?.trim()
+    );
+    expect(labels).toEqual(["בית", "קטלוג מצבות"]);
+  });
+
   it("marks the default current page with aria-current", () => {
     render(<Breadcrumb />);
     expect(screen.getByText("קטלוג מצבות")).toHaveAttribute(
@@ -25,9 +33,9 @@ describe("Breadcrumb", () => {
     render(
       <Breadcrumb
         items={[
-          { label: "מצבת גרניט שחורה אבסולוט" },
-          { label: "מצבות גרניט", href: "/catalog/granite" },
           { label: "קטלוג מצבות", href: "/catalog" },
+          { label: "מצבות גרניט", href: "/catalog/granite" },
+          { label: "מצבת גרניט שחורה אבסולוט" },
         ]}
       />
     );

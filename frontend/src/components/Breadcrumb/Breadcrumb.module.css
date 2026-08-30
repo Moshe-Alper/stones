@@ -38,4 +38,14 @@
 .separator {
   color: var(--color-text-muted);
   font-size: 14px;
+  line-height: 1;
+}
+
+/* Point the chevron in the reading direction: forward is left in RTL. */
+.separator::before {
+  content: "\203A";
+}
+
+:global([dir="rtl"]) .separator::before {
+  content: "\2039";
 }

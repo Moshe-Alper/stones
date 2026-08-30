@@ -9,7 +9,6 @@
     "brandAriaLabel": "Alper Marble, to the homepage",
     "brand": "Alper Marble",
     "navCatalog": "Catalog",
-    "navRenovation": "Headstone restoration",
     "navFaq": "FAQ",
     "ctaContact": "Contact us"
   },
@@ -25,7 +24,6 @@
     "navHeading": "Quick links",
     "navCatalogProducts": "Product catalog",
     "navStoneTypes": "Stone types",
-    "navRenovation": "Maintenance services",
     "navFaq": "FAQ",
     "infoHeading": "More information",
     "infoPrivacy": "Privacy policy",
@@ -45,31 +43,31 @@
   },
   "ServiceArea": {
     "sectionAriaLabel": "Service area",
-    "summary": "We operate in the Pardes Hana-Karkur, Hadera, Ein Shemer, and Alona region area and its surroundings",
-    "towns": ["Pardes Hana-Karkur", "Hadera", "Ein Shemer", "Alona region"]
+    "summary": "We operate across Pardes Hana-Karkur, Hadera, and the Menashe and Alona regional-council communities, and onward up to Haifa",
+    "towns": ["Pardes Hana-Karkur", "Hadera", "Menashe & Alona region", "Up to Haifa"]
   },
   "FAQ": {
     "sectionAriaLabel": "FAQ",
     "heading": "Frequently asked questions",
     "q1Question": "Which areas do you operate in?",
     "q1AnswerTemplate": "{summary}. Our studio and workshop are located in Pardes Hana-Karkur, next to the cemetery.",
-    "q2Question": "How long does it take to order and install a headstone?",
-    "q2Answer": "On average, about 4 to 8 weeks from design approval to installation at the cemetery, depending on the stone type and the complexity of the inscription. We prioritize orders according to the funeral and unveiling dates required by Jewish tradition.",
-    "q3Question": "Do you also handle approvals with the cemetery?",
-    "q3Answer": "Yes, our team accompanies you with the cemetery administration to coordinate measurements, approve the design, and set the installation date, so you don't have to deal with the bureaucracy during this difficult time.",
-    "q4Question": "Which stone types are recommended for Israel's weather conditions?",
-    "q4Answer": "Granite and quality marble are the common choice thanks to their resistance to heat, moisture, and direct sunlight over decades. We're happy to help choose the most suitable stone type and finish during the consultation meeting.",
-    "q5Question": "What does your warranty cover?",
-    "q5Answer": "Our warranty covers the stability of the installation and the quality of the stone and inscription over the years. In case of damage from weather, ground subsidence, or natural wear, we offer headstone maintenance and restoration services.",
-    "q6Question": "Can I order an additional inscription or update to an existing headstone?",
-    "q6Answer": "Absolutely. We engrave additional text, update dates, and touch up color on existing headstones, even ones we did not originally install.",
-    "q7Question": "How long does restoring an existing headstone take?",
-    "q7Answer": "Most restoration work, such as cleaning, foundation reinforcement, and inscription restoration, takes between a single work day and a few days depending on the extent of the damage. More details on the restoration services page."
+    "q2Question": "Do you also handle approvals with the cemetery?",
+    "q2Answer": "Yes, our team accompanies you with the cemetery administration to coordinate measurements, approve the design, and set the installation date, so you don't have to deal with the bureaucracy during this difficult time.",
+    "q3Question": "Which stone types are recommended for Israel's weather conditions?",
+    "q3Answer": "Granite and quality marble are the common choice thanks to their resistance to heat, moisture, and direct sunlight over decades. We're happy to help choose the most suitable stone type and finish during the consultation meeting.",
+    "q4Question": "What does your warranty cover?",
+    "q4Answer": "Our warranty covers the stability of the installation and the quality of the stone and inscription over the years.",
+    "q5Question": "Can I order an additional inscription or update to an existing headstone?",
+    "q5Answer": "Absolutely. We engrave additional text, update dates, and touch up color on existing headstones, even ones we did not originally install.",
+    "q6Question": "What's included in the price?",
+    "q6Answer": "The price covers the stone, the design, production, and installation at the cemetery. The lettering (engraving the inscription) is not included and is quoted separately based on the amount of text."
   },
   "Breadcrumb": {
     "navAriaLabel": "Breadcrumb",
     "defaultCatalogLabel": "Headstone catalog",
-    "homeLabel": "Home"
+    "homeLabel": "Home",
+    "backToCatalog": "Back to catalog",
+    "backToHome": "Back to home"
   },
   "Categories": {
     "hebron-marble": {
@@ -122,7 +120,6 @@
     "sectionAriaLabel": "Our process",
     "heading": "Our process",
     "intro": "At Alper Marble, we understand that every headstone is a whole life story. Our team accompanies you with sensitivity and dedication, from planning to final installation, while upholding a long-standing tradition of quality and craftsmanship.",
-    "allServicesLink": "Headstone restoration and maintenance",
     "step1Title": "Consultation meeting",
     "step1Desc": "Our team accompanies families personally, from planning to final installation, with attention to the smallest details.",
     "step2Title": "Planning and design",
@@ -197,44 +194,6 @@
     "prevAriaLabel": "Previous",
     "pageAriaLabel": "Page {page}"
   },
-  "RenovationHero": {
-    "heading": "Restoring and reviving existing headstones",
-    "subtitle": "Moisture, moss, subsidence, and fading inscriptions are natural processes over the years. We give the existing headstone professional, sensitive treatment that restores it to a dignified condition."
-  },
-  "RenovationProblems": {
-    "sectionAriaLabel": "Common issues",
-    "heading": "Common issues we handle",
-    "problem1Title": "Moisture and water stains",
-    "problem1Desc": "Moisture penetration causes staining and a change in the stone's color over time.",
-    "problem2Title": "Moss and mineral buildup",
-    "problem2Desc": "Accumulation of moss and deposits that dull the headstone's original appearance.",
-    "problem3Title": "Subsidence and tilting",
-    "problem3Desc": "Foundation movement causing the headstone to tilt or sink into the ground.",
-    "problem4Title": "Fading inscription",
-    "problem4Desc": "Darkening or fading of the lettering color and engraved details.",
-    "problem5Title": "Cracks and breaks",
-    "problem5Desc": "Weather damage or mechanical impact that created a crack in the stone."
-  },
-  "RenovationProcess": {
-    "sectionAriaLabel": "Restoration process",
-    "heading": "Restoration process",
-    "intro": "Every restoration begins with a personal on-site visit and diagnosis, so we can tailor the right treatment to the specific condition of the headstone.",
-    "step1Title": "On-site diagnosis",
-    "step1Desc": "A visit to the cemetery to assess the condition of the stone, foundations, and inscription, and determine the scope of work required.",
-    "step2Title": "Cleaning and sanitizing",
-    "step2Desc": "Removal of moisture stains, moss, and mineral deposits using professional methods that don't damage the original stone.",
-    "step3Title": "Leveling and reinforcement",
-    "step3Desc": "Foundation repair, leveling the headstone, and sealing cracks where needed.",
-    "step4Title": "Inscription restoration and finishing",
-    "step4Desc": "Refreshing the lettering color and applying a protective coating to prevent future damage."
-  },
-  "RenovationGallery": {
-    "sectionAriaLabel": "Before and after",
-    "heading": "Before and after",
-    "intro": "Real examples from restorations we've completed are coming soon.",
-    "beforeLabel": "Before",
-    "afterLabel": "After"
-  },
   "CatalogCategoryPage": {
     "fallbackTitle": "Design gallery",
     "notFoundNote": "Category not found.",
@@ -242,11 +201,6 @@
   },
   "ContactPage": {
     "gridAriaLabel": "Get in touch with the Alper family"
-  },
-  "RenovationPage": {
-    "requestSectionAriaLabel": "Request a price estimate",
-    "requestHeading": "Request a price estimate for headstone restoration",
-    "requestIntro": "Tell us about the headstone's condition and location, and we'll get back to you with an initial estimate."
   },
   "ApiErrors": {
     "invalidBody": "The inquiry details are missing or invalid.",

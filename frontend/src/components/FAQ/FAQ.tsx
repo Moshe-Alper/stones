@@ -12,7 +12,6 @@ export default function FAQ() {
     { q: t("q4Question"), a: t("q4Answer") },
     { q: t("q5Question"), a: t("q5Answer") },
     { q: t("q6Question"), a: t("q6Answer") },
-    { q: t("q7Question"), a: t("q7Answer") },
   ];
 
   return (

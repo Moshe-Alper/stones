@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import BackLink from "@/components/BackLink/BackLink";
 import CategoryGallery from "@/components/CategoryGallery/CategoryGallery";
 import { CATEGORIES } from "@/components/CatalogGrid/categories";
 import styles from "./page.module.css";
@@ -24,13 +25,16 @@ export default async function CatalogCategoryPage({
       <Header />
       <main className={styles.main}>
         <div className={styles.container}>
-          <Breadcrumb
-            items={[
-              { label: title },
-              { label: tBreadcrumb("defaultCatalogLabel"), href: "/catalog" },
-              { label: tBreadcrumb("homeLabel"), href: "/" },
-            ]}
-          />
+          <div className={styles.topNav}>
+            <BackLink href="/catalog" label={tBreadcrumb("backToCatalog")} />
+            <Breadcrumb
+              items={[
+                { label: tBreadcrumb("homeLabel"), href: "/" },
+                { label: tBreadcrumb("defaultCatalogLabel"), href: "/catalog" },
+                { label: title },
+              ]}
+            />
+          </div>
           <h1 className={styles.title}>{title}</h1>
           {category && (
             <p className={styles.description}>

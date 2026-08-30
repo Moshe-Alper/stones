@@ -49,9 +49,18 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: right;
+}
+
+.card:hover .cardTitle {
+  color: var(--color-accent);
+}
+
+.card:hover .cardLink {
+  border-bottom-color: var(--color-accent);
 }
 
 .cardImage {
@@ -116,6 +125,15 @@
   padding-top: 4px;
   align-self: flex-start;
   border-bottom: 1px solid transparent;
+}
+
+/* Stretch the single card link across the whole card so a click anywhere
+   on the article navigates, while keeping just one link in the a11y tree. */
+.cardLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .cardLink:hover {

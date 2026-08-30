@@ -30,8 +30,8 @@ const MAP_PLACE_ID = "ChIJK_2MvlsOHRURHMf7uFqyo1A"
 // reading language (see .plan/017 "Decisions confirmed with the owner").
 export const CONTACT_DETAILS = {
   addressLine: "דרך השדה, צמוד לבית העלמין, פרדס חנה-כרכור",
-  directPhone: "03-555-8291",
-  phoneHref: "tel:+97235558291",
+  directPhone: "050-5282431",
+  phoneHref: "tel:+972505282431",
   email: "moshe@alper-marble.co.il",
   mapsUrl: `https://www.google.com/maps/dir/?api=1&destination=${ENCODED_MAP_QUERY}&destination_place_id=${MAP_PLACE_ID}`,
   mapsEmbedUrl: `https://www.google.com/maps?q=${ENCODED_MAP_QUERY}&output=embed`,
