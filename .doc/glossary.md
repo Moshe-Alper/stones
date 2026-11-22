@@ -19,6 +19,9 @@
 - `contact inquiry`
 	- Canonical meaning: a visitor request for the Alper family to make contact about memorial stone services.
 	- Use: use for the form payload and delivery flow; do not call it an order or purchase.
+- `opening agreement`
+	- Canonical meaning: a signed payment commitment from a family member, obtained before the owner opens an existing memorial stone.
+	- Use: entity `agreement` in the separate `agreements/` app; the person who signs is the `signer`. Not part of the public website.
 
 ## Naming Alignment
 - Keep this glossary aligned with naming decisions in `../.rule/naming-rules.md`.

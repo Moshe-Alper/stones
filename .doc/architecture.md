@@ -13,6 +13,11 @@
 - `docs/api-contract.yaml` is the source of truth for the Contact endpoint payload and
   response shapes.
 
+- `agreements/` is a separate, owner-only Next.js app (opening-agreement signing service, see
+  `.plan/019-2026-11-22-opening-agreement-service.md`). It is NOT part of the public website,
+  runs on its own port/deployment, and owns its own database. Local dev uses embedded Postgres
+  (PGlite) under `agreements/.data/`; production will use hosted Postgres.
+
 ## Data Flow
 
 1. A visitor completes the client-side Contact form.
@@ -25,6 +30,10 @@
    message id) is logged server-side; the raw name/phone/message content is never logged.
 
 ## Auth and Org Boundaries
+
+- `agreements/`: a single owner logs in with `OWNER_PASSWORD` and gets an HMAC-signed httpOnly
+  cookie (`SESSION_SECRET`). Create/cancel/list require it. The signing page `/s/<token>` is
+  public but guarded by an unguessable 128-bit token, expires, can be signed once, and is `noindex`.
 
 - The public catalog and Contact page do not require authentication.
 - No org boundary exists in the current single-business public-site runtime.
@@ -62,6 +71,8 @@
 
 ## Change Log
 
+- 2026-11-22: Added the separate `agreements/` app (owner-created signing links, canvas signature,
+  Israeli ID check, no SMS OTP, Hebrew only). No change to the public site.
 - 2026-07-28: Removed the `frontend/scripts/gallery-import.ts` Google Photos/Anthropic gallery
   curation CLI added 2026-07-23 below. The account owner chose to blur engraved text manually
   instead of relying on automated detection, which repeated real-photo testing showed missed
