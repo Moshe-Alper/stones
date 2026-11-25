@@ -1,10 +1,11 @@
-import Header from "@/components/Header/Header";
-import Hero from "@/components/Hero/Hero";
-import ServiceArea from "@/components/ServiceArea/ServiceArea";
-import MaterialsGrid from "@/components/MaterialsGrid/MaterialsGrid";
-import ProcessSteps from "@/components/ProcessSteps/ProcessSteps";
-import FAQ from "@/components/FAQ/FAQ";
-import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header"
+import Hero from "@/components/Hero/Hero"
+import RecentWork from "@/components/RecentWork/RecentWork"
+import CategoryTiles from "@/components/CategoryTiles/CategoryTiles"
+import ProcessSteps from "@/components/ProcessSteps/ProcessSteps"
+import FamilyNote from "@/components/FamilyNote/FamilyNote"
+import ContactBand from "@/components/ContactBand/ContactBand"
+import Footer from "@/components/Footer/Footer"
 
 export default function Home() {
   return (
@@ -12,12 +13,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <ServiceArea />
-        <MaterialsGrid />
+        <RecentWork />
+        <CategoryTiles />
         <ProcessSteps />
-        <FAQ />
+        <FamilyNote />
+        <ContactBand />
       </main>
       <Footer />
     </>
-  );
+  )
 }

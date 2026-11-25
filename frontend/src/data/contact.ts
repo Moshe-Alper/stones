@@ -32,11 +32,16 @@ export const CONTACT_DETAILS = {
   addressLine: "דרך השדה, צמוד לבית העלמין, פרדס חנה-כרכור",
   directPhone: "050-5282431",
   phoneHref: "tel:+972505282431",
+  whatsappHref: "https://wa.me/972505282431",
   email: "moshe@alper-marble.co.il",
   mapsUrl: `https://www.google.com/maps/dir/?api=1&destination=${ENCODED_MAP_QUERY}&destination_place_id=${MAP_PLACE_ID}`,
   mapsEmbedUrl: `https://www.google.com/maps?q=${ENCODED_MAP_QUERY}&output=embed`,
   wazeUrl: `https://waze.com/ul?q=${ENCODED_MAP_QUERY}&navigate=yes`,
 } as const
+
+// TODO(owner): 3002 is a deliberately wrong placeholder so it stands out on the live
+// site until Moshik supplies the real founding year (.plan/020, question 3).
+export const BUSINESS_FOUNDED_YEAR = 3002
 
 export type ContactInquiry = {
   name: string

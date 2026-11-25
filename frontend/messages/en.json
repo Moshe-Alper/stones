@@ -36,15 +36,31 @@
   },
   "Hero": {
     "ariaLabel": "Introduction",
-    "heading": "Honoring the memory of your loved ones with dignity and grace",
-    "subheading": "We specialize in creating headstones that combine traditional craftsmanship with modern design, while maintaining a high standard of quality and durability for generations.",
-    "ctaCatalog": "View the catalog",
-    "ctaFaq": "FAQ"
+    "heading": "Handcrafted memorial stones, in memory of your loved ones",
+    "imageAlt": "Hebron marble memorial stone with river pebbles, made by Alper Marble",
+    "ctaWorks": "See our work",
+    "ctaContact": "Talk to us"
+  },
+  "RecentWork": {
+    "sectionAriaLabel": "Recent work",
+    "heading": "Recent work",
+    "viewAll": "Full gallery",
+    "photoAlt": "{category} – made by Alper Marble"
+  },
+  "CategoryTiles": {
+    "sectionAriaLabel": "Stone types",
+    "heading": "Choose a stone",
+    "popularBadge": "Most popular"
   },
   "ServiceArea": {
     "sectionAriaLabel": "Service area",
     "summary": "We operate across Pardes Hana-Karkur, Hadera, and the Menashe and Alona regional-council communities, and onward up to Haifa",
-    "towns": ["Pardes Hana-Karkur", "Hadera", "Menashe & Alona region", "Up to Haifa"]
+    "towns": [
+      "Pardes Hana-Karkur",
+      "Hadera",
+      "Menashe & Alona region",
+      "Up to Haifa"
+    ]
   },
   "FAQ": {
     "sectionAriaLabel": "FAQ",
@@ -103,27 +119,27 @@
     "lightboxAriaLabel": "Enlarged photo - {categoryTitle}",
     "closeAriaLabel": "Close"
   },
-  "MaterialsGrid": {
-    "sectionAriaLabel": "Materials and styles",
-    "heading": "Materials and styles",
-    "excerpt": "At Alper Marble, we understand that every headstone is a whole life story. Our team accompanies families personally, from planning to…",
-    "viewAll": "View all designs",
-    "hebronMarbleTitle": "Hebron marble",
-    "granitePremiumTitle": "Premium granite",
-    "basaltTitle": "Natural stone and personal design"
-  },
   "ProcessSteps": {
-    "sectionAriaLabel": "Our process",
-    "heading": "Our process",
-    "intro": "At Alper Marble, we understand that every headstone is a whole life story. Our team accompanies you with sensitivity and dedication, from planning to final installation, while upholding a long-standing tradition of quality and craftsmanship.",
-    "step1Title": "Consultation meeting",
-    "step1Desc": "Our team accompanies families personally, from planning to final installation, with attention to the smallest details.",
-    "step2Title": "Planning and design",
-    "step2Desc": "Precise matching of the stone type, inscription, and artistic elements to the family's wishes and the memory of the deceased.",
-    "step3Title": "Artistic production",
-    "step3Desc": "Meticulous handwork combining modern technology with a longstanding tradition of stone carving craftsmanship.",
-    "step4Title": "On-site installation",
-    "step4Desc": "Professional, stable installation at cemeteries, with attention to a perfect finish and long-term durability."
+    "sectionAriaLabel": "How it works",
+    "step1Title": "Consultation",
+    "step2Title": "Design and wording",
+    "step3Title": "Made in our workshop",
+    "step4Title": "Installation at the cemetery"
+  },
+  "FamilyNote": {
+    "sectionAriaLabel": "Family business",
+    "eyebrow": "A family business since {year}",
+    "statement": "The Alper family guides you personally, from the first conversation to the installation."
+  },
+  "ContactBand": {
+    "sectionAriaLabel": "Contact",
+    "heading": "We are here for you",
+    "callAriaLabel": "Call us: {phone}",
+    "whatsapp": "WhatsApp",
+    "leaveDetails": "Leave your details"
+  },
+  "WhatsAppFab": {
+    "ariaLabel": "Message us on WhatsApp"
   },
   "ContactForm": {
     "nameLabel": "Full name",

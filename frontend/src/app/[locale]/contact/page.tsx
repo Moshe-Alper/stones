@@ -6,6 +6,7 @@ import ContactForm from "@/components/ContactForm/ContactForm"
 import ContactDetails from "@/components/ContactDetails/ContactDetails"
 import ContactMap from "@/components/ContactMap/ContactMap"
 import TrustHighlights from "@/components/TrustHighlights/TrustHighlights"
+import FAQ from "@/components/FAQ/FAQ"
 import styles from "./page.module.css"
 
 export default function ContactPage() {
@@ -26,6 +27,7 @@ export default function ContactPage() {
           </div>
         </section>
         <TrustHighlights />
+        <FAQ />
       </main>
       <Footer />
     </>

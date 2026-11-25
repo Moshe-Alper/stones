@@ -71,6 +71,12 @@
 
 ## Change Log
 
+- 2026-11-25: Homepage redesigned photo-first (`.plan/020-2026-11-25-homepage-visual-redesign.md`):
+  `Hero` → `RecentWork` → `CategoryTiles` → `ProcessSteps` → `FamilyNote` → `ContactBand`.
+  `MaterialsGrid` and `ServiceArea` components removed; FAQ moved to the Contact page
+  (`/contact#faq`); a mobile-only `WhatsAppFab` renders on every page from the locale layout.
+  Homepage photos come from `frontend/src/data/gallery.ts` (`featured` order). External links
+  added: `wa.me` WhatsApp deep link (no API, no credentials).
 - 2026-11-22: Added the separate `agreements/` app (owner-created signing links, canvas signature,
   Israeli ID check, no SMS OTP, Hebrew only). No change to the public site.
 - 2026-07-28: Removed the `frontend/scripts/gallery-import.ts` Google Photos/Anthropic gallery

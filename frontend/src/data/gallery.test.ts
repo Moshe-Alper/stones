@@ -1,7 +1,7 @@
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { GALLERY_PHOTOS } from "./gallery";
+import { GALLERY_PHOTOS, getFeaturedPhotos } from "./gallery";
 import { CATEGORIES } from "@/components/CatalogGrid/categories";
 
 const GALLERY_DIR = path.join(
@@ -36,3 +36,18 @@ describe("GALLERY_PHOTOS manifest", () => {
     });
   });
 });
+
+describe("getFeaturedPhotos", () => {
+  it("returns the 8 homepage photos in featured order", () => {
+    const featured = getFeaturedPhotos()
+    expect(featured).toHaveLength(8)
+    expect(featured.map((photo) => photo.featured)).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
+  })
+
+  it("uses each featured position at most once", () => {
+    const positions = GALLERY_PHOTOS.flatMap((photo) =>
+      photo.featured === undefined ? [] : [photo.featured],
+    )
+    expect(new Set(positions).size).toBe(positions.length)
+  })
+})

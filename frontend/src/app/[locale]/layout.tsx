@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Frank_Ruhl_Libre, Heebo, Noto_Sans, Noto_Serif } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { CONTACT_DETAILS } from "@/data/contact";
+import WhatsAppFab from "@/components/WhatsAppFab/WhatsAppFab";
 import "../globals.css";
 
 const frankRuhlLibre = Frank_Ruhl_Libre({
@@ -96,7 +97,10 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <WhatsAppFab />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

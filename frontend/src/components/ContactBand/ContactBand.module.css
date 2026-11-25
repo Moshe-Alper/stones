@@ -1,0 +1,82 @@
+.section {
+  margin-top: 112px;
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
+}
+
+.inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  font-size: 44px;
+  font-weight: 500;
+}
+
+.area {
+  font-size: 16px;
+  color: var(--color-on-dark-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.phone,
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  font-size: 18px;
+}
+
+.phone {
+  background: var(--color-accent-light);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.whatsapp {
+  border: 1px solid rgba(251, 249, 244, 0.6);
+  font-weight: 500;
+}
+
+.form {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 20px;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+@media (max-width: 820px) {
+  .section {
+    margin-top: 72px;
+  }
+
+  .inner {
+    padding: 56px 24px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+}

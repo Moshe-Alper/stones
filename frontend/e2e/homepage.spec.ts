@@ -17,7 +17,7 @@ test.describe("Homepage", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "he");
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
     await expect(
-      page.getByRole("heading", { name: "כיבוד זיכרון יקיריכם בכבוד ובעדינות" })
+      page.getByRole("heading", { name: "מצבות בעבודת יד, לזכר יקיריכם" })
     ).toBeVisible()
 
     expect(consoleErrors).toEqual([]);
@@ -26,7 +26,7 @@ test.describe("Homepage", () => {
   test("header nav links point to the expected hrefs", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.getByRole("link", { name: "בקשת ייעוץ" })).toHaveAttribute(
+    await expect(page.getByRole("navigation").getByRole("link", { name: "צור קשר" })).toHaveAttribute(
       "href",
       "/contact"
     );
@@ -40,17 +40,34 @@ test.describe("Homepage", () => {
     ).toHaveAttribute("href", "/");
   });
 
-  test("hero CTAs point to the catalog and brand-story anchor", async ({ page }) => {
+  test("hero CTAs point to recent work and the contact page", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.getByRole("link", { name: "לצפייה בקטלוג" })).toHaveAttribute(
+    await expect(page.getByRole("link", { name: "לצפייה בעבודות" })).toHaveAttribute(
       "href",
-      "/catalog"
+      "#works"
     );
-    await expect(page.getByRole("link", { name: "סיפור המותג" })).toHaveAttribute(
+    await expect(page.getByRole("link", { name: "דברו איתנו" })).toHaveAttribute(
       "href",
-      "#brand-story"
+      "/contact"
     );
+  });
+
+  test("shows the photo-first sections and no FAQ", async ({ page }) => {
+    await page.goto("/");
+
+    await expect(page.locator("#works img")).toHaveCount(8);
+    await expect(page.getByRole("heading", { name: "בחרו סוג אבן" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "וואטסאפ" })).toHaveAttribute(
+      "href",
+      "https://wa.me/972505282431"
+    );
+    await expect(page.locator("#faq")).toHaveCount(0);
+  });
+
+  test("FAQ now lives on the contact page", async ({ page }) => {
+    await page.goto("/contact#faq");
+    await expect(page.getByRole("heading", { name: "שאלות נפוצות" })).toBeVisible();
   });
 
   test("catalog and contact routes resolve without 404", async ({ page }) => {

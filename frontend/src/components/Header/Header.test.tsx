@@ -38,4 +38,12 @@ describe("Header", () => {
     expect(screen.getByRole("button", { name: "EN" })).not.toBeDisabled();
     expect(screen.getByRole("button", { name: "RU" })).not.toBeDisabled();
   });
+
+  it("points the FAQ link at the FAQ section on the contact page", () => {
+    render(<Header />);
+    expect(screen.getByRole("link", { name: "שאלות נפוצות" })).toHaveAttribute(
+      "href",
+      "/contact#faq"
+    );
+  });
 });

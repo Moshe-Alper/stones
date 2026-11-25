@@ -1,0 +1,33 @@
+.section {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 96px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+}
+
+.statement {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+@media (max-width: 820px) {
+  .section {
+    padding-top: 64px;
+  }
+
+  .statement {
+    font-size: 28px;
+  }
+}

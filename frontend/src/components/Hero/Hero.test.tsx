@@ -1,26 +1,30 @@
-import { describe, expect, it } from "vitest";
-import { screen } from "@testing-library/react";
-import { renderWithIntl as render } from "@/test/renderWithIntl";
-import Hero from "./Hero";
+import { describe, expect, it } from "vitest"
+import { screen } from "@testing-library/react"
+import { renderWithIntl as render } from "@/test/renderWithIntl"
+import Hero from "./Hero"
 
 describe("Hero", () => {
-  it("renders the heading and subheading copy", () => {
-    render(<Hero />);
+  it("renders the single-line heading without a subheading paragraph", () => {
+    const { container } = render(<Hero />)
     expect(
-      screen.getByRole("heading", { name: "כיבוד זיכרון יקיריכם בכבוד ובעדינות" })
-    ).toBeInTheDocument();
-    expect(screen.getByText(/אנו מתמחים ביצירת מצבות/)).toBeInTheDocument();
-  });
+      screen.getByRole("heading", { name: "מצבות בעבודת יד, לזכר יקיריכם" }),
+    ).toBeInTheDocument()
+    expect(container.querySelector("p")).toBeNull()
+  })
 
-  it("renders a CTA linking to the catalog", () => {
-    render(<Hero />);
-    const catalogLink = screen.getByRole("link", { name: "לצפייה בקטלוג" });
-    expect(catalogLink).toHaveAttribute("href", "/catalog");
-  });
+  it("shows a real gallery photo with descriptive alt text", () => {
+    render(<Hero />)
+    const image = screen.getByRole("img", { name: /מצבה משיש חברוני/ })
+    expect(image.getAttribute("src")).toContain("gallery-88.jpg")
+  })
 
-  it("renders a CTA linking to the FAQ anchor", () => {
-    render(<Hero />);
-    const faqLink = screen.getByRole("link", { name: "שאלות נפוצות" });
-    expect(faqLink).toHaveAttribute("href", "#faq");
-  });
-});
+  it("links the primary CTA to the recent-work section", () => {
+    render(<Hero />)
+    expect(screen.getByRole("link", { name: "לצפייה בעבודות" })).toHaveAttribute("href", "#works")
+  })
+
+  it("links the secondary CTA to the contact page", () => {
+    render(<Hero />)
+    expect(screen.getByRole("link", { name: "דברו איתנו" })).toHaveAttribute("href", "/contact")
+  })
+})
