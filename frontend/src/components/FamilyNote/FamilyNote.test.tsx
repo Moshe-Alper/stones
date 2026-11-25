@@ -4,9 +4,9 @@ import { renderWithIntl as render } from "@/test/renderWithIntl"
 import FamilyNote from "./FamilyNote"
 
 describe("FamilyNote", () => {
-  it("shows the founding-year line with the current placeholder year", () => {
+  it("shows the founding-year line with the founding year", () => {
     render(<FamilyNote />)
-    expect(screen.getByText("עסק משפחתי מאז 3002")).toBeInTheDocument()
+    expect(screen.getByText("עסק משפחתי מאז 1965")).toBeInTheDocument()
   })
 
   it("renders the one-sentence statement as the section heading", () => {
