@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Alper Marble",
-    "description": "Leading the culture of memorialization in the Pardes Hana-Karkur area for over 50 years, with an emphasis on quality, sensitivity, and timeless design. {areaSummary}.",
+    "description": "Crafting memorial stones in the Pardes Hana-Karkur area for over 60 years, with care for quality, sensitivity and timeless design. {areaSummary}.",
     "businessName": "Alper Marble"
   },
   "Header": {
@@ -20,7 +20,7 @@
   },
   "Footer": {
     "brandName": "Alper Marble",
-    "brandBlurb": "Leading the culture of memorialization in the Pardes Hana-Karkur area for over 50 years, with an emphasis on quality, sensitivity, and timeless design.",
+    "brandBlurb": "Crafting memorial stones in the Pardes Hana-Karkur area for over 60 years, with care for quality, sensitivity and timeless design.",
     "navHeading": "Quick links",
     "navCatalogProducts": "Product catalog",
     "navStoneTypes": "Stone types",
@@ -54,12 +54,12 @@
   },
   "ServiceArea": {
     "sectionAriaLabel": "Service area",
-    "summary": "We operate across Pardes Hana-Karkur, Hadera, and the Menashe and Alona regional-council communities, and onward up to Haifa",
+    "summary": "We serve Pardes Hana-Karkur, Hadera, the Menashe and Alona regional councils, and as far as Haifa",
     "towns": [
       "Pardes Hana-Karkur",
       "Hadera",
       "Menashe & Alona region",
-      "Up to Haifa"
+      "As far as Haifa"
     ]
   },
   "FAQ": {
@@ -68,7 +68,7 @@
     "q1Question": "Which areas do you operate in?",
     "q1AnswerTemplate": "{summary}. Our studio and workshop are located in Pardes Hana-Karkur, next to the cemetery.",
     "q2Question": "Do you also handle approvals with the cemetery?",
-    "q2Answer": "Yes, our team accompanies you with the cemetery administration to coordinate measurements, approve the design, and set the installation date, so you don't have to deal with the bureaucracy during this difficult time.",
+    "q2Answer": "Yes. We handle the cemetery administration for you: coordinating measurements, getting the design approved and setting the installation date, so you don't have to deal with paperwork at this difficult time.",
     "q3Question": "Which stone types are recommended for Israel's weather conditions?",
     "q3Answer": "Granite and quality marble are the common choice thanks to their resistance to heat, moisture, and direct sunlight over decades. We're happy to help choose the most suitable stone type and finish during the consultation meeting.",
     "q4Question": "What's included in the price?",
@@ -84,19 +84,19 @@
   "Categories": {
     "hebron-marble": {
       "title": "Hebron marble",
-      "description": "The well-known and beloved stone in Israeli cemeteries, in a variety of finishes."
+      "description": "The familiar, much-loved stone of Israeli cemeteries, in a variety of finishes."
     },
     "turkish-marble": {
       "title": "Turkish marble",
-      "description": "High-quality white marble, durable for years with a classic-traditional style."
+      "description": "High-quality white marble: long-lasting, in a classic, traditional style."
     },
     "granite": {
       "title": "Granite headstones",
-      "description": "Uncompromising strength, a prestigious look, and a range of colors — black, gray, red, and blue."
+      "description": "Exceptional strength, an elegant look and a choice of colors: black, gray, red and blue."
     },
     "special": {
       "title": "Special headstones",
-      "description": "A combination of fieldstones, artistic designs, and personal sculpture reflecting the character of the deceased."
+      "description": "Fieldstones, artistic designs and personal carving that reflects the person being remembered."
     }
   },
   "CatalogGrid": {
@@ -104,7 +104,7 @@
     "title": "Design catalog",
     "subtitle": "A selection of headstones in Hebron marble, Turkish marble, granite, and special designs, custom made by Alper Marble.",
     "countLabel": "Showing {count} featured categories",
-    "badgeFeatured": "Most requested",
+    "badgeFeatured": "Most popular",
     "viewGallery": "View gallery"
   },
   "CategoryGallery": {
@@ -133,7 +133,7 @@
   },
   "ContactBand": {
     "sectionAriaLabel": "Contact",
-    "heading": "We are here for you",
+    "heading": "We're here for you",
     "callAriaLabel": "Call us: {phone}",
     "whatsapp": "WhatsApp",
     "leaveDetails": "Leave your details"
@@ -176,7 +176,7 @@
   "ContactMap": {
     "sectionAriaLabel": "Studio location",
     "studioLabel": "Studio and workshop",
-    "hours": "Open between 08:30 - 17:30",
+    "hours": "Open 08:30–17:30",
     "mapFallbackAriaLabel": "Studio location map",
     "mapTitle": "Studio location map",
     "activateMapLabel": "Tap for an interactive map",
@@ -199,7 +199,7 @@
   "CatalogFilters": {
     "sidebarAriaLabel": "Filter headstones",
     "ctaText": "Here for you at every step of the way.",
-    "ctaButton": "Personal consultation, from the heart"
+    "ctaButton": "Personal consultation"
   },
   "Pagination": {
     "ariaLabel": "Pagination",

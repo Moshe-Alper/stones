@@ -116,3 +116,8 @@ Last updated: 2026-11-25
   "ייעוץ אישי מהמשפחה שלנו" vs current "ייעוץ אישי ומקצועי") and `e2e/product.spec.ts` (7, the product route was
   removed in `e7efc9f`). Proposed as a separate cleanup.
 - Footer blurb still says "למעלה מ-50 שנה" — conflicts with the 3002 placeholder until the real year is set.
+
+## Follow-up (2026-11-25, after PR #4 went live)
+
+- Founding year set to **1965** (owner). "Over 50 years" in the footer/meta description updated to "over 60 years" in all locales to match.
+- EN/RU translation review by Claude (owner delegated the review): fixed awkward/literal phrasing ("leading the culture of memorialization"), RU style filters (`Модерн` means Art Nouveau → `Современный`), RU "Вечер" for 15:00–17:30 → "После обеда", unified the "most popular" badge wording, unified the RU family-name spelling to "Альпер", gentler EN wording for the special-headstones description.

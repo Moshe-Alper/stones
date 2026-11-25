@@ -39,9 +39,7 @@ export const CONTACT_DETAILS = {
   wazeUrl: `https://waze.com/ul?q=${ENCODED_MAP_QUERY}&navigate=yes`,
 } as const
 
-// TODO(owner): 3002 is a deliberately wrong placeholder so it stands out on the live
-// site until Moshik supplies the real founding year (.plan/020, question 3).
-export const BUSINESS_FOUNDED_YEAR = 3002
+export const BUSINESS_FOUNDED_YEAR = 1965
 
 export type ContactInquiry = {
   name: string
