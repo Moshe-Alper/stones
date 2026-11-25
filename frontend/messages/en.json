@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Alper Marble",
-    "description": "Crafting memorial stones in the Pardes Hana-Karkur area for over 60 years, with care for quality, sensitivity and timeless design. {areaSummary}.",
+    "description": "Alper Marble – Leading memorial craftsmanship in the Pardes Hana-Karkur area and its surroundings. Our factory and offices are in Pardes Hana, right next to the cemetery. {areaSummary}.",
     "businessName": "Alper Marble"
   },
   "Header": {
@@ -20,7 +20,7 @@
   },
   "Footer": {
     "brandName": "Alper Marble",
-    "brandBlurb": "Crafting memorial stones in the Pardes Hana-Karkur area for over 60 years, with care for quality, sensitivity and timeless design.",
+    "brandBlurb": "Leading memorial craftsmanship in the Pardes Hana-Karkur area and its surroundings. Our factory and offices are in Pardes Hana, right next to the cemetery.",
     "navHeading": "Quick links",
     "navCatalogProducts": "Product catalog",
     "navStoneTypes": "Stone types",
@@ -37,7 +37,8 @@
   "Hero": {
     "ariaLabel": "Introduction",
     "heading": "Handcrafted memorial stones, in memory of your loved ones",
-    "imageAlt": "Hebron marble memorial stone with river pebbles, made by Alper Marble",
+    "imageAlt": "The front of the Alper Marble factory in Pardes Hana, with its sign",
+    "photoPlaceholder": "Front of the factory with the sign",
     "ctaWorks": "See our work",
     "ctaContact": "Talk to us"
   },
@@ -46,6 +47,19 @@
     "heading": "Recent work",
     "viewAll": "Full gallery",
     "photoAlt": "{category} – made by Alper Marble"
+  },
+  "OurFactory": {
+    "sectionAriaLabel": "Our factory",
+    "heading": "Our factory in Pardes Hana",
+    "subheading": "Every memorial stone is made here, from raw stone to installation.",
+    "photos": {
+      "truck": "The factory truck",
+      "crane": "Crane at work",
+      "forklift": "Forklift loading stone",
+      "cutter": "Stone cutting machine",
+      "tools": "Work and engraving tools",
+      "finished": "Finished memorial stones before installation"
+    }
   },
   "CategoryTiles": {
     "sectionAriaLabel": "Stone types",
@@ -67,13 +81,9 @@
     "sectionAriaLabel": "FAQ",
     "heading": "Frequently asked questions",
     "q1Question": "Which areas do you operate in?",
-    "q1AnswerTemplate": "{summary}. Our studio and workshop are located in Pardes Hana-Karkur, next to the cemetery.",
-    "q2Question": "Do you also handle approvals with the cemetery?",
-    "q2Answer": "Yes. We handle the cemetery administration for you: coordinating measurements, getting the design approved and setting the installation date, so you don't have to deal with paperwork at this difficult time.",
-    "q3Question": "Which stone types are recommended for Israel's weather conditions?",
-    "q3Answer": "Granite and quality marble are the common choice thanks to their resistance to heat, moisture, and direct sunlight over decades. We're happy to help choose the most suitable stone type and finish during the consultation meeting.",
-    "q4Question": "What's included in the price?",
-    "q4Answer": "The price covers the stone, the design, production, and installation at the cemetery. The lettering (engraving the inscription) is not included and is quoted separately based on the amount of text."
+    "q1AnswerTemplate": "{summary}. We are the Pardes Hana business: our factory and offices are here, right next to the cemetery.",
+    "q2Question": "Which stone types are recommended for Israel's weather conditions?",
+    "q2Answer": "We recommend granite, marble and Galilean dolomite rock. These are hard stones that hold up well to heat, rain and the Israeli sun for many years. We'd be glad to show you the options at our factory and match the stone to your taste and budget."
   },
   "Breadcrumb": {
     "navAriaLabel": "Breadcrumb",
@@ -83,19 +93,91 @@
   "Categories": {
     "hebron-marble": {
       "title": "Hebron marble",
-      "description": "The familiar, much-loved stone of Israeli cemeteries, in a variety of finishes."
+      "description": "The familiar, much-loved stone of Israeli cemeteries, in a variety of finishes.",
+      "sections": [
+        {
+          "title": "About the stone",
+          "text": "A limestone from the Hebron hills, in a light, warm tone. It is the most common stone in Israeli cemeteries."
+        },
+        {
+          "title": "Why choose it",
+          "text": "A traditional, familiar look; easy to work and engrave, and relatively affordable."
+        },
+        {
+          "title": "Care",
+          "text": "An occasional clean with water and a soft brush. No special products needed."
+        },
+        {
+          "title": "Combinations",
+          "text": "Pairs well with dark granite, river pebbles and raised lettering."
+        }
+      ]
     },
     "turkish-marble": {
       "title": "Turkish marble",
-      "description": "High-quality white marble: long-lasting, in a classic, traditional style."
+      "description": "High-quality white marble: long-lasting, in a classic, traditional style.",
+      "sections": [
+        {
+          "title": "About the stone",
+          "text": "A white-grey marble with delicate veining, imported from Turkey."
+        },
+        {
+          "title": "Why choose it",
+          "text": "A clean, elegant look that lasts for years."
+        },
+        {
+          "title": "Care",
+          "text": "Gentle, regular cleaning to prevent stains from leaves and dust."
+        },
+        {
+          "title": "Combinations",
+          "text": "Suits a classic design, on its own or with a granite frame."
+        }
+      ]
     },
     "granite": {
       "title": "Granite headstones",
-      "description": "Exceptional strength, an elegant look and a choice of colors: black, gray, red and blue."
+      "description": "Exceptional strength, an elegant look and a choice of colors: black, gray, red and blue.",
+      "sections": [
+        {
+          "title": "About the stone",
+          "text": "A very hard stone in a range of colours: black, grey, red and blue."
+        },
+        {
+          "title": "Why choose it",
+          "text": "Exceptionally resistant to sun and rain. The polish and colour last, and the inscription stays legible."
+        },
+        {
+          "title": "Care",
+          "text": "Almost maintenance-free; cleaning with water is enough."
+        },
+        {
+          "title": "Combinations",
+          "text": "Several granite shades can be combined, or granite with Hebron marble, for contrast."
+        }
+      ]
     },
     "special": {
       "title": "Special headstones",
-      "description": "Fieldstones, artistic designs and personal carving that reflects the person being remembered."
+      "description": "Fieldstones, artistic designs and personal carving that reflects the person being remembered.",
+      "sections": [
+        {
+          "title": "What it is",
+          "text": "Personally designed memorial stones: field stones, Galilean dolomite rock, sculpture and artistic work."
+        },
+        {
+          "title": "Why choose it",
+          "text": "When you want a stone that says something about the person and stands apart."
+        },
+        {
+          "title": "How it works",
+          "text": "We sit together, hear about your loved one and propose a design. We start work only after you approve it."
+        },
+        {
+          "title": "Materials",
+          "text": "Natural rock, Galilean dolomite, and combinations with marble and granite, depending on the design."
+        }
+      ]
     }
   },
   "CatalogPage": {
@@ -159,7 +241,7 @@
   },
   "ContactDetails": {
     "sectionAriaLabel": "Contact details",
-    "addressCardLabel": "Studio address",
+    "addressCardLabel": "Factory address",
     "emailCardLabel": "Email"
   },
   "ContactHero": {
@@ -169,15 +251,15 @@
     "formIntro": "Or leave your details and we'll get back to you"
   },
   "ContactMap": {
-    "sectionAriaLabel": "Studio location",
-    "studioLabel": "Studio and workshop",
+    "sectionAriaLabel": "Factory location",
+    "studioLabel": "Factory and offices",
     "hours": "Open 08:30–17:30",
-    "mapFallbackAriaLabel": "Studio location map",
-    "mapTitle": "Studio location map",
+    "mapFallbackAriaLabel": "Factory location map",
+    "mapTitle": "Factory location map",
     "activateMapLabel": "Tap for an interactive map",
-    "navigateAriaLabel": "Navigate to the studio on Google Maps",
+    "navigateAriaLabel": "Navigate to the factory on Google Maps",
     "navigateLabel": "Navigate",
-    "wazeAriaLabel": "Navigate to the studio on Waze",
+    "wazeAriaLabel": "Navigate to the factory on Waze",
     "wazeLabel": "Waze"
   },
   "TrustHighlights": {

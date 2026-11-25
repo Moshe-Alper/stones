@@ -9,16 +9,16 @@ describe("ContactMap", () => {
   it("embeds the real studio map with hours and navigation links", () => {
     render(<ContactMap />)
 
-    const frame = screen.getByTitle("מפת מיקום הסטודיו")
+    const frame = screen.getByTitle("מפת מיקום המפעל")
     expect(frame.tagName).toBe("IFRAME")
     expect(frame).toHaveAttribute("src", CONTACT_DETAILS.mapsEmbedUrl)
 
     expect(screen.getByText(heMessages.ContactMap.hours)).toBeInTheDocument()
     expect(
-      screen.getByRole("link", { name: "ניווט לסטודיו במפות Google" }),
+      screen.getByRole("link", { name: "ניווט למפעל במפות Google" }),
     ).toHaveAttribute("href", CONTACT_DETAILS.mapsUrl)
     expect(
-      screen.getByRole("link", { name: "ניווט לסטודיו ב-Waze" }),
+      screen.getByRole("link", { name: "ניווט למפעל ב-Waze" }),
     ).toHaveAttribute("href", CONTACT_DETAILS.wazeUrl)
     expect(screen.queryByRole("img")).not.toBeInTheDocument()
   })
@@ -26,7 +26,7 @@ describe("ContactMap", () => {
   it("keeps the map inert until the visitor taps to activate it", () => {
     render(<ContactMap />)
 
-    const frame = screen.getByTitle("מפת מיקום הסטודיו")
+    const frame = screen.getByTitle("מפת מיקום המפעל")
     expect(frame.className).not.toContain("mapFrameActive")
 
     const activateButton = screen.getByRole("button", {

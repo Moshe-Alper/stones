@@ -25,6 +25,12 @@
 - `featured photo`
 	- Canonical meaning: a gallery photo shown in the homepage "Recent work" grid, marked with `featured: <position>` in `frontend/src/data/gallery.ts`.
 	- Use: use `featured` for this flag; do not call it "highlight" or "hero photo" (the hero image is separate).
+- `factory`
+	- Canonical meaning: Alper Marble's factory and offices in Pardes Hana, next to the cemetery (Hebrew: "המפעל והמשרדים").
+	- Use: use "factory" (מפעל) in copy and code; do not call it "studio" (סטודיו) or "workshop".
+- `factory photo`
+	- Canonical meaning: a photo of the business itself (front with sign, vehicles, machines, finished stones), listed in `frontend/src/data/factory-photos.ts`.
+	- Use: distinct from gallery photos of installed headstones; until supplied, it renders as a `PhotoPlaceholder`.
 
 ## Naming Alignment
 - Keep this glossary aligned with naming decisions in `../.rule/naming-rules.md`.
