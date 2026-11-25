@@ -1,6 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react"
+import { fireEvent, screen } from "@testing-library/react"
+import { renderWithIntl as render } from "@/test/renderWithIntl"
 import { describe, expect, it } from "vitest"
 import { CONTACT_DETAILS } from "@/data/contact"
+import heMessages from "../../../messages/he.json"
 import ContactMap from "./ContactMap"
 
 describe("ContactMap", () => {
@@ -11,7 +13,7 @@ describe("ContactMap", () => {
     expect(frame.tagName).toBe("IFRAME")
     expect(frame).toHaveAttribute("src", CONTACT_DETAILS.mapsEmbedUrl)
 
-    expect(screen.getByText(CONTACT_DETAILS.hours)).toBeInTheDocument()
+    expect(screen.getByText(heMessages.ContactMap.hours)).toBeInTheDocument()
     expect(
       screen.getByRole("link", { name: "ניווט לסטודיו במפות Google" }),
     ).toHaveAttribute("href", CONTACT_DETAILS.mapsUrl)

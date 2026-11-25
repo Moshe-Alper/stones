@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithIntl as render } from "@/test/renderWithIntl";
 import Breadcrumb from "./Breadcrumb";
 
 describe("Breadcrumb", () => {
@@ -10,6 +11,14 @@ describe("Breadcrumb", () => {
       "href",
       "/"
     );
+  });
+
+  it("orders the default trail Home first, current page last", () => {
+    const { container } = render(<Breadcrumb />);
+    const labels = Array.from(container.querySelectorAll("li")).map((li) =>
+      li.textContent?.trim()
+    );
+    expect(labels).toEqual(["בית", "קטלוג מצבות"]);
   });
 
   it("marks the default current page with aria-current", () => {
@@ -24,9 +33,9 @@ describe("Breadcrumb", () => {
     render(
       <Breadcrumb
         items={[
-          { label: "מצבת גרניט שחורה אבסולוט" },
-          { label: "מצבות גרניט", href: "/catalog/granite" },
           { label: "קטלוג מצבות", href: "/catalog" },
+          { label: "מצבות גרניט", href: "/catalog/granite" },
+          { label: "מצבת גרניט שחורה אבסולוט" },
         ]}
       />
     );

@@ -22,6 +22,9 @@
 - `opening agreement`
 	- Canonical meaning: a signed payment commitment from a family member, obtained before the owner opens an existing memorial stone.
 	- Use: entity `agreement` in the separate `agreements/` app; the person who signs is the `signer`. Not part of the public website.
+- `featured photo`
+	- Canonical meaning: a gallery photo shown in the homepage "Recent work" grid, marked with `featured: <position>` in `frontend/src/data/gallery.ts`.
+	- Use: use `featured` for this flag; do not call it "highlight" or "hero photo" (the hero image is separate).
 
 ## Naming Alignment
 - Keep this glossary aligned with naming decisions in `../.rule/naming-rules.md`.

@@ -1,23 +1,26 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 import styles from "./Header.module.css";
 
-const NAV_LINKS = [
-  { href: "/catalog", label: "קטלוג" },
-  { href: "/renovation", label: "שיקום מצבות" },
-  { href: "/#faq", label: "שאלות נפוצות" },
-];
-
 export default function Header() {
+  const t = useTranslations("Header");
+
+  const NAV_LINKS = [
+    { href: "/catalog", label: t("navCatalog") },
+    { href: "/contact#faq", label: t("navFaq") },
+  ];
+
   return (
     <header className={styles.header}>
-      <nav className={styles.nav} aria-label="ניווט ראשי">
-        <Link href="/" className={styles.brand} aria-label="שיש אלפר, לעמוד הבית">
+      <nav className={styles.nav} aria-label={t("navAriaLabel")}>
+        <Link href="/" className={styles.brand} aria-label={t("brandAriaLabel")}>
           <span className={styles.brandMark} aria-hidden="true" />
-          שיש אלפר
+          {t("brand")}
         </Link>
         <ul className={styles.links}>
           {NAV_LINKS.map((link) => (
-            <li key={link.label}>
+            <li key={link.href}>
               <Link href={link.href} className={styles.link}>
                 {link.label}
               </Link>
@@ -25,17 +28,9 @@ export default function Header() {
           ))}
         </ul>
         <div className={styles.actions}>
-          {/* Visual-only language switcher — not functional (out of scope). */}
-          <button
-            type="button"
-            className={styles.langSwitcher}
-            aria-label="בחירת שפה"
-            disabled
-          >
-            RU | EN | עברית
-          </button>
+          <LanguageSwitcher />
           <Link href="/contact" className={styles.ctaButton}>
-            צור קשר
+            {t("ctaContact")}
           </Link>
         </div>
       </nav>

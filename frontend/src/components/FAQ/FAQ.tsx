@@ -1,42 +1,21 @@
-import { SERVICE_AREA } from "@/data/contact";
+import { useTranslations } from "next-intl";
 import styles from "./FAQ.module.css";
 
-const QUESTIONS = [
-  {
-    q: "באילו אזורים אתם פעילים?",
-    a: `${SERVICE_AREA.summary}. הסטודיו ובית המלאכה שלנו ממוקמים בפרדס חנה-כרכור, צמוד לבית העלמין.`,
-  },
-  {
-    q: "כמה זמן לוקח תהליך ההזמנה וההצבה של מצבה?",
-    a: "בממוצע כ-4 עד 8 שבועות ממועד אישור העיצוב ועד להצבה בבית העלמין, בהתאם לסוג האבן ומורכבות הכיתוב. אנו מתעדפים הזמנות בהתאם למועדי הלוויה וההקמה הנדרשים על פי ההלכה.",
-  },
-  {
-    q: "האם אתם מטפלים גם באישורים מול בית העלמין?",
-    a: "כן, הצוות שלנו מלווה אתכם מול הנהלת בית העלמין לצורך תיאום מידות, אישור העיצוב וקביעת מועד ההצבה, כך שלא תצטרכו להתעסק בבירוקרטיה בזמן הקשה הזה.",
-  },
-  {
-    q: "אילו סוגי אבן מומלצים לתנאי מזג האוויר בישראל?",
-    a: "גרניט ושיש איכותי הם הבחירה הנפוצה בזכות עמידותם לחום, לחות ולקרינת שמש ישירה לאורך עשרות שנים. נשמח להתאים את סוג האבן והגימור המתאימים ביותר בפגישת הייעוץ.",
-  },
-  {
-    q: "מה כלול באחריות שאתם נותנים?",
-    a: "האחריות שלנו מכסה את יציבות ההקמה, איכות האבן והכיתוב לאורך שנים. במקרה של נזק כתוצאה ממזג אוויר, שקיעת קרקע או בלאי טבעי, אנו מציעים שירותי תחזוקה ושיפוץ מצבות.",
-  },
-  {
-    q: "אפשר להזמין תוספת כיתוב או עדכון למצבה קיימת?",
-    a: "בהחלט. אנו מבצעים חריטת כיתוב נוסף, עדכון תאריכים ותיקוני צבע על מצבות קיימות, גם כאלה שלא הוקמו על ידינו במקור.",
-  },
-  {
-    q: "כמה זמן לוקח שיקום של מצבה קיימת?",
-    a: "רוב עבודות השיקום, כגון ניקוי, חיזוק יסודות ושיקום כיתוב, נמשכות בין יום עבודה בודד למספר ימים בהתאם להיקף הנזק. פרטים נוספים בעמוד שירותי השיקום.",
-  },
-];
-
 export default function FAQ() {
+  const t = useTranslations("FAQ");
+  const tServiceArea = useTranslations("ServiceArea");
+
+  const QUESTIONS = [
+    { q: t("q1Question"), a: t("q1AnswerTemplate", { summary: tServiceArea("summary") }) },
+    { q: t("q2Question"), a: t("q2Answer") },
+    { q: t("q3Question"), a: t("q3Answer") },
+    { q: t("q4Question"), a: t("q4Answer") },
+  ];
+
   return (
-    <section id="faq" className={styles.section} aria-label="שאלות נפוצות">
+    <section id="faq" className={styles.section} aria-label={t("sectionAriaLabel")}>
       <div className={styles.inner}>
-        <h2 className={styles.heading}>שאלות נפוצות</h2>
+        <h2 className={styles.heading}>{t("heading")}</h2>
         <div className={styles.list}>
           {QUESTIONS.map((item) => (
             <details className={styles.item} key={item.q}>

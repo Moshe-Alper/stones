@@ -1,0 +1,228 @@
+{
+  "Metadata": {
+    "title": "Alper Marble",
+    "description": "Leading the culture of memorialization in the Pardes Hana-Karkur area for over 50 years, with an emphasis on quality, sensitivity, and timeless design. {areaSummary}.",
+    "businessName": "Alper Marble"
+  },
+  "Header": {
+    "navAriaLabel": "Main navigation",
+    "brandAriaLabel": "Alper Marble, to the homepage",
+    "brand": "Alper Marble",
+    "navCatalog": "Catalog",
+    "navFaq": "FAQ",
+    "ctaContact": "Contact us"
+  },
+  "LanguageSwitcher": {
+    "ariaLabel": "Choose language",
+    "he": "עברית",
+    "en": "EN",
+    "ru": "RU"
+  },
+  "Footer": {
+    "brandName": "Alper Marble",
+    "brandBlurb": "Leading the culture of memorialization in the Pardes Hana-Karkur area for over 50 years, with an emphasis on quality, sensitivity, and timeless design.",
+    "navHeading": "Quick links",
+    "navCatalogProducts": "Product catalog",
+    "navStoneTypes": "Stone types",
+    "navFaq": "FAQ",
+    "infoHeading": "More information",
+    "infoPrivacy": "Privacy policy",
+    "infoTerms": "Terms of use",
+    "infoAccessibility": "Accessibility",
+    "infoBlog": "Memorial blog",
+    "accessibilityBadge": "Accessibility AA",
+    "visitorsPlaceholder": "Visitors: 12,482",
+    "copyright": "© {year} Alper Marble. All rights reserved."
+  },
+  "Hero": {
+    "ariaLabel": "Introduction",
+    "heading": "Handcrafted memorial stones, in memory of your loved ones",
+    "imageAlt": "Hebron marble memorial stone with river pebbles, made by Alper Marble",
+    "ctaWorks": "See our work",
+    "ctaContact": "Talk to us"
+  },
+  "RecentWork": {
+    "sectionAriaLabel": "Recent work",
+    "heading": "Recent work",
+    "viewAll": "Full gallery",
+    "photoAlt": "{category} – made by Alper Marble"
+  },
+  "CategoryTiles": {
+    "sectionAriaLabel": "Stone types",
+    "heading": "Choose a stone",
+    "popularBadge": "Most popular"
+  },
+  "ServiceArea": {
+    "sectionAriaLabel": "Service area",
+    "summary": "We operate across Pardes Hana-Karkur, Hadera, and the Menashe and Alona regional-council communities, and onward up to Haifa",
+    "towns": [
+      "Pardes Hana-Karkur",
+      "Hadera",
+      "Menashe & Alona region",
+      "Up to Haifa"
+    ]
+  },
+  "FAQ": {
+    "sectionAriaLabel": "FAQ",
+    "heading": "Frequently asked questions",
+    "q1Question": "Which areas do you operate in?",
+    "q1AnswerTemplate": "{summary}. Our studio and workshop are located in Pardes Hana-Karkur, next to the cemetery.",
+    "q2Question": "Do you also handle approvals with the cemetery?",
+    "q2Answer": "Yes, our team accompanies you with the cemetery administration to coordinate measurements, approve the design, and set the installation date, so you don't have to deal with the bureaucracy during this difficult time.",
+    "q3Question": "Which stone types are recommended for Israel's weather conditions?",
+    "q3Answer": "Granite and quality marble are the common choice thanks to their resistance to heat, moisture, and direct sunlight over decades. We're happy to help choose the most suitable stone type and finish during the consultation meeting.",
+    "q4Question": "What's included in the price?",
+    "q4Answer": "The price covers the stone, the design, production, and installation at the cemetery. The lettering (engraving the inscription) is not included and is quoted separately based on the amount of text."
+  },
+  "Breadcrumb": {
+    "navAriaLabel": "Breadcrumb",
+    "defaultCatalogLabel": "Headstone catalog",
+    "homeLabel": "Home",
+    "backToCatalog": "Back to catalog",
+    "backToHome": "Back to home"
+  },
+  "Categories": {
+    "hebron-marble": {
+      "title": "Hebron marble",
+      "description": "The well-known and beloved stone in Israeli cemeteries, in a variety of finishes."
+    },
+    "turkish-marble": {
+      "title": "Turkish marble",
+      "description": "High-quality white marble, durable for years with a classic-traditional style."
+    },
+    "granite": {
+      "title": "Granite headstones",
+      "description": "Uncompromising strength, a prestigious look, and a range of colors — black, gray, red, and blue."
+    },
+    "special": {
+      "title": "Special headstones",
+      "description": "A combination of fieldstones, artistic designs, and personal sculpture reflecting the character of the deceased."
+    }
+  },
+  "CatalogGrid": {
+    "sectionAriaLabel": "Design catalog",
+    "title": "Design catalog",
+    "subtitle": "A selection of headstones in Hebron marble, Turkish marble, granite, and special designs, custom made by Alper Marble.",
+    "countLabel": "Showing {count} featured categories",
+    "badgeFeatured": "Most requested",
+    "viewGallery": "View gallery"
+  },
+  "CategoryGallery": {
+    "styleFilterAriaLabel": "Filter by style",
+    "filterAll": "All",
+    "filterClassic": "Classic",
+    "filterModern": "Modern",
+    "emptyState": "There are no photos in this style for this category.",
+    "galleryAriaLabel": "{categoryTitle} photos",
+    "enlargeAriaLabel": "Enlarge photo {index} of {categoryTitle}",
+    "photoAlt": "{categoryTitle} - photo {index}",
+    "lightboxAriaLabel": "Enlarged photo - {categoryTitle}",
+    "closeAriaLabel": "Close"
+  },
+  "ProcessSteps": {
+    "sectionAriaLabel": "How it works",
+    "step1Title": "Consultation",
+    "step2Title": "Design and wording",
+    "step3Title": "Made in our workshop",
+    "step4Title": "Installation at the cemetery"
+  },
+  "FamilyNote": {
+    "sectionAriaLabel": "Family business",
+    "eyebrow": "A family business since {year}",
+    "statement": "The Alper family guides you personally, from the first conversation to the installation."
+  },
+  "ContactBand": {
+    "sectionAriaLabel": "Contact",
+    "heading": "We are here for you",
+    "callAriaLabel": "Call us: {phone}",
+    "whatsapp": "WhatsApp",
+    "leaveDetails": "Leave your details"
+  },
+  "WhatsAppFab": {
+    "ariaLabel": "Message us on WhatsApp"
+  },
+  "ContactForm": {
+    "nameLabel": "Full name",
+    "namePlaceholder": "John Smith",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "050-0000000",
+    "preferredTimeLabel": "Preferred time to be contacted",
+    "messageLabel": "Message / special request",
+    "messagePlaceholder": "How can we help?",
+    "honeypotLabel": "Website",
+    "submitLabel": "Send request",
+    "submittingLabel": "Sending...",
+    "submittingStatus": "Sending your request...",
+    "errorMissingFields": "Please fill in all fields so we can get back to you.",
+    "errorGeneric": "We couldn't send your request. Please try again in a few moments.",
+    "successMessage": "Your request was sent successfully. We'll get back to you soon.",
+    "preferredTimeOptions": {
+      "morning": "Morning (08:00 - 12:00)",
+      "midday": "Midday (12:00 - 15:00)",
+      "afternoon": "Afternoon (15:00 - 17:30)"
+    }
+  },
+  "ContactDetails": {
+    "sectionAriaLabel": "Contact details",
+    "addressCardLabel": "Studio address",
+    "phoneCardLabel": "Direct phone",
+    "emailCardLabel": "Email",
+    "areaCardLabel": "Service area"
+  },
+  "ContactHero": {
+    "heading": "Personal, professional consultation",
+    "subtitle": "We're here to accompany you through the most sensitive moments, with professionalism, sensitivity, and attention to every detail."
+  },
+  "ContactMap": {
+    "sectionAriaLabel": "Studio location",
+    "studioLabel": "Studio and workshop",
+    "hours": "Open between 08:30 - 17:30",
+    "mapFallbackAriaLabel": "Studio location map",
+    "mapTitle": "Studio location map",
+    "activateMapLabel": "Tap for an interactive map",
+    "navigateAriaLabel": "Navigate to the studio on Google Maps",
+    "navigateLabel": "Navigate",
+    "wazeAriaLabel": "Navigate to the studio on Waze",
+    "wazeLabel": "Waze",
+    "workshopAlt": "Atmospheric photo of the family workshop",
+    "workshopLabel": "The family workshop"
+  },
+  "TrustHighlights": {
+    "sectionAriaLabel": "Our values",
+    "highlight1Title": "Personal design",
+    "highlight1Desc": "Every memorial is planned together with you to commemorate a personal story.",
+    "highlight2Title": "Full transparency",
+    "highlight2Desc": "Regular updates and photos throughout the entire production and installation process.",
+    "highlight3Title": "Warranty for generations",
+    "highlight3Desc": "We are committed to the quality of the stone and the work for decades to come."
+  },
+  "CatalogFilters": {
+    "sidebarAriaLabel": "Filter headstones",
+    "ctaText": "Here for you at every step of the way.",
+    "ctaButton": "Personal consultation, from the heart"
+  },
+  "Pagination": {
+    "ariaLabel": "Pagination",
+    "prevAriaLabel": "Previous",
+    "pageAriaLabel": "Page {page}"
+  },
+  "CatalogCategoryPage": {
+    "fallbackTitle": "Design gallery",
+    "notFoundNote": "Category not found.",
+    "ctaConsult": "Request a consultation"
+  },
+  "ContactPage": {
+    "gridAriaLabel": "Get in touch with the Alper family"
+  },
+  "ApiErrors": {
+    "invalidBody": "The inquiry details are missing or invalid.",
+    "invalidJson": "The request body is not valid JSON.",
+    "nameRequired": "Please enter your full name.",
+    "nameTooLong": "The name is too long.",
+    "phoneInvalid": "Please enter a valid phone number.",
+    "preferredTimeInvalid": "Please choose a preferred time from the list.",
+    "messageRequired": "Please enter a message.",
+    "messageTooLong": "The message is too long.",
+    "deliveryUnavailable": "We couldn't send your request right now. Please try again in a few minutes or contact us by phone."
+  }
+}

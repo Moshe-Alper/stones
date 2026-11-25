@@ -1,28 +1,32 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import styles from "./Footer.module.css";
 
-const INFO_LINKS = ["מדיניות פרטיות", "תנאי שימוש", "נגישות", "בלוג הנצחה"];
-const NAV_LINKS = [
-  { label: "קטלוג מוצרים", href: "/catalog" },
-  { label: "סוגי אבנים", href: "/catalog" },
-  { label: "שירותי תחזוקה", href: "/renovation" },
-  { label: "שאלות נפוצות", href: "/#faq" },
-];
-
 export default function Footer() {
+  const t = useTranslations("Footer");
+
+  const NAV_LINKS = [
+    { label: t("navCatalogProducts"), href: "/catalog" },
+    { label: t("navStoneTypes"), href: "/catalog" },
+    { label: t("navFaq"), href: "/contact#faq" },
+  ];
+  const INFO_LINKS = [
+    t("infoPrivacy"),
+    t("infoTerms"),
+    t("infoAccessibility"),
+    t("infoBlog"),
+  ];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.branding}>
-          <span className={styles.brandName}>שיש אלפר</span>
-          <p className={styles.brandBlurb}>
-            מובילים את תרבות ההנצחה באזור פרדס חנה-כרכור וסביבתה למעלה מ-50 שנה, עם דגש על
-            איכות, רגישות ועיצוב נצחי.
-          </p>
+          <span className={styles.brandName}>{t("brandName")}</span>
+          <p className={styles.brandBlurb}>{t("brandBlurb")}</p>
         </div>
         <div className={styles.linkColumns}>
           <div className={styles.column}>
-            <span className={styles.columnTitle}>ניווט מהיר</span>
+            <span className={styles.columnTitle}>{t("navHeading")}</span>
             <ul className={styles.list}>
               {NAV_LINKS.map((link) => (
                 <li className={styles.listItem} key={link.label}>
@@ -32,7 +36,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.column}>
-            <span className={styles.columnTitle}>מידע נוסף</span>
+            <span className={styles.columnTitle}>{t("infoHeading")}</span>
             <ul className={styles.list}>
               {INFO_LINKS.map((label) => (
                 <li className={styles.listItem} key={label}>
@@ -45,11 +49,13 @@ export default function Footer() {
       </div>
       <div className={styles.bottom}>
         <div className={styles.bottomLeft}>
-          <span className={styles.meta}>נגישות AA</span>
+          <span className={styles.meta}>{t("accessibilityBadge")}</span>
           {/* Static placeholder text only — no real visitor tracking (out of scope). */}
-          <span className={styles.meta}>מבקרים: 12,482</span>
+          <span className={styles.meta}>{t("visitorsPlaceholder")}</span>
         </div>
-        <span className={styles.copyright}>© {new Date().getFullYear()} שיש אלפר. כל הזכויות שמורות.</span>
+        <span className={styles.copyright}>
+          {t("copyright", { year: new Date().getFullYear() })}
+        </span>
       </div>
     </footer>
   );

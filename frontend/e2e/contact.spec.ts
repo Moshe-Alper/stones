@@ -119,7 +119,7 @@ test.describe("Contact page", () => {
 
     await expect(page.getByRole("link", { name: /טלפון ישיר/ })).toHaveAttribute(
       "href",
-      "tel:+97235558291",
+      "tel:+972505282431",
     )
     await expect(
       page.getByRole("link", { name: /דואר אלקטרוני/ }),

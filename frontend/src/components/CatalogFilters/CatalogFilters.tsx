@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import styles from "./CatalogFilters.module.css";
 
 // The material/style/price filter controls that used to live here were removed:
@@ -7,12 +8,14 @@ import styles from "./CatalogFilters.module.css";
 // filtering now lives where there's enough content for it to matter — see
 // CategoryGallery on the per-category gallery pages.
 export default function CatalogFilters() {
+  const t = useTranslations("CatalogFilters");
+
   return (
-    <aside className={styles.sidebar} aria-label="סינון מצבות">
+    <aside className={styles.sidebar} aria-label={t("sidebarAriaLabel")}>
       <div className={styles.ctaBox}>
-        <p className={styles.ctaText}>כאן בשבילכם בכל שלב בתהליך.</p>
+        <p className={styles.ctaText}>{t("ctaText")}</p>
         <Link href="/contact" className={styles.ctaButton}>
-          ייעוץ אישי מהלב
+          {t("ctaButton")}
         </Link>
       </div>
     </aside>

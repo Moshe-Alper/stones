@@ -6,12 +6,15 @@ export default defineConfig({
   reporter: "list",
   use: {
     baseURL: "http://localhost:3000",
+    // next-intl negotiates `/` from Accept-Language; pin Hebrew so the default
+    // (unprefixed) locale is what the specs exercise (.plan/017 known e2e break).
+    locale: "he-IL",
     trace: "on-first-retry",
   },
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"], locale: "he-IL" },
     },
   ],
   webServer: {
