@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./CategoryGallery.module.css";
 import { GALLERY_PHOTOS, type GalleryStyle } from "@/data/gallery";
-import type { CategorySlug } from "@/components/CatalogGrid/categories";
+import type { CategorySlug } from "@/data/categories";
 
 export default function CategoryGallery({
   category,

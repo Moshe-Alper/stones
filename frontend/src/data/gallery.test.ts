@@ -1,8 +1,8 @@
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { GALLERY_PHOTOS, getFeaturedPhotos } from "./gallery";
-import { CATEGORIES } from "@/components/CatalogGrid/categories";
+import { GALLERY_PHOTOS, getCategoryPhotoCount, getFeaturedPhotos } from "./gallery";
+import { CATEGORIES } from "@/data/categories";
 
 const GALLERY_DIR = path.join(
   __dirname,
@@ -49,5 +49,12 @@ describe("getFeaturedPhotos", () => {
       photo.featured === undefined ? [] : [photo.featured],
     )
     expect(new Set(positions).size).toBe(positions.length)
+  })
+})
+
+describe("getCategoryPhotoCount", () => {
+  it("counts every gallery photo exactly once across the categories", () => {
+    const total = CATEGORIES.reduce((sum, category) => sum + getCategoryPhotoCount(category.slug), 0)
+    expect(total).toBe(GALLERY_PHOTOS.length)
   })
 })

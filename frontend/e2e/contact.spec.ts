@@ -17,7 +17,7 @@ test.describe("Contact page", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "ייעוץ אישי מהמשפחה שלנו",
+        name: "ייעוץ אישי ומקצועי",
       }),
     ).toBeVisible()
     await expect(page.getByLabel("שם מלא")).toBeVisible()
@@ -42,11 +42,11 @@ test.describe("Contact page", () => {
       .getByLabel("הודעה / בקשה מיוחדת")
       .fill("אשמח לקבל פרטים על עיצוב אישי.")
     await page
-      .getByRole("button", { name: "שליחת בקשה למשפחה" })
+      .getByRole("button", { name: "שליחת הבקשה" })
       .click()
 
     await expect(
-      page.getByText("בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם."),
+      page.getByText("בקשתכם נשלחה בהצלחה. נחזור אליכם בהקדם."),
     ).toBeVisible()
   })
 
@@ -93,7 +93,7 @@ test.describe("Contact page", () => {
     await page
       .getByLabel("הודעה / בקשה מיוחדת")
       .fill("אשמח לקבל פרטים על עיצוב אישי.")
-    await page.getByRole("button", { name: "שליחת בקשה למשפחה" }).click()
+    await page.getByRole("button", { name: "שליחת הבקשה" }).click()
 
     await expect(
       page.getByText(
@@ -102,10 +102,10 @@ test.describe("Contact page", () => {
     ).toBeVisible()
     await expect(page.getByLabel("שם מלא")).toHaveValue("ישראל ישראלי")
 
-    await page.getByRole("button", { name: "שליחת בקשה למשפחה" }).click()
+    await page.getByRole("button", { name: "שליחת הבקשה" }).click()
 
     await expect(
-      page.getByText("בקשתכם נשלחה למשפחה. נחזור אליכם בהקדם."),
+      page.getByText("בקשתכם נשלחה בהצלחה. נחזור אליכם בהקדם."),
     ).toBeVisible()
     expect(requestCount).toBe(2)
 
@@ -117,10 +117,12 @@ test.describe("Contact page", () => {
   test("exposes direct contact paths but no commerce UI", async ({ page }) => {
     await page.goto("/contact")
 
-    await expect(page.getByRole("link", { name: /טלפון ישיר/ })).toHaveAttribute(
-      "href",
-      "tel:+972505282431",
-    )
+    await expect(
+      page.getByRole("link", { name: "התקשרו אלינו: 050-5282431" }).first(),
+    ).toHaveAttribute("href", "tel:+972505282431")
+    await expect(
+      page.getByRole("main").getByRole("link", { name: "וואטסאפ" }),
+    ).toHaveAttribute("href", "https://wa.me/972505282431")
     await expect(
       page.getByRole("link", { name: /דואר אלקטרוני/ }),
     ).toHaveAttribute("href", "mailto:moshe@alper-marble.co.il")
@@ -151,12 +153,12 @@ test.describe("Contact page", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "ייעוץ אישי מהמשפחה שלנו",
+        name: "ייעוץ אישי ומקצועי",
       }),
     ).toBeVisible()
     await expect(page.getByLabel("שם מלא")).toBeVisible()
     await expect(
-      page.getByRole("button", { name: "שליחת בקשה למשפחה" }),
+      page.getByRole("button", { name: "שליחת הבקשה" }),
     ).toBeVisible()
     await expect(
       page.getByTitle("מפת מיקום הסטודיו"),

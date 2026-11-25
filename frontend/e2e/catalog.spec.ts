@@ -28,7 +28,7 @@ test.describe("Catalog page", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "קטלוג דגמים" })
     ).toBeVisible();
-    await expect(page.getByText("מציג 4 קטגוריות נבחרות")).toBeVisible();
+    await expect(page.getByText("מציג 4 קטגוריות נבחרות")).toHaveCount(0);
 
     expect(consoleErrors).toEqual([]);
   });
@@ -42,16 +42,21 @@ test.describe("Catalog page", () => {
     ).toHaveAttribute("href", "/catalog");
   });
 
-  test("each category card links to its gallery route", async ({ page }) => {
+  test("each category photo tile links to its gallery route", async ({ page }) => {
     await page.goto("/catalog");
+    const main = page.getByRole("main");
     for (const category of CATEGORY_LINKS) {
-      const card = page.getByRole("article").filter({
-        has: page.getByRole("heading", { level: 3, name: category.title }),
-      });
       await expect(
-        card.getByRole("link", { name: "לצפייה בגלריה" })
+        main.getByRole("link", { name: new RegExp(category.title) }).first()
       ).toHaveAttribute("href", category.href);
     }
+  });
+
+  test("ends with the phone and WhatsApp contact band", async ({ page }) => {
+    await page.goto("/catalog");
+    await expect(
+      page.getByRole("main").getByRole("link", { name: "וואטסאפ" })
+    ).toHaveAttribute("href", "https://wa.me/972505282431");
   });
 
   test("category card routes resolve without 404", async ({ page }) => {
@@ -104,10 +109,13 @@ test.describe("Catalog category gallery", () => {
     expect(consoleErrors).toEqual([]);
   });
 
-  test("has a consultation CTA linking to Contact", async ({ page }) => {
+  test("offers the other stone types and a contact path", async ({ page }) => {
     await page.goto("/catalog/hebron-marble");
+    const more = page.getByRole("region", { name: "סוגי אבן נוספים" });
+    await expect(more.getByRole("link")).toHaveCount(3);
+    await expect(more.getByRole("link", { name: /שיש חברוני/ })).toHaveCount(0);
     await expect(
-      page.getByRole("main").getByRole("link", { name: "בקשת ייעוץ" })
+      page.getByRole("main").getByRole("link", { name: "השאירו פרטים" })
     ).toHaveAttribute("href", "/contact");
   });
 

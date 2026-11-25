@@ -50,7 +50,8 @@
   "CategoryTiles": {
     "sectionAriaLabel": "Виды камня",
     "heading": "Выберите камень",
-    "popularBadge": "Самый популярный"
+    "popularBadge": "Самый популярный",
+    "photoCount": "{count} фото"
   },
   "ServiceArea": {
     "sectionAriaLabel": "Зона обслуживания",
@@ -77,9 +78,7 @@
   "Breadcrumb": {
     "navAriaLabel": "Путь навигации",
     "defaultCatalogLabel": "Каталог памятников",
-    "homeLabel": "Главная",
-    "backToCatalog": "Назад к каталогу",
-    "backToHome": "Назад на главную"
+    "homeLabel": "Главная"
   },
   "Categories": {
     "hebron-marble": {
@@ -99,13 +98,9 @@
       "description": "Сочетание природного камня, художественных решений и индивидуальной резьбы, отражающих личность покойного."
     }
   },
-  "CatalogGrid": {
-    "sectionAriaLabel": "Каталог моделей",
+  "CatalogPage": {
     "title": "Каталог моделей",
-    "subtitle": "Подборка памятников из хевронского мрамора, турецкого мрамора, гранита и особых моделей индивидуального изготовления Alper Marble.",
-    "countLabel": "Показано {count} избранных категорий",
-    "badgeFeatured": "Самый популярный",
-    "viewGallery": "Смотреть галерею"
+    "subtitle": "Хевронский и турецкий мрамор, гранит и особые модели — каждая изготавливается индивидуально."
   },
   "CategoryGallery": {
     "styleFilterAriaLabel": "Фильтр по стилю",
@@ -165,13 +160,13 @@
   "ContactDetails": {
     "sectionAriaLabel": "Контактные данные",
     "addressCardLabel": "Адрес студии",
-    "phoneCardLabel": "Прямой телефон",
-    "emailCardLabel": "Электронная почта",
-    "areaCardLabel": "Зона обслуживания"
+    "emailCardLabel": "Электронная почта"
   },
   "ContactHero": {
     "heading": "Индивидуальная профессиональная консультация",
-    "subtitle": "Мы здесь, чтобы сопровождать вас в самые непростые моменты, профессионально, деликатно и с вниманием к каждой детали."
+    "callAriaLabel": "Позвоните нам: {phone}",
+    "whatsapp": "WhatsApp",
+    "formIntro": "Или оставьте заявку, и мы вам перезвоним"
   },
   "ContactMap": {
     "sectionAriaLabel": "Расположение студии",
@@ -183,23 +178,13 @@
     "navigateAriaLabel": "Проложить маршрут до студии в Google Картах",
     "navigateLabel": "Маршрут",
     "wazeAriaLabel": "Проложить маршрут до студии в Waze",
-    "wazeLabel": "Waze",
-    "workshopAlt": "Атмосферное фото семейной мастерской",
-    "workshopLabel": "Семейная мастерская"
+    "wazeLabel": "Waze"
   },
   "TrustHighlights": {
     "sectionAriaLabel": "Наши ценности",
     "highlight1Title": "Индивидуальный дизайн",
-    "highlight1Desc": "Каждый памятник разрабатывается вместе с вами, чтобы увековечить личную историю.",
     "highlight2Title": "Полная прозрачность",
-    "highlight2Desc": "Регулярные обновления и фотографии на протяжении всего процесса изготовления и установки.",
-    "highlight3Title": "Гарантия на поколения",
-    "highlight3Desc": "Мы гарантируем качество камня и работы на десятилетия вперёд."
-  },
-  "CatalogFilters": {
-    "sidebarAriaLabel": "Фильтр памятников",
-    "ctaText": "Мы рядом с вами на каждом этапе.",
-    "ctaButton": "Личная консультация"
+    "highlight3Title": "Гарантия на поколения"
   },
   "Pagination": {
     "ariaLabel": "Постраничная навигация",
@@ -209,7 +194,7 @@
   "CatalogCategoryPage": {
     "fallbackTitle": "Галерея моделей",
     "notFoundNote": "Категория не найдена.",
-    "ctaConsult": "Запросить консультацию"
+    "otherCategoriesHeading": "Другие виды камня"
   },
   "ContactPage": {
     "gridAriaLabel": "Связаться с семьёй Альпер"

@@ -13,4 +13,9 @@ describe("TrustHighlights", () => {
       ).toBeInTheDocument()
     }
   })
+
+  it("shows titles only, without description paragraphs", () => {
+    const { container } = render(<TrustHighlights />)
+    expect(container.querySelector("p")).toBeNull()
+  })
 })

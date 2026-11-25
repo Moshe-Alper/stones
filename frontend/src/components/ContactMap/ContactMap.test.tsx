@@ -6,7 +6,7 @@ import heMessages from "../../../messages/he.json"
 import ContactMap from "./ContactMap"
 
 describe("ContactMap", () => {
-  it("embeds the real studio map and workshop context", () => {
+  it("embeds the real studio map with hours and navigation links", () => {
     render(<ContactMap />)
 
     const frame = screen.getByTitle("מפת מיקום הסטודיו")
@@ -20,9 +20,7 @@ describe("ContactMap", () => {
     expect(
       screen.getByRole("link", { name: "ניווט לסטודיו ב-Waze" }),
     ).toHaveAttribute("href", CONTACT_DETAILS.wazeUrl)
-    expect(
-      screen.getByRole("img", { name: "תמונת אווירה של בית המלאכה" }),
-    ).toBeInTheDocument()
+    expect(screen.queryByRole("img")).not.toBeInTheDocument()
   })
 
   it("keeps the map inert until the visitor taps to activate it", () => {

@@ -50,7 +50,8 @@
   "CategoryTiles": {
     "sectionAriaLabel": "Stone types",
     "heading": "Choose a stone",
-    "popularBadge": "Most popular"
+    "popularBadge": "Most popular",
+    "photoCount": "{count, plural, one {# photo} other {# photos}}"
   },
   "ServiceArea": {
     "sectionAriaLabel": "Service area",
@@ -77,9 +78,7 @@
   "Breadcrumb": {
     "navAriaLabel": "Breadcrumb",
     "defaultCatalogLabel": "Headstone catalog",
-    "homeLabel": "Home",
-    "backToCatalog": "Back to catalog",
-    "backToHome": "Back to home"
+    "homeLabel": "Home"
   },
   "Categories": {
     "hebron-marble": {
@@ -99,13 +98,9 @@
       "description": "Fieldstones, artistic designs and personal carving that reflects the person being remembered."
     }
   },
-  "CatalogGrid": {
-    "sectionAriaLabel": "Design catalog",
+  "CatalogPage": {
     "title": "Design catalog",
-    "subtitle": "A selection of headstones in Hebron marble, Turkish marble, granite, and special designs, custom made by Alper Marble.",
-    "countLabel": "Showing {count} featured categories",
-    "badgeFeatured": "Most popular",
-    "viewGallery": "View gallery"
+    "subtitle": "Hebron marble, Turkish marble, granite and special designs, each made to order."
   },
   "CategoryGallery": {
     "styleFilterAriaLabel": "Filter by style",
@@ -165,13 +160,13 @@
   "ContactDetails": {
     "sectionAriaLabel": "Contact details",
     "addressCardLabel": "Studio address",
-    "phoneCardLabel": "Direct phone",
-    "emailCardLabel": "Email",
-    "areaCardLabel": "Service area"
+    "emailCardLabel": "Email"
   },
   "ContactHero": {
     "heading": "Personal, professional consultation",
-    "subtitle": "We're here to accompany you through the most sensitive moments, with professionalism, sensitivity, and attention to every detail."
+    "callAriaLabel": "Call us: {phone}",
+    "whatsapp": "WhatsApp",
+    "formIntro": "Or leave your details and we'll get back to you"
   },
   "ContactMap": {
     "sectionAriaLabel": "Studio location",
@@ -183,23 +178,13 @@
     "navigateAriaLabel": "Navigate to the studio on Google Maps",
     "navigateLabel": "Navigate",
     "wazeAriaLabel": "Navigate to the studio on Waze",
-    "wazeLabel": "Waze",
-    "workshopAlt": "Atmospheric photo of the family workshop",
-    "workshopLabel": "The family workshop"
+    "wazeLabel": "Waze"
   },
   "TrustHighlights": {
     "sectionAriaLabel": "Our values",
     "highlight1Title": "Personal design",
-    "highlight1Desc": "Every memorial is planned together with you to commemorate a personal story.",
     "highlight2Title": "Full transparency",
-    "highlight2Desc": "Regular updates and photos throughout the entire production and installation process.",
-    "highlight3Title": "Warranty for generations",
-    "highlight3Desc": "We are committed to the quality of the stone and the work for decades to come."
-  },
-  "CatalogFilters": {
-    "sidebarAriaLabel": "Filter headstones",
-    "ctaText": "Here for you at every step of the way.",
-    "ctaButton": "Personal consultation"
+    "highlight3Title": "Warranty for generations"
   },
   "Pagination": {
     "ariaLabel": "Pagination",
@@ -209,7 +194,7 @@
   "CatalogCategoryPage": {
     "fallbackTitle": "Design gallery",
     "notFoundNote": "Category not found.",
-    "ctaConsult": "Request a consultation"
+    "otherCategoriesHeading": "More stone types"
   },
   "ContactPage": {
     "gridAriaLabel": "Get in touch with the Alper family"

@@ -1,93 +1,33 @@
 import { useTranslations } from "next-intl"
+import { Mail, MapPin } from "lucide-react"
 import { CONTACT_DETAILS } from "@/data/contact"
 import styles from "./ContactDetails.module.css"
 
-function PinIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
-      <circle cx="12" cy="9" r="2.4" />
-    </svg>
-  )
-}
-
-function AreaIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="8.5" strokeDasharray="2.5 3.2" />
-      <circle cx="12" cy="12" r="2" />
-    </svg>
-  )
-}
-
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M7.2 3.5 10 7.7 8.2 9.5c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8 4.2 2.8-.8 4c-.2.7-.8 1.1-1.5 1C9.7 20.1 3.9 14.3 3 6.6c-.1-.7.3-1.3 1-1.5l3.2-.6Z" />
-    </svg>
-  )
-}
-
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <rect x="3" y="5" width="18" height="14" rx="1" />
-      <path d="m4 7 8 6 8-6" />
-    </svg>
-  )
-}
-
+// Compact address + email line under the form. Phone/WhatsApp live in the hero and
+// the service area in the FAQ, so they are not repeated here (.plan/021).
 export default function ContactDetails() {
   const t = useTranslations("ContactDetails")
-  const tServiceArea = useTranslations("ServiceArea")
-  const towns = tServiceArea.raw("towns") as string[]
 
   return (
     <section className={styles.details} aria-label={t("sectionAriaLabel")}>
       <a
-        className={styles.card}
+        className={styles.item}
         href={CONTACT_DETAILS.mapsUrl}
         target="_blank"
         rel="noreferrer"
+        aria-label={`${t("addressCardLabel")}: ${CONTACT_DETAILS.addressLine}`}
       >
-        <span className={styles.icon}>
-          <PinIcon />
-        </span>
-        <span className={styles.copy}>
-          <strong>{t("addressCardLabel")}</strong>
-          <span>{CONTACT_DETAILS.addressLine}</span>
-        </span>
+        <MapPin size={18} aria-hidden="true" />
+        <span>{CONTACT_DETAILS.addressLine}</span>
       </a>
-
-      <a className={styles.card} href={CONTACT_DETAILS.phoneHref}>
-        <span className={styles.icon}>
-          <PhoneIcon />
-        </span>
-        <span className={styles.copy}>
-          <strong>{t("phoneCardLabel")}</strong>
-          <span dir="ltr">{CONTACT_DETAILS.directPhone}</span>
-        </span>
+      <a
+        className={styles.item}
+        href={`mailto:${CONTACT_DETAILS.email}`}
+        aria-label={`${t("emailCardLabel")}: ${CONTACT_DETAILS.email}`}
+      >
+        <Mail size={18} aria-hidden="true" />
+        <span dir="ltr">{CONTACT_DETAILS.email}</span>
       </a>
-
-      <a className={styles.email} href={`mailto:${CONTACT_DETAILS.email}`}>
-        <span className={styles.icon}>
-          <MailIcon />
-        </span>
-        <span>
-          <strong>{t("emailCardLabel")}</strong>
-          <span dir="ltr">{CONTACT_DETAILS.email}</span>
-        </span>
-      </a>
-
-      <div className={styles.email}>
-        <span className={styles.icon}>
-          <AreaIcon />
-        </span>
-        <span>
-          <strong>{t("areaCardLabel")}</strong>
-          <span>{towns.join(", ")}</span>
-        </span>
-      </div>
     </section>
   )
 }

@@ -71,6 +71,13 @@
 
 ## Change Log
 
+- 2026-11-25: Catalog, category gallery and Contact pages redesigned photo-first
+  (`.plan/021-2026-11-25-catalog-contact-visual-redesign.md`). The catalog now reuses
+  `CategoryTiles` (`size="large"`) and ends with `ContactBand`; category pages end with a
+  "more stone types" `CategoryTiles` strip + `ContactBand`. Contact page leads with call /
+  WhatsApp buttons in `ContactHero`. Removed `CatalogGrid`, `CatalogFilters`, `BackLink` and the
+  stock `contact-workshop.webp`. Category ids/order moved from
+  `components/CatalogGrid/categories.ts` to `src/data/categories.ts`.
 - 2026-11-25: Homepage redesigned photo-first (`.plan/020-2026-11-25-homepage-visual-redesign.md`):
   `Hero` → `RecentWork` → `CategoryTiles` → `ProcessSteps` → `FamilyNote` → `ContactBand`.
   `MaterialsGrid` and `ServiceArea` components removed; FAQ moved to the Contact page
