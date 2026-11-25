@@ -1,6 +1,8 @@
-import { render, screen } from "@testing-library/react"
+import { screen } from "@testing-library/react"
+import { renderWithIntl as render } from "@/test/renderWithIntl"
 import { describe, expect, it } from "vitest"
-import { CONTACT_DETAILS, SERVICE_AREA } from "@/data/contact"
+import { CONTACT_DETAILS } from "@/data/contact"
+import heMessages from "../../../messages/he.json"
 import ContactDetails from "./ContactDetails"
 
 describe("ContactDetails", () => {
@@ -23,7 +25,7 @@ describe("ContactDetails", () => {
 
     expect(screen.getByText("אזור שירות")).toBeInTheDocument()
     expect(
-      screen.getByText(SERVICE_AREA.towns.join(", ")),
+      screen.getByText(heMessages.ServiceArea.towns.join(", ")),
     ).toBeInTheDocument()
   })
 })

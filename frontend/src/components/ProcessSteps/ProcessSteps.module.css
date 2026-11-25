@@ -11,22 +11,6 @@
   gap: 24px;
 }
 
-.top {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.allServices {
-  font-size: 16px;
-  color: var(--color-accent);
-  border-bottom: 1px solid var(--color-accent);
-  padding-bottom: 5px;
-  white-space: nowrap;
-}
-
 .headingCol {
   display: flex;
   flex-direction: column;

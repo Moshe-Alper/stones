@@ -11,7 +11,7 @@ placeholders — a future task replaces them with real client-provided photograp
 | File | Source | Photographer | License |
 | --- | --- | --- | --- |
 | `hero-workshop.webp` | [pexels.com/photo/11949659](https://www.pexels.com/photo/stone-marble-pattern-11949659/) | Girl from Antares | Pexels License |
-| `material-granite.webp` | [pexels.com/photo/33962544](https://www.pexels.com/photo/granite-texture-close-up-in-black-and-white-33962544/) | jaralol | Pexels License |
+| `material-granite.webp` | [pexels.com/photo/12932179](https://www.pexels.com/photo/rough-rock-surface-12932179/) | Atlantic Ambience | Pexels License |
 | `material-marble.webp` | [pexels.com/photo/4709481](https://www.pexels.com/photo/close-up-of-a-stone-texture-4709481/) | Karola G | Pexels License |
 | `material-basalt.webp` | [pexels.com/photo/30082287](https://www.pexels.com/photo/textured-volcanic-rock-surface-in-canary-islands-30082287/) | Anastasia Haritonov | Pexels License |
 | `craftsmanship-carving.webp` | [pexels.com/photo/6713855](https://www.pexels.com/photo/man-person-hands-people-6713855/) | Tima Miroshnichenko | Pexels License |

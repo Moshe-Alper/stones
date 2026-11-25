@@ -15,6 +15,13 @@
   --max-content-width: 1200px;
 }
 
+/* Frank Ruhl Libre / Heebo have no Cyrillic subset — swap in Noto Serif/Sans for
+   Russian (see .plan/017 decision #2). */
+html:lang(ru) {
+  --font-display: var(--font-noto-serif), "Times New Roman", serif;
+  --font-sans: var(--font-noto-sans), Arial, sans-serif;
+}
+
 html {
   height: 100%;
 }

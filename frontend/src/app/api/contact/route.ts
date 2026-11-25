@@ -1,5 +1,11 @@
+import { getTranslations } from "next-intl/server"
 import { deliverContactInquiry } from "@/lib/contact-inquiry-delivery"
-import { PREFERRED_TIME_OPTIONS, type ContactInquiry } from "@/data/contact"
+import {
+  getPreferredTimeLabelHe,
+  isPreferredTimeOptionId,
+  type ContactInquiry,
+} from "@/data/contact"
+import { routing } from "@/i18n/routing"
 
 type ValidationDetails = Partial<Record<keyof ContactInquiry, string>>
 
@@ -15,25 +21,34 @@ function getString(value: unknown): string {
   return typeof value === "string" ? value.trim() : ""
 }
 
-function genericInvalidResponse(requestId: string) {
-  return Response.json(
-    {
-      error: {
-        code: "INVALID_CONTACT_INQUIRY",
-        message: "פרטי הפנייה חסרים או אינם תקינים.",
-      },
-      requestId,
-    },
-    { status: 422 },
-  )
+function resolveLocale(request: Request): (typeof routing.locales)[number] {
+  const requested = request.headers.get("x-locale")
+  return (routing.locales as readonly string[]).includes(requested ?? "")
+    ? (requested as (typeof routing.locales)[number])
+    : routing.defaultLocale
 }
 
 export async function POST(request: Request) {
   const requestId = crypto.randomUUID()
+  const locale = resolveLocale(request)
+  const t = await getTranslations({ locale, namespace: "ApiErrors" })
+
+  function genericInvalidResponse() {
+    return Response.json(
+      {
+        error: {
+          code: "INVALID_CONTACT_INQUIRY",
+          message: t("invalidBody"),
+        },
+        requestId,
+      },
+      { status: 422 },
+    )
+  }
 
   const contentLength = Number(request.headers.get("content-length") ?? "0")
   if (contentLength > MAX_BODY_BYTES) {
-    return genericInvalidResponse(requestId)
+    return genericInvalidResponse()
   }
 
   let body: unknown
@@ -45,7 +60,7 @@ export async function POST(request: Request) {
       {
         error: {
           code: "INVALID_JSON",
-          message: "גוף הבקשה אינו JSON תקין.",
+          message: t("invalidJson"),
         },
         requestId,
       },
@@ -54,7 +69,7 @@ export async function POST(request: Request) {
   }
 
   if (!isRecord(body)) {
-    return genericInvalidResponse(requestId)
+    return genericInvalidResponse()
   }
 
   const inquiry: ContactInquiry = {
@@ -67,27 +82,23 @@ export async function POST(request: Request) {
   const details: ValidationDetails = {}
 
   if (!inquiry.name) {
-    details.name = "יש להזין שם מלא."
+    details.name = t("nameRequired")
   } else if (inquiry.name.length > MAX_NAME_LENGTH) {
-    details.name = "השם ארוך מדי."
+    details.name = t("nameTooLong")
   }
 
   if (!/^[0-9+()\-\s]{7,20}$/.test(inquiry.phone)) {
-    details.phone = "יש להזין מספר טלפון תקין."
+    details.phone = t("phoneInvalid")
   }
 
-  if (
-    !PREFERRED_TIME_OPTIONS.includes(
-      inquiry.preferredTime as (typeof PREFERRED_TIME_OPTIONS)[number],
-    )
-  ) {
-    details.preferredTime = "יש לבחור זמן מועדף מהרשימה."
+  if (!isPreferredTimeOptionId(inquiry.preferredTime)) {
+    details.preferredTime = t("preferredTimeInvalid")
   }
 
   if (!inquiry.message) {
-    details.message = "יש להזין הודעה."
+    details.message = t("messageRequired")
   } else if (inquiry.message.length > MAX_MESSAGE_LENGTH) {
-    details.message = "ההודעה ארוכה מדי."
+    details.message = t("messageTooLong")
   }
 
   if (Object.keys(details).length > 0) {
@@ -95,7 +106,7 @@ export async function POST(request: Request) {
       {
         error: {
           code: "INVALID_CONTACT_INQUIRY",
-          message: "פרטי הפנייה חסרים או אינם תקינים.",
+          message: t("invalidBody"),
           details,
         },
         requestId,
@@ -124,7 +135,9 @@ export async function POST(request: Request) {
     requestId,
     name: inquiry.name,
     phone: inquiry.phone,
-    preferredTime: inquiry.preferredTime,
+    // The owner's notification email always reads in Hebrew, regardless of the
+    // visitor's site language — see .plan/017.
+    preferredTime: getPreferredTimeLabelHe(inquiry.preferredTime),
     message: inquiry.message,
   })
 
@@ -144,8 +157,7 @@ export async function POST(request: Request) {
       {
         error: {
           code: "CONTACT_DELIVERY_UNAVAILABLE",
-          message:
-            "לא הצלחנו לשלוח את הבקשה כעת. נסו שוב בעוד מספר דקות או צרו קשר טלפוני.",
+          message: t("deliveryUnavailable"),
         },
         requestId,
       },

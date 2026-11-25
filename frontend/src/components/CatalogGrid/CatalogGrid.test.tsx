@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithIntl as render } from "@/test/renderWithIntl";
+import heMessages from "../../../messages/he.json";
 import CatalogGrid from "./CatalogGrid";
 import { CATEGORIES } from "./categories";
+
+const categoryText = (slug: string) =>
+  (heMessages.Categories as Record<string, { title: string; description: string }>)[slug];
 
 describe("CatalogGrid", () => {
   it("renders the section heading", () => {
@@ -21,10 +26,11 @@ describe("CatalogGrid", () => {
   it("renders all four category cards with titles and descriptions", () => {
     render(<CatalogGrid />);
     CATEGORIES.forEach((category) => {
+      const { title, description } = categoryText(category.slug);
       expect(
-        screen.getByRole("heading", { level: 3, name: category.title })
+        screen.getByRole("heading", { level: 3, name: title })
       ).toBeInTheDocument();
-      expect(screen.getByText(category.description)).toBeInTheDocument();
+      expect(screen.getByText(description)).toBeInTheDocument();
     });
   });
 

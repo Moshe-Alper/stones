@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithIntl as render } from "@/test/renderWithIntl";
 import userEvent from "@testing-library/user-event";
 import CategoryGallery from "./CategoryGallery";
 import { GALLERY_PHOTOS } from "@/data/gallery";

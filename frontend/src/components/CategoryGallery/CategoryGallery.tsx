@@ -2,15 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import styles from "./CategoryGallery.module.css";
 import { GALLERY_PHOTOS, type GalleryStyle } from "@/data/gallery";
 import type { CategorySlug } from "@/components/CatalogGrid/categories";
-
-const STYLE_FILTERS: { id: GalleryStyle | "all"; label: string }[] = [
-  { id: "all", label: "הכל" },
-  { id: "classic", label: "קלאסי" },
-  { id: "modern", label: "מודרני" },
-];
 
 export default function CategoryGallery({
   category,
@@ -19,6 +14,14 @@ export default function CategoryGallery({
   category: CategorySlug;
   categoryTitle: string;
 }) {
+  const t = useTranslations("CategoryGallery");
+
+  const STYLE_FILTERS: { id: GalleryStyle | "all"; label: string }[] = [
+    { id: "all", label: t("filterAll") },
+    { id: "classic", label: t("filterClassic") },
+    { id: "modern", label: t("filterModern") },
+  ];
+
   const categoryPhotos = GALLERY_PHOTOS.filter(
     (photo) => photo.category === category
   );
@@ -45,7 +48,7 @@ export default function CategoryGallery({
       <div
         className={styles.styleFilter}
         role="group"
-        aria-label="סינון לפי סגנון"
+        aria-label={t("styleFilterAriaLabel")}
       >
         {STYLE_FILTERS.map((filter) => (
           <button
@@ -68,23 +71,23 @@ export default function CategoryGallery({
       </div>
 
       {photos.length === 0 ? (
-        <p className={styles.emptyState}>אין תמונות בסגנון זה בקטגוריה זו.</p>
+        <p className={styles.emptyState}>{t("emptyState")}</p>
       ) : (
-        <ul className={styles.grid} aria-label={`תמונות ${categoryTitle}`}>
+        <ul className={styles.grid} aria-label={t("galleryAriaLabel", { categoryTitle })}>
           {photos.map((photo, index) => (
             <li key={photo.file}>
               <button
                 type="button"
                 className={styles.thumb}
                 onClick={() => setOpenIndex(index)}
-                aria-label={`הגדלת תמונה ${index + 1} מתוך ${categoryTitle}`}
+                aria-label={t("enlargeAriaLabel", { index: index + 1, categoryTitle })}
               >
                 {/* Real photos come in mixed orientations/aspect ratios, so
                     `fill` inside a fixed-ratio box is used instead of the
                     explicit width/height pattern used elsewhere on the site. */}
                 <Image
                   src={`/images/gallery/${photo.file}`}
-                  alt={`${categoryTitle} - תמונה ${index + 1}`}
+                  alt={t("photoAlt", { categoryTitle, index: index + 1 })}
                   fill
                   sizes="(max-width: 700px) 50vw, 25vw"
                   className={styles.thumbImage}
@@ -100,13 +103,13 @@ export default function CategoryGallery({
           className={styles.lightbox}
           role="dialog"
           aria-modal="true"
-          aria-label={`תמונה מוגדלת - ${categoryTitle}`}
+          aria-label={t("lightboxAriaLabel", { categoryTitle })}
           onClick={() => setOpenIndex(null)}
         >
           <button
             type="button"
             className={styles.closeButton}
-            aria-label="סגירה"
+            aria-label={t("closeAriaLabel")}
             onClick={() => setOpenIndex(null)}
           >
             ✕
@@ -114,7 +117,7 @@ export default function CategoryGallery({
           <div className={styles.lightboxImageWrapper}>
             <Image
               src={`/images/gallery/${photos[openIndex].file}`}
-              alt={`${categoryTitle} - תמונה ${openIndex + 1}`}
+              alt={t("photoAlt", { categoryTitle, index: openIndex + 1 })}
               fill
               sizes="90vw"
               className={styles.lightboxImage}

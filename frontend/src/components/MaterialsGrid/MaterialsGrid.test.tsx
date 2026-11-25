@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithIntl as render } from "@/test/renderWithIntl";
 import MaterialsGrid from "./MaterialsGrid";
 
 describe("MaterialsGrid", () => {
@@ -13,7 +14,7 @@ describe("MaterialsGrid", () => {
   it("renders all three material cards with titles", () => {
     render(<MaterialsGrid />);
     expect(screen.getByText("אבן טבעית ועיצוב אישי")).toBeInTheDocument();
-    expect(screen.getByText("שיש טורקי")).toBeInTheDocument();
+    expect(screen.getByText("שיש חברוני")).toBeInTheDocument();
     expect(screen.getByText("גרניט פרימיום")).toBeInTheDocument();
   });
 

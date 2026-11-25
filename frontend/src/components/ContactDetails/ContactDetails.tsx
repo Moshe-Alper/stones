@@ -1,4 +1,5 @@
-import { CONTACT_DETAILS, SERVICE_AREA } from "@/data/contact"
+import { useTranslations } from "next-intl"
+import { CONTACT_DETAILS } from "@/data/contact"
 import styles from "./ContactDetails.module.css"
 
 function PinIcon() {
@@ -37,8 +38,12 @@ function MailIcon() {
 }
 
 export default function ContactDetails() {
+  const t = useTranslations("ContactDetails")
+  const tServiceArea = useTranslations("ServiceArea")
+  const towns = tServiceArea.raw("towns") as string[]
+
   return (
-    <section className={styles.details} aria-label="פרטי התקשרות">
+    <section className={styles.details} aria-label={t("sectionAriaLabel")}>
       <a
         className={styles.card}
         href={CONTACT_DETAILS.mapsUrl}
@@ -49,7 +54,7 @@ export default function ContactDetails() {
           <PinIcon />
         </span>
         <span className={styles.copy}>
-          <strong>כתובת הסטודיו</strong>
+          <strong>{t("addressCardLabel")}</strong>
           <span>{CONTACT_DETAILS.addressLine}</span>
         </span>
       </a>
@@ -59,7 +64,7 @@ export default function ContactDetails() {
           <PhoneIcon />
         </span>
         <span className={styles.copy}>
-          <strong>טלפון ישיר</strong>
+          <strong>{t("phoneCardLabel")}</strong>
           <span dir="ltr">{CONTACT_DETAILS.directPhone}</span>
         </span>
       </a>
@@ -69,7 +74,7 @@ export default function ContactDetails() {
           <MailIcon />
         </span>
         <span>
-          <strong>דואר אלקטרוני</strong>
+          <strong>{t("emailCardLabel")}</strong>
           <span dir="ltr">{CONTACT_DETAILS.email}</span>
         </span>
       </a>
@@ -79,8 +84,8 @@ export default function ContactDetails() {
           <AreaIcon />
         </span>
         <span>
-          <strong>אזור שירות</strong>
-          <span>{SERVICE_AREA.towns.join(", ")}</span>
+          <strong>{t("areaCardLabel")}</strong>
+          <span>{towns.join(", ")}</span>
         </span>
       </div>
     </section>

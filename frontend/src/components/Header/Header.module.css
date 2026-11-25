@@ -33,17 +33,6 @@
   letter-spacing: 0.7px;
 }
 
-.langSwitcher {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.7px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  border: none;
-  background: none;
-  padding: 0;
-}
-
 .links {
   display: flex;
   align-items: center;
