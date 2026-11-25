@@ -1,4 +1,4 @@
-import type { CategorySlug } from "@/components/CatalogGrid/categories";
+import type { CategorySlug } from "@/data/categories";
 
 export type GalleryStyle = "classic" | "modern";
 
@@ -78,4 +78,8 @@ export function getFeaturedPhotos(): GalleryPhoto[] {
   return GALLERY_PHOTOS.filter((photo) => photo.featured !== undefined).sort(
     (a, b) => (a.featured ?? 0) - (b.featured ?? 0),
   );
+}
+
+export function getCategoryPhotoCount(category: CategorySlug): number {
+  return GALLERY_PHOTOS.filter((photo) => photo.category === category).length
 }

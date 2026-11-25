@@ -1,7 +1,7 @@
 .section {
   width: 100%;
-  margin-top: 88px;
-  padding: 48px 40px;
+  margin-top: 72px;
+  padding: 32px 24px;
   background: var(--color-bg-alt);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -15,10 +15,11 @@
 }
 
 .highlight {
-  padding: 4px 40px;
+  padding: 4px 24px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   border-inline-start: 1px solid var(--color-border);
 }
 
@@ -43,31 +44,20 @@
   stroke-width: 1.4;
 }
 
-.highlight div {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .highlight h2 {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
 }
 
-.highlight p {
-  color: var(--color-text-muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 20px;
   }
 
   .highlight {
+    justify-content: flex-start;
     padding: 0;
     border-inline-start: 0;
   }

@@ -11,4 +11,3 @@ placeholders — a future task replaces them with real client-provided photograp
 | File | Source | Photographer | License |
 | --- | --- | --- | --- |
 | `craftsmanship-carving.webp` | [pexels.com/photo/6713855](https://www.pexels.com/photo/man-person-hands-people-6713855/) | Tima Miroshnichenko | Pexels License |
-| `contact-workshop.webp` | [pexels.com/photo/6714319](https://www.pexels.com/photo/a-head-sculpture-and-sculpting-tools-on-a-wooden-table-6714319/) | Tima Miroshnichenko | Pexels License |

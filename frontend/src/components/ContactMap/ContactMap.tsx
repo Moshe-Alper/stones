@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { CONTACT_DETAILS } from "@/data/contact"
@@ -73,18 +72,6 @@ export default function ContactMap() {
             </a>
           </div>
         </div>
-      </div>
-
-      <div className={styles.workshopPlaceholder}>
-        <Image
-          className={styles.workshopImage}
-          src="/images/contact-workshop.webp"
-          alt={t("workshopAlt")}
-          fill
-          sizes="(max-width: 900px) 100vw, 40vw"
-        />
-        <div className={styles.workshopOverlay} />
-        <span>{t("workshopLabel")}</span>
       </div>
     </section>
   )

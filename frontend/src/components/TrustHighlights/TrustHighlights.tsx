@@ -34,9 +34,9 @@ export default function TrustHighlights() {
   const t = useTranslations("TrustHighlights")
 
   const HIGHLIGHTS = [
-    { title: t("highlight1Title"), description: t("highlight1Desc"), icon: ICONS[0] },
-    { title: t("highlight2Title"), description: t("highlight2Desc"), icon: ICONS[1] },
-    { title: t("highlight3Title"), description: t("highlight3Desc"), icon: ICONS[2] },
+    { title: t("highlight1Title"), icon: ICONS[0] },
+    { title: t("highlight2Title"), icon: ICONS[1] },
+    { title: t("highlight3Title"), icon: ICONS[2] },
   ]
 
   return (
@@ -47,10 +47,7 @@ export default function TrustHighlights() {
             <span className={styles.icon}>
               <HighlightIcon icon={highlight.icon} />
             </span>
-            <div>
-              <h2>{highlight.title}</h2>
-              <p>{highlight.description}</p>
-            </div>
+            <h2>{highlight.title}</h2>
           </article>
         ))}
       </div>

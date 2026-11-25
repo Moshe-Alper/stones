@@ -50,7 +50,8 @@
   "CategoryTiles": {
     "sectionAriaLabel": "סוגי אבן",
     "heading": "בחרו סוג אבן",
-    "popularBadge": "הכי מבוקש"
+    "popularBadge": "הכי מבוקש",
+    "photoCount": "{count} עבודות"
   },
   "ServiceArea": {
     "sectionAriaLabel": "אזור שירות",
@@ -77,9 +78,7 @@
   "Breadcrumb": {
     "navAriaLabel": "נתיב ניווט",
     "defaultCatalogLabel": "קטלוג מצבות",
-    "homeLabel": "בית",
-    "backToCatalog": "חזרה לקטלוג",
-    "backToHome": "חזרה לדף הבית"
+    "homeLabel": "בית"
   },
   "Categories": {
     "hebron-marble": {
@@ -99,13 +98,9 @@
       "description": "שילוב אבני לקט, עיצובים אמנותיים ופיסול אישי המשקף את דמותו של הנפטר."
     }
   },
-  "CatalogGrid": {
-    "sectionAriaLabel": "קטלוג דגמים",
+  "CatalogPage": {
     "title": "קטלוג דגמים",
-    "subtitle": "מבחר מצבות משיש חברוני, טורקי, גרניט ודגמים מיוחדים בייצור אישי של אלפר מצבות.",
-    "countLabel": "מציג {count} קטגוריות נבחרות",
-    "badgeFeatured": "הכי מבוקש",
-    "viewGallery": "לצפייה בגלריה"
+    "subtitle": "שיש חברוני, טורקי, גרניט ודגמים מיוחדים, בייצור אישי."
   },
   "CategoryGallery": {
     "styleFilterAriaLabel": "סינון לפי סגנון",
@@ -165,13 +160,13 @@
   "ContactDetails": {
     "sectionAriaLabel": "פרטי התקשרות",
     "addressCardLabel": "כתובת הסטודיו",
-    "phoneCardLabel": "טלפון ישיר",
-    "emailCardLabel": "דואר אלקטרוני",
-    "areaCardLabel": "אזור שירות"
+    "emailCardLabel": "דואר אלקטרוני"
   },
   "ContactHero": {
     "heading": "ייעוץ אישי ומקצועי",
-    "subtitle": "אנו כאן כדי ללוות אתכם ברגעים הרגישים ביותר, במקצועיות, רגישות והקפדה על כל פרט ופרט."
+    "callAriaLabel": "התקשרו אלינו: {phone}",
+    "whatsapp": "וואטסאפ",
+    "formIntro": "או השאירו פרטים ונחזור אליכם"
   },
   "ContactMap": {
     "sectionAriaLabel": "מיקום הסטודיו",
@@ -183,23 +178,13 @@
     "navigateAriaLabel": "ניווט לסטודיו במפות Google",
     "navigateLabel": "ניווט",
     "wazeAriaLabel": "ניווט לסטודיו ב-Waze",
-    "wazeLabel": "Waze",
-    "workshopAlt": "תמונת אווירה של בית המלאכה",
-    "workshopLabel": "בית המלאכה המשפחתי"
+    "wazeLabel": "Waze"
   },
   "TrustHighlights": {
     "sectionAriaLabel": "הערכים שלנו",
     "highlight1Title": "עיצוב אישי",
-    "highlight1Desc": "כל אנדרטה מתוכננת יחד אתכם כדי להנציח את הסיפור האישי.",
     "highlight2Title": "שקיפות מלאה",
-    "highlight2Desc": "עדכונים שוטפים וצילומים לאורך כל תהליך הייצור וההקמה.",
-    "highlight3Title": "אחריות לדורות",
-    "highlight3Desc": "אנו מתחייבים לאיכות האבן והעבודה לאורך עשרות שנים."
-  },
-  "CatalogFilters": {
-    "sidebarAriaLabel": "סינון מצבות",
-    "ctaText": "כאן בשבילכם בכל שלב בתהליך.",
-    "ctaButton": "ייעוץ אישי מהלב"
+    "highlight3Title": "אחריות לדורות"
   },
   "Pagination": {
     "ariaLabel": "עימוד",
@@ -209,7 +194,7 @@
   "CatalogCategoryPage": {
     "fallbackTitle": "גלריית דגמים",
     "notFoundNote": "הקטגוריה לא נמצאה.",
-    "ctaConsult": "בקשת ייעוץ"
+    "otherCategoriesHeading": "סוגי אבן נוספים"
   },
   "ContactPage": {
     "gridAriaLabel": "יצירת קשר עם משפחת אלפר"

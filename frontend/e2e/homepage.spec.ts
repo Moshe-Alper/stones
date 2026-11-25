@@ -78,7 +78,7 @@ test.describe("Homepage", () => {
     const contactResponse = await page.goto("/contact");
     expect(contactResponse?.status()).toBeLessThan(400);
     await expect(
-      page.getByRole("heading", { name: "ייעוץ אישי מהמשפחה שלנו" }),
+      page.getByRole("heading", { name: "ייעוץ אישי ומקצועי" }),
     ).toBeVisible();
   });
 });
