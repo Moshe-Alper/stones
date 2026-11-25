@@ -43,7 +43,7 @@
 ## External Dependencies
 
 - The Contact page's `ContactMap` component embeds a Google Maps `output=embed` iframe to
-  show the studio's real location, plus static Google Maps and Waze deep links for
+  show the factory's real location, plus static Google Maps and Waze deep links for
   directions. This is a client-rendered, unauthenticated, no-API-key embed; no server-side
   credentials or billing account are involved.
 - Contact inquiry email delivery uses [Resend](https://resend.com). The API key
@@ -71,6 +71,12 @@
 
 ## Change Log
 
+- 2026-11-25: Hebrew content round 1 (`.plan/022-2026-11-25-hebrew-content-expansion.md`). Homepage
+  is now `Hero` → `RecentWork` → `OurFactory` → `CategoryTiles` → … ; the hero and the new
+  `OurFactory` strip read their photos from `frontend/src/data/factory-photos.ts`
+  (`public/images/factory/`) and render a captioned `PhotoPlaceholder` until a file is set.
+  Category pages render 4 "about this stone" blocks from `Categories.<slug>.sections`
+  in messages. FAQ trimmed to 2 questions; "studio" wording replaced by "factory".
 - 2026-11-25: Catalog, category gallery and Contact pages redesigned photo-first
   (`.plan/021-2026-11-25-catalog-contact-visual-redesign.md`). The catalog now reuses
   `CategoryTiles` (`size="large"`) and ends with `ContactBand`; category pages end with a

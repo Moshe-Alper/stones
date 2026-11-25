@@ -10,16 +10,25 @@ describe("FAQ", () => {
     expect(container.querySelector("#faq")).toBeInTheDocument();
   });
 
-  it("renders each question as a collapsible item", () => {
-    render(<FAQ />);
-    expect(
-      screen.getByText("האם אתם מטפלים גם באישורים מול בית העלמין?")
-    ).toBeInTheDocument();
+  it("renders exactly the two remaining questions", () => {
+    const { container } = render(<FAQ />);
+    expect(container.querySelectorAll("details")).toHaveLength(2);
   });
 
-  it("renders the pricing question", () => {
+  it("no longer renders the removed pricing and cemetery-approvals questions", () => {
     render(<FAQ />);
-    expect(screen.getByText("מה כלול במחיר?")).toBeInTheDocument();
+    expect(screen.queryByText("מה כלול במחיר?")).toBeNull();
+    expect(screen.queryByText("האם אתם מטפלים גם באישורים מול בית העלמין?")).toBeNull();
+  });
+
+  it("recommends granite, marble and Galilean dolomite", () => {
+    render(<FAQ />);
+    expect(screen.getByText(/גרניט, שיש וסלעי דולמיט גליליים/)).toBeInTheDocument();
+  });
+
+  it("presents the factory and offices as being in Pardes Hana", () => {
+    render(<FAQ />);
+    expect(screen.getByText(/המפעל והמשרדים שלנו נמצאים כאן, צמוד לבית העלמין/)).toBeInTheDocument();
   });
 
   it("renders the service area question", () => {

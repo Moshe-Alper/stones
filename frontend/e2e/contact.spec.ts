@@ -22,7 +22,7 @@ test.describe("Contact page", () => {
     ).toBeVisible()
     await expect(page.getByLabel("שם מלא")).toBeVisible()
     await expect(
-      page.getByTitle("מפת מיקום הסטודיו"),
+      page.getByTitle("מפת מיקום המפעל"),
     ).toBeVisible()
     await expect(
       page.getByRole("heading", { level: 2, name: "אחריות לדורות" }),
@@ -131,16 +131,16 @@ test.describe("Contact page", () => {
     ).toHaveCount(0)
   })
 
-  test("offers Google Maps and Waze navigation to the studio", async ({
+  test("offers Google Maps and Waze navigation to the factory", async ({
     page,
   }) => {
     await page.goto("/contact")
 
     await expect(
-      page.getByRole("link", { name: "ניווט לסטודיו במפות Google" }),
+      page.getByRole("link", { name: "ניווט למפעל במפות Google" }),
     ).toHaveAttribute("href", /^https:\/\/www\.google\.com\/maps\/dir\/\?/)
     await expect(
-      page.getByRole("link", { name: "ניווט לסטודיו ב-Waze" }),
+      page.getByRole("link", { name: "ניווט למפעל ב-Waze" }),
     ).toHaveAttribute("href", /^https:\/\/waze\.com\/ul\?/)
   })
 
@@ -161,7 +161,7 @@ test.describe("Contact page", () => {
       page.getByRole("button", { name: "שליחת הבקשה" }),
     ).toBeVisible()
     await expect(
-      page.getByTitle("מפת מיקום הסטודיו"),
+      page.getByTitle("מפת מיקום המפעל"),
     ).toBeVisible()
   })
 })

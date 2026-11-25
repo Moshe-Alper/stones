@@ -7,7 +7,7 @@ import ContactDetails from "./ContactDetails"
 describe("ContactDetails", () => {
   it("links the studio address to Google Maps directions", () => {
     render(<ContactDetails />)
-    expect(screen.getByRole("link", { name: /כתובת הסטודיו/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /כתובת המפעל/ })).toHaveAttribute(
       "href",
       CONTACT_DETAILS.mapsUrl,
     )

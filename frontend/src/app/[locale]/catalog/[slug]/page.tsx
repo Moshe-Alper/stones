@@ -8,6 +8,8 @@ import ContactBand from "@/components/ContactBand/ContactBand"
 import { CATEGORIES } from "@/data/categories"
 import styles from "./page.module.css"
 
+type CategorySection = { title: string; text: string }
+
 export default async function CatalogCategoryPage({
   params,
 }: {
@@ -19,6 +21,8 @@ export default async function CatalogCategoryPage({
   const tCategories = await getTranslations({ locale, namespace: "Categories" })
   const tBreadcrumb = await getTranslations({ locale, namespace: "Breadcrumb" })
   const title = category ? tCategories(`${category.slug}.title`) : t("fallbackTitle")
+  // Short "about this stone" blocks shown under the gallery (.plan/022).
+  const sections: CategorySection[] = category ? tCategories.raw(`${category.slug}.sections`) : []
 
   return (
     <>
@@ -42,6 +46,16 @@ export default async function CatalogCategoryPage({
             <CategoryGallery category={category.slug} categoryTitle={title} />
           ) : (
             <p className={styles.note}>{t("notFoundNote")}</p>
+          )}
+          {sections.length > 0 && (
+            <dl className={styles.sections}>
+              {sections.map((section) => (
+                <div className={styles.section} key={section.title}>
+                  <dt className={styles.sectionTitle}>{section.title}</dt>
+                  <dd className={styles.sectionText}>{section.text}</dd>
+                </div>
+              ))}
+            </dl>
           )}
         </div>
         <CategoryTiles heading={t("otherCategoriesHeading")} excludeSlug={category?.slug} />

@@ -12,10 +12,9 @@ describe("Hero", () => {
     expect(container.querySelector("p")).toBeNull()
   })
 
-  it("shows a real gallery photo with descriptive alt text", () => {
+  it("shows a captioned placeholder for the factory-front photo until it is supplied", () => {
     render(<Hero />)
-    const image = screen.getByRole("img", { name: /מצבה משיש חברוני/ })
-    expect(image.getAttribute("src")).toContain("gallery-88.jpg")
+    expect(screen.getByRole("img", { name: "חזית המפעל עם השלט" })).toBeInTheDocument()
   })
 
   it("links the primary CTA to the recent-work section", () => {

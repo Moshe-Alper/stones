@@ -8,8 +8,6 @@ export default function FAQ() {
   const QUESTIONS = [
     { q: t("q1Question"), a: t("q1AnswerTemplate", { summary: tServiceArea("summary") }) },
     { q: t("q2Question"), a: t("q2Answer") },
-    { q: t("q3Question"), a: t("q3Answer") },
-    { q: t("q4Question"), a: t("q4Answer") },
   ];
 
   return (

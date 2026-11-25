@@ -1,6 +1,7 @@
 import Header from "@/components/Header/Header"
 import Hero from "@/components/Hero/Hero"
 import RecentWork from "@/components/RecentWork/RecentWork"
+import OurFactory from "@/components/OurFactory/OurFactory"
 import CategoryTiles from "@/components/CategoryTiles/CategoryTiles"
 import ProcessSteps from "@/components/ProcessSteps/ProcessSteps"
 import FamilyNote from "@/components/FamilyNote/FamilyNote"
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <RecentWork />
+        <OurFactory />
         <CategoryTiles />
         <ProcessSteps />
         <FamilyNote />
