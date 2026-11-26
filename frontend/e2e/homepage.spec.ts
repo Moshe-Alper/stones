@@ -17,8 +17,10 @@ test.describe("Homepage", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "he");
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
     await expect(
-      page.getByRole("heading", { name: "מצבות בעבודת יד, לזכר יקיריכם" })
+      page.getByRole("heading", { name: "מצבות משיש ואבן, מאז 1965" })
     ).toBeVisible()
+    // Factory section is hidden until there are enough photos (.plan/023).
+    await expect(page.getByRole("heading", { name: "המפעל שלנו בפרדס חנה" })).toHaveCount(0)
 
     expect(consoleErrors).toEqual([]);
   });

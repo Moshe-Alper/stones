@@ -71,6 +71,11 @@
 
 ## Change Log
 
+- 2026-11-26: Homepage and footer cleanup (`.plan/023-2026-11-26-hero-footer-font-cleanup.md`).
+  `OurFactory` was taken off the homepage until more photos exist. The component and its data are
+  kept. The footer lost the non-link "info" column, the placeholder visitor count and the
+  unverified accessibility badge. The Hebrew fonts are now Noto Serif Hebrew (display) and
+  Assistant (body). RU keeps Noto Serif/Sans.
 - 2026-11-25: Hebrew content round 1 (`.plan/022-2026-11-25-hebrew-content-expansion.md`). Homepage
   is now `Hero` → `RecentWork` → `OurFactory` → `CategoryTiles` → … ; the hero and the new
   `OurFactory` strip read their photos from `frontend/src/data/factory-photos.ts`

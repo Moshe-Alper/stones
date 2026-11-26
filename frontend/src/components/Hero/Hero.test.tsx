@@ -7,7 +7,7 @@ describe("Hero", () => {
   it("renders the single-line heading without a subheading paragraph", () => {
     const { container } = render(<Hero />)
     expect(
-      screen.getByRole("heading", { name: "מצבות בעבודת יד, לזכר יקיריכם" }),
+      screen.getByRole("heading", { name: "מצבות משיש ואבן, מאז 1965" }),
     ).toBeInTheDocument()
     expect(container.querySelector("p")).toBeNull()
   })
