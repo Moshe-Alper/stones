@@ -27,7 +27,7 @@ export default async function CatalogCategoryPage({
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <div className={styles.container}>
           <Breadcrumb
             items={[

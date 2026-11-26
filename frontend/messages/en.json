@@ -25,7 +25,8 @@
     "navCatalogProducts": "Product catalog",
     "navStoneTypes": "Stone types",
     "navFaq": "FAQ",
-    "copyright": "© {year} Alper Marble. All rights reserved."
+    "copyright": "© {year} Alper Marble. All rights reserved.",
+    "navAccessibility": "Accessibility statement"
   },
   "Hero": {
     "ariaLabel": "Introduction",
@@ -284,5 +285,39 @@
     "messageRequired": "Please enter a message.",
     "messageTooLong": "The message is too long.",
     "deliveryUnavailable": "We couldn't send your request right now. Please try again in a few minutes or contact us by phone."
+  },
+  "AccessibilityPage": {
+    "skipLink": "Skip to main content",
+    "metaTitle": "Accessibility statement | Alper Marble",
+    "title": "Accessibility statement",
+    "intro": "We want everyone, including people with disabilities, to be able to use this site easily and find the information they need.",
+    "standardHeading": "Accessibility level",
+    "standardText": "The site has been adapted to the Israeli Equal Rights for Persons with Disabilities (Service Accessibility Adjustments) Regulations, 2013, and to Israeli Standard IS 5568, which is based on WCAG 2.0, at level AA.",
+    "doneHeading": "What we did",
+    "doneItems": [
+      "The whole site can be used with a keyboard, and every page starts with a \"Skip to main content\" link.",
+      "The element in keyboard focus has a clear outline.",
+      "Images have text alternatives, and decorative images are hidden from screen readers.",
+      "Every field in the contact form has a label, and a field left empty is marked and announced by screen readers.",
+      "Colour contrast meets the standard.",
+      "Text can be enlarged to 200% without losing content.",
+      "The site respects the operating system's \"reduce motion\" setting.",
+      "The site is available in Hebrew, English and Russian."
+    ],
+    "checkedHeading": "How we checked",
+    "checkedText": "The site was checked with an automated testing tool (axe) on every page in all three languages, and manually for keyboard navigation.",
+    "limitationsHeading": "Known limitations",
+    "limitationItems": [
+      "The map on the contact page is embedded from Google Maps and is not under our control. The address is also shown as text, with navigation links to Google Maps and Waze.",
+      "Gallery photos have a general description (stone type and photo number), not a detailed description of each headstone.",
+      "The address is shown in Hebrew in the English and Russian versions too."
+    ],
+    "contactHeading": "Accessibility contact",
+    "contactText": "Found a problem on the site, or need information in another way? Let us know and we will take care of it. You can also contact us about accessibility at the factory and office.",
+    "contactPersonLabel": "Accessibility coordinator",
+    "contactPersonName": "Moshik Alper",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "updated": "This statement was last updated on 26 November 2026."
   }
 }

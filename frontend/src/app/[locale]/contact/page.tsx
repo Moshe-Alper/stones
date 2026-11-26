@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main id="main-content" tabIndex={-1} className={styles.main}>
         <ContactHero />
         <section className={styles.grid} aria-label={t("gridAriaLabel")}>
           <div className={styles.contactColumn}>

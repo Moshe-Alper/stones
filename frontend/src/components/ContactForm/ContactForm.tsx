@@ -20,6 +20,8 @@ type SubmissionState = {
   message: string
 }
 
+const STATUS_ID = "contact-form-status"
+
 const INITIAL_SUBMISSION_STATE: SubmissionState = {
   type: "idle",
   message: "",
@@ -32,12 +34,18 @@ export default function ContactForm() {
   const [submission, setSubmission] = useState<SubmissionState>(
     INITIAL_SUBMISSION_STATE,
   )
+  // Required fields left empty on the last submit; marked aria-invalid and tied
+  // to the status message so screen readers announce which field is wrong (.plan/024).
+  const [invalidFields, setInvalidFields] = useState<string[]>([])
 
   function handleChange(
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) {
     const field = event.target.name as keyof ContactInquiry
     setValues((current) => ({ ...current, [field]: event.target.value }))
+    if (event.target.value.trim()) {
+      setInvalidFields((current) => current.filter((name) => name !== field))
+    }
 
     if (submission.type === "error") {
       setSubmission(INITIAL_SUBMISSION_STATE)
@@ -47,11 +55,11 @@ export default function ContactForm() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    const hasMissingField = REQUIRED_FIELDS.some(
-      (field) => !values[field].trim(),
-    )
+    const missingFields = REQUIRED_FIELDS.filter((field) => !values[field].trim())
+    setInvalidFields(missingFields)
 
-    if (hasMissingField) {
+    if (missingFields.length > 0) {
+      event.currentTarget.querySelector<HTMLElement>(`[name="${missingFields[0]}"]`)?.focus()
       setSubmission({
         type: "error",
         message: t("errorMissingFields"),
@@ -87,6 +95,10 @@ export default function ContactForm() {
   }
 
   const isSubmitting = submission.type === "submitting"
+  const fieldA11yProps = (field: string) =>
+    invalidFields.includes(field)
+      ? { "aria-invalid": true, "aria-describedby": STATUS_ID }
+      : {}
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
@@ -96,6 +108,7 @@ export default function ContactForm() {
           <input
             id="contact-name"
             name="name"
+            {...fieldA11yProps("name")}
             type="text"
             value={values.name}
             onChange={handleChange}
@@ -110,6 +123,7 @@ export default function ContactForm() {
           <input
             id="contact-phone"
             name="phone"
+            {...fieldA11yProps("phone")}
             type="tel"
             value={values.phone}
             onChange={handleChange}
@@ -127,6 +141,7 @@ export default function ContactForm() {
         <select
           id="contact-preferred-time"
           name="preferredTime"
+          {...fieldA11yProps("preferredTime")}
           value={values.preferredTime}
           onChange={handleChange}
           required
@@ -144,6 +159,7 @@ export default function ContactForm() {
         <textarea
           id="contact-message"
           name="message"
+          {...fieldA11yProps("message")}
           value={values.message}
           onChange={handleChange}
           placeholder={t("messagePlaceholder")}
@@ -170,6 +186,7 @@ export default function ContactForm() {
       </button>
 
       <p
+        id={STATUS_ID}
         className={`${styles.status} ${
           submission.type === "error" ? styles.statusError : ""
         }`}

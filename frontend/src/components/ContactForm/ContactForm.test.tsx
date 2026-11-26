@@ -37,6 +37,22 @@ describe("ContactForm", () => {
     expect(fetchMock).not.toHaveBeenCalled()
   })
 
+  it("marks empty required fields invalid and focuses the first one", async () => {
+    const user = userEvent.setup()
+    vi.stubGlobal("fetch", vi.fn())
+    render(<ContactForm />)
+
+    await user.type(screen.getByLabelText("שם מלא"), "ישראל")
+    await user.click(screen.getByRole("button", { name: "שליחת הבקשה" }))
+
+    const phone = screen.getByLabelText("מספר טלפון")
+    expect(screen.getByLabelText("שם מלא")).not.toHaveAttribute("aria-invalid")
+    expect(phone).toHaveAttribute("aria-invalid", "true")
+    expect(phone).toHaveAccessibleDescription("אנא מלאו את כל השדות כדי שנוכל לחזור אליכם.")
+    expect(screen.getByLabelText("הודעה / בקשה מיוחדת")).toHaveAttribute("aria-invalid", "true")
+    expect(phone).toHaveFocus()
+  })
+
   it("submits a complete inquiry and announces success", async () => {
     const user = userEvent.setup()
     const fetchMock = vi.fn().mockResolvedValue({

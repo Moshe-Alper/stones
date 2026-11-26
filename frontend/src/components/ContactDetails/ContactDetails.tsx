@@ -15,17 +15,18 @@ export default function ContactDetails() {
         href={CONTACT_DETAILS.mapsUrl}
         target="_blank"
         rel="noreferrer"
-        aria-label={`${t("addressCardLabel")}: ${CONTACT_DETAILS.addressLine}`}
       >
         <MapPin size={18} aria-hidden="true" />
-        <span>{CONTACT_DETAILS.addressLine}</span>
+        <span className="visually-hidden">{t("addressCardLabel")}: </span>
+        {/* The address stays Hebrew on every locale (.plan/017), so mark its language (.plan/024). */}
+        <span lang="he" dir="rtl">{CONTACT_DETAILS.addressLine}</span>
       </a>
       <a
         className={styles.item}
         href={`mailto:${CONTACT_DETAILS.email}`}
-        aria-label={`${t("emailCardLabel")}: ${CONTACT_DETAILS.email}`}
       >
         <Mail size={18} aria-hidden="true" />
+        <span className="visually-hidden">{t("emailCardLabel")}: </span>
         <span dir="ltr">{CONTACT_DETAILS.email}</span>
       </a>
     </section>

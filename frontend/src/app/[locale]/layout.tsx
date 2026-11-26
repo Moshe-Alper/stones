@@ -71,6 +71,7 @@ export default async function RootLayout({
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
   const tServiceArea = await getTranslations({ locale, namespace: "ServiceArea" });
+  const tAccessibility = await getTranslations({ locale, namespace: "AccessibilityPage" });
 
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
@@ -93,6 +94,10 @@ export default async function RootLayout({
       className={`${notoSerifHebrew.variable} ${assistant.variable} ${notoSerif.variable} ${notoSans.variable}`}
     >
       <body>
+        {/* First focusable element on every page (.plan/024). */}
+        <a href="#main-content" className="skip-link">
+          {tAccessibility("skipLink")}
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}

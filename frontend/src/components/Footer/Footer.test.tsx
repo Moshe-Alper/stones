@@ -23,7 +23,15 @@ describe("Footer", () => {
   it("does not render placeholder info, accessibility badge or visitor count", () => {
     render(<Footer />);
     expect(screen.queryByText("מידע נוסף")).not.toBeInTheDocument();
-    expect(screen.queryByText(/נגישות/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/נגישות AA/)).not.toBeInTheDocument();
     expect(screen.queryByText(/מבקרים/)).not.toBeInTheDocument();
+  });
+
+  it("links to the accessibility statement (.plan/024)", () => {
+    render(<Footer />);
+    expect(screen.getByRole("link", { name: "הצהרת נגישות" })).toHaveAttribute(
+      "href",
+      "/accessibility",
+    );
   });
 });

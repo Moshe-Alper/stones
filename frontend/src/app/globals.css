@@ -72,3 +72,56 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* Accessibility (.plan/024, IS 5568 / WCAG AA). A visible focus ring on every
+   interactive element, with a light halo so it also shows on dark/photo backgrounds. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--color-bg);
+}
+
+/* Focus target for the skip link; it doesn't need a ring of its own. */
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 16px;
+  top: 16px;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Text for screen readers only. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

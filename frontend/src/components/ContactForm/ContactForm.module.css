@@ -116,3 +116,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+.field [aria-invalid="true"] {
+  border-color: #8a2d22;
+}

@@ -71,6 +71,14 @@
 
 ## Change Log
 
+- 2026-11-26: Accessibility, IS 5568 / WCAG AA (`.plan/024-2026-11-26-accessibility-is5568.md`).
+  New static route `/[locale]/accessibility` (accessibility statement, text in the
+  `AccessibilityPage` messages), linked from the footer. Every page's `<main>` has
+  `id="main-content"`, which the skip link in `[locale]/layout.tsx` targets. Global
+  `:focus-visible` ring, `prefers-reduced-motion` and `.visually-hidden` live in
+  `globals.css`. `e2e/accessibility.spec.ts` runs axe (A/AA) on every page in he/en/ru. When
+  a page is added, add it to that spec and update the statement's `updated` date.
+
 - 2026-11-26: Homepage and footer cleanup (`.plan/023-2026-11-26-hero-footer-font-cleanup.md`).
   `OurFactory` was taken off the homepage until more photos exist. The component and its data are
   kept. The footer lost the non-link "info" column, the placeholder visitor count and the
