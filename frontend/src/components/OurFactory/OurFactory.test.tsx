@@ -15,10 +15,16 @@ describe("OurFactory", () => {
     expect(screen.getAllByRole("listitem")).toHaveLength(FACTORY_PHOTOS.length)
   })
 
+  it("shows a supplied photo as a real image", () => {
+    render(<OurFactory />)
+    const truck = screen.getByRole("img", { name: "משאית המפעל" })
+    expect(truck.getAttribute("src")).toContain("factory-yard.jpg")
+  })
+
   it("captions missing photos with what should be shot", () => {
     render(<OurFactory />)
-    for (const caption of ["משאית המפעל", "מנוף בעבודה", "מלגזה מעמיסה אבן", "מכונת חיתוך אבן"]) {
-      expect(screen.getByRole("img", { name: caption })).toBeInTheDocument()
+    for (const caption of ["מנוף בעבודה", "מלגזה מעמיסה אבן", "מכונת חיתוך אבן"]) {
+      expect(screen.getByRole("img", { name: caption }).tagName).toBe("DIV")
     }
   })
 })
