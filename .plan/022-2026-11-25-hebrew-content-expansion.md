@@ -194,3 +194,4 @@ Owner said: "put in what you wrote for now; we'll fix later if needed". Done on 
 - EN/RU got matching translations of all new keys (Claude's draft, to review with the translation plan).
 - Round (d) SEO metadata: not started.
 - Validation: 101 unit tests, lint, build and all 25 Playwright e2e tests pass; mobile/desktop screenshots checked, no horizontal scroll.
+- 2026-11-26: First real photo `frontend/public/images/factory/factory-yard.jpg` (factory yard with the truck and crane; converted from the owner's HEIC, license plate blurred, GPS metadata stripped). It is used for the "truck" tile and, **temporarily**, as the hero. When the owner hangs the sign, shoot the front, set `HERO_PHOTO.file` and restore `Hero.imageAlt` to the "front with sign" wording.

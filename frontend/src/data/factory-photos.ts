@@ -7,13 +7,15 @@ export type FactoryPhoto = {
   file?: string
 }
 
-// Hero background: the front of the factory with its sign.
-export const HERO_PHOTO: FactoryPhoto = { id: "front" }
+// Hero background: meant to be the front of the factory with its sign. TEMPORARY: until
+// the owner hangs the sign and shoots it, the hero reuses the factory-yard photo. When the
+// sign photo arrives, set its file here and restore "Hero.imageAlt" in messages.
+export const HERO_PHOTO: FactoryPhoto = { id: "front", file: "factory-yard.jpg" }
 
 // "המפעל שלנו" homepage strip, in display order. Captions/alt text live in
 // messages/{locale}.json under "OurFactory.photos.<id>".
 export const FACTORY_PHOTOS: FactoryPhoto[] = [
-  { id: "truck" },
+  { id: "truck", file: "factory-yard.jpg" },
   { id: "crane" },
   { id: "forklift" },
   { id: "cutter" },
