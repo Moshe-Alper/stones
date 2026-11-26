@@ -12,13 +12,13 @@
   --color-surface-dark: #22201b;
   --color-whatsapp: #25d366;
 
-  --font-display: var(--font-frank-ruhl-libre), "Times New Roman", serif;
-  --font-sans: var(--font-heebo), Arial, sans-serif;
+  --font-display: var(--font-noto-serif-hebrew), "Times New Roman", serif;
+  --font-sans: var(--font-assistant), Arial, sans-serif;
 
   --max-content-width: 1200px;
 }
 
-/* Frank Ruhl Libre / Heebo have no Cyrillic subset — swap in Noto Serif/Sans for
+/* Noto Serif Hebrew / Assistant have no Cyrillic subset — swap in Noto Serif/Sans for
    Russian (see .plan/017 decision #2). */
 html:lang(ru) {
   --font-display: var(--font-noto-serif), "Times New Roman", serif;

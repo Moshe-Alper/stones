@@ -25,18 +25,11 @@
     "navCatalogProducts": "קטלוג מוצרים",
     "navStoneTypes": "סוגי אבנים",
     "navFaq": "שאלות נפוצות",
-    "infoHeading": "מידע נוסף",
-    "infoPrivacy": "מדיניות פרטיות",
-    "infoTerms": "תנאי שימוש",
-    "infoAccessibility": "נגישות",
-    "infoBlog": "בלוג הנצחה",
-    "accessibilityBadge": "נגישות AA",
-    "visitorsPlaceholder": "מבקרים: 12,482",
     "copyright": "© {year} שיש אלפר. כל הזכויות שמורות."
   },
   "Hero": {
     "ariaLabel": "פתיחה",
-    "heading": "מצבות בעבודת יד, לזכר יקיריכם",
+    "heading": "מצבות משיש ואבן, מאז 1965",
     "imageAlt": "חצר המפעל של שיש אלפר בפרדס חנה",
     "photoPlaceholder": "חזית המפעל עם השלט",
     "ctaWorks": "לצפייה בעבודות",
@@ -206,7 +199,7 @@
   "FamilyNote": {
     "sectionAriaLabel": "עסק משפחתי",
     "eyebrow": "עסק משפחתי מאז {year}",
-    "statement": "משפחת אלפר מלווה אתכם אישית, מהשיחה הראשונה ועד ההצבה."
+    "statement": "מלווים אתכם אישית, מהשיחה הראשונה ועד ההצבה."
   },
   "ContactBand": {
     "sectionAriaLabel": "יצירת קשר",

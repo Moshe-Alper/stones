@@ -25,18 +25,11 @@
     "navCatalogProducts": "Product catalog",
     "navStoneTypes": "Stone types",
     "navFaq": "FAQ",
-    "infoHeading": "More information",
-    "infoPrivacy": "Privacy policy",
-    "infoTerms": "Terms of use",
-    "infoAccessibility": "Accessibility",
-    "infoBlog": "Memorial blog",
-    "accessibilityBadge": "Accessibility AA",
-    "visitorsPlaceholder": "Visitors: 12,482",
     "copyright": "© {year} Alper Marble. All rights reserved."
   },
   "Hero": {
     "ariaLabel": "Introduction",
-    "heading": "Handcrafted memorial stones, in memory of your loved ones",
+    "heading": "Marble and stone headstones, since 1965",
     "imageAlt": "The Alper Marble factory yard in Pardes Hana",
     "photoPlaceholder": "Front of the factory with the sign",
     "ctaWorks": "See our work",
@@ -206,7 +199,7 @@
   "FamilyNote": {
     "sectionAriaLabel": "Family business",
     "eyebrow": "A family business since {year}",
-    "statement": "The Alper family guides you personally, from the first conversation to the installation."
+    "statement": "We guide you personally, from the first conversation to the installation."
   },
   "ContactBand": {
     "sectionAriaLabel": "Contact",

@@ -2,25 +2,25 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Frank_Ruhl_Libre, Heebo, Noto_Sans, Noto_Serif } from "next/font/google";
+import { Assistant, Noto_Sans, Noto_Serif, Noto_Serif_Hebrew } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { CONTACT_DETAILS } from "@/data/contact";
 import WhatsAppFab from "@/components/WhatsAppFab/WhatsAppFab";
 import "../globals.css";
 
-const frankRuhlLibre = Frank_Ruhl_Libre({
-  variable: "--font-frank-ruhl-libre",
+const notoSerifHebrew = Noto_Serif_Hebrew({
+  variable: "--font-noto-serif-hebrew",
   subsets: ["hebrew", "latin"],
   weight: "variable",
 });
 
-const heebo = Heebo({
-  variable: "--font-heebo",
+const assistant = Assistant({
+  variable: "--font-assistant",
   subsets: ["hebrew", "latin"],
   weight: "variable",
 });
 
-// Neither Frank Ruhl Libre nor Heebo ships a Cyrillic subset (confirmed against
+// Neither Noto Serif Hebrew nor Assistant ships a Cyrillic subset (confirmed against
 // Next's Google Fonts metadata) — Noto Serif/Sans cover `ru` instead, swapped in
 // via the `html:lang(ru)` rule in globals.css. See .plan/017 decision #2.
 const notoSerif = Noto_Serif({
@@ -90,7 +90,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={locale === "he" ? "rtl" : "ltr"}
-      className={`${frankRuhlLibre.variable} ${heebo.variable} ${notoSerif.variable} ${notoSans.variable}`}
+      className={`${notoSerifHebrew.variable} ${assistant.variable} ${notoSerif.variable} ${notoSans.variable}`}
     >
       <body>
         <script

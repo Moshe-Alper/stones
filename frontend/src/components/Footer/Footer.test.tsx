@@ -20,8 +20,10 @@ describe("Footer", () => {
     );
   });
 
-  it("renders the static visitor count placeholder", () => {
+  it("does not render placeholder info, accessibility badge or visitor count", () => {
     render(<Footer />);
-    expect(screen.getByText("מבקרים: 12,482")).toBeInTheDocument();
+    expect(screen.queryByText("מידע נוסף")).not.toBeInTheDocument();
+    expect(screen.queryByText(/נגישות/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/מבקרים/)).not.toBeInTheDocument();
   });
 });

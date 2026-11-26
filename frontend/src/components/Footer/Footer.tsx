@@ -10,12 +10,6 @@ export default function Footer() {
     { label: t("navStoneTypes"), href: "/catalog" },
     { label: t("navFaq"), href: "/contact#faq" },
   ];
-  const INFO_LINKS = [
-    t("infoPrivacy"),
-    t("infoTerms"),
-    t("infoAccessibility"),
-    t("infoBlog"),
-  ];
 
   return (
     <footer className={styles.footer}>
@@ -35,24 +29,9 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div className={styles.column}>
-            <span className={styles.columnTitle}>{t("infoHeading")}</span>
-            <ul className={styles.list}>
-              {INFO_LINKS.map((label) => (
-                <li className={styles.listItem} key={label}>
-                  {label}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
       <div className={styles.bottom}>
-        <div className={styles.bottomLeft}>
-          <span className={styles.meta}>{t("accessibilityBadge")}</span>
-          {/* Static placeholder text only — no real visitor tracking (out of scope). */}
-          <span className={styles.meta}>{t("visitorsPlaceholder")}</span>
-        </div>
         <span className={styles.copyright}>
           {t("copyright", { year: new Date().getFullYear() })}
         </span>
