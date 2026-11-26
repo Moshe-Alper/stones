@@ -11,6 +11,6 @@ describe("FamilyNote", () => {
 
   it("renders the one-sentence statement as the section heading", () => {
     render(<FamilyNote />)
-    expect(screen.getByRole("heading", { name: /משפחת אלפר מלווה אתכם אישית/ })).toBeInTheDocument()
+    expect(screen.getByRole("heading", { name: /מלווים אתכם אישית/ })).toBeInTheDocument()
   })
 })
