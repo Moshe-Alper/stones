@@ -19,7 +19,7 @@ export default function ContactMap() {
             role="img"
             aria-label={t("mapFallbackAriaLabel")}
           >
-            <span>{CONTACT_DETAILS.addressLine}</span>
+            <span lang="he" dir="rtl">{CONTACT_DETAILS.addressLine}</span>
           </div>
         ) : (
           <>

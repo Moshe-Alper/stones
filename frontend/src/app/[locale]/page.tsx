@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <RecentWork />
         {/* OurFactory hidden until there are enough factory photos (.plan/023). */}

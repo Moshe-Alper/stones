@@ -14,7 +14,7 @@ export default function CatalogPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <div className={styles.topNav}>
           <Breadcrumb />
         </div>

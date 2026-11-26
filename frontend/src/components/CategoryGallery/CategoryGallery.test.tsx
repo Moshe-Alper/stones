@@ -45,6 +45,24 @@ describe("CategoryGallery", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
+  it("moves focus into the lightbox and back to the thumbnail on Escape", async () => {
+    const user = userEvent.setup();
+    render(
+      <CategoryGallery category="granite" categoryTitle="מצבות אבן גרניט" />
+    );
+    const [firstThumb] = screen.getAllByRole("button", { name: /הגדלת תמונה/ });
+
+    await user.click(firstThumb);
+    expect(screen.getByRole("button", { name: "סגירה" })).toHaveFocus();
+
+    await user.tab();
+    expect(screen.getByRole("button", { name: "סגירה" })).toHaveFocus();
+
+    await user.keyboard("{Escape}");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(firstThumb).toHaveFocus();
+  });
+
   it("narrows the grid to only classic-tagged photos when the style filter is used", async () => {
     const user = userEvent.setup();
     render(

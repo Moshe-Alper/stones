@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./CategoryGallery.module.css";
@@ -31,15 +31,31 @@ export default function CategoryGallery({
       ? categoryPhotos
       : categoryPhotos.filter((photo) => photo.style === styleFilter);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const isOpen = openIndex !== null;
 
+  // Modal dialog behaviour (.plan/024): focus moves into the lightbox, Tab stays
+  // on its only control, Esc closes, and focus returns to the opening thumbnail.
   useEffect(() => {
     if (openIndex === null) return;
+    const returnTarget = thumbRefs.current[openIndex];
+    closeButtonRef.current?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpenIndex(null);
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeButtonRef.current?.focus();
+      }
     };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [openIndex]);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      returnTarget?.focus();
+    };
+    // Re-run only on open/close, not when the open photo changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   if (categoryPhotos.length === 0) return null;
 
@@ -79,6 +95,9 @@ export default function CategoryGallery({
               <button
                 type="button"
                 className={styles.thumb}
+                ref={(element) => {
+                  thumbRefs.current[index] = element;
+                }}
                 onClick={() => setOpenIndex(index)}
                 aria-label={t("enlargeAriaLabel", { index: index + 1, categoryTitle })}
               >
@@ -109,6 +128,7 @@ export default function CategoryGallery({
           <button
             type="button"
             className={styles.closeButton}
+            ref={closeButtonRef}
             aria-label={t("closeAriaLabel")}
             onClick={() => setOpenIndex(null)}
           >

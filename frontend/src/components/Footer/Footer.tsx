@@ -9,6 +9,7 @@ export default function Footer() {
     { label: t("navCatalogProducts"), href: "/catalog" },
     { label: t("navStoneTypes"), href: "/catalog" },
     { label: t("navFaq"), href: "/contact#faq" },
+    { label: t("navAccessibility"), href: "/accessibility" },
   ];
 
   return (
