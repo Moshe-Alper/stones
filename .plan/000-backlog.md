@@ -28,4 +28,4 @@ Current queue:
 - [ ] Credit card payment link (Tranzila) | plan:.plan/015-2026-08-22-credit-card-payment-link.md — blocked on Tranzila account signup
 - [x] Communicate service area (Pardes Hana-Karkur and vicinity) sitewide | plan:.plan/016-2026-08-22-service-area-messaging.md
 - [x] Content fixes batch: service-area wording (Menashe & Alona, up to Haifa), FAQ trim + pricing entry, blue-granite homepage photo, remove headstone-restoration page, fully-clickable catalog cards | plan:.plan/018-2026-08-30-content-fixes.md
-- [ ] About page (אודות) | plan:.plan/025-2026-11-28-about-page.md — implemented on branch feat/about-page-025, waiting on PR
+- [x] About page (אודות) | plan:.plan/025-2026-11-28-about-page.md — live via PR #13
