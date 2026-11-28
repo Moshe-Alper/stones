@@ -95,6 +95,18 @@
   white-space: nowrap;
 }
 
+.privacyNotice {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.privacyNotice a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 .status {
   min-height: 24px;
   color: var(--color-accent);

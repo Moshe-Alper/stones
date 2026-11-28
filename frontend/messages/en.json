@@ -28,7 +28,8 @@
     "navAbout": "About",
     "navFaq": "FAQ",
     "copyright": "© {year} Alper Marble. All rights reserved.",
-    "navAccessibility": "Accessibility statement"
+    "navAccessibility": "Accessibility statement",
+    "navPrivacy": "Privacy policy"
   },
   "Hero": {
     "ariaLabel": "Introduction",
@@ -233,7 +234,8 @@
       "morning": "Morning (08:00 - 12:00)",
       "midday": "Midday (12:00 - 15:00)",
       "afternoon": "Afternoon (15:00 - 17:30)"
-    }
+    },
+    "privacyNotice": "Your details are used only to get back to you. <link>Privacy policy</link>"
   },
   "ContactDetails": {
     "sectionAriaLabel": "Contact details",
@@ -337,5 +339,40 @@
     "craftHeading": "Handwork",
     "craftText": "Much of the work is done by hand: engraving letters, carving decorations and finishing the stone. It takes patience and precision, and we don't cut corners.",
     "craftImageAlt": "Hand-carving a decoration in stone at the Alper Marble factory"
+  },
+  "PrivacyPage": {
+    "metaTitle": "Privacy policy | Alper Marble",
+    "title": "Privacy policy",
+    "intro": "We respect your privacy. This page explains what details we receive through the site, why, and what your rights are.",
+    "translationNote": "This translation is provided for convenience. The Hebrew version is the binding one.",
+    "whoHeading": "Who we are",
+    "whoText": "This site belongs to Alper Marble, a headstone factory in Pardes Hana-Karkur. Our contact details are at the bottom of this page.",
+    "collectHeading": "What details we receive",
+    "collectItems": [
+      "Through the contact form: your name, phone number, preferred time for a call back and the message you write.",
+      "If you contact us by WhatsApp, phone or email, we receive only the details you choose to send.",
+      "The site's hosting provider automatically keeps standard technical data, such as IP address and browser type, for operation and security."
+    ],
+    "useHeading": "Why we use your details",
+    "useText": "Only to get back to you, answer your inquiry and give you a quote. We will not use your details for marketing, sell them or pass them to anyone else, except the service providers listed here.",
+    "processorsHeading": "Service providers",
+    "processorItems": [
+      "Resend: the email service that delivers your inquiry from the form to our inbox.",
+      "Vercel: the site's hosting provider.",
+      "Google: the map on the contact page is embedded from Google Maps. Google may collect data and set cookies under its own privacy policy."
+    ],
+    "storageHeading": "Where and for how long your details are kept",
+    "storageText": "Your inquiry reaches us by email and is kept in the business mailbox. It is not stored in a database on the site. We keep it for as long as needed to handle your inquiry and order, and delete it if you ask.",
+    "cookiesHeading": "Cookies",
+    "cookiesText": "The site itself does not use cookies, tracking, analytics or advertising tools. Only the Google map may set cookies.",
+    "rightsHeading": "Your rights",
+    "rightsText": "You can ask to see the details we hold about you, correct them or delete them. Contact us by phone or email and we will take care of it.",
+    "contactHeading": "Privacy contact",
+    "contactPersonLabel": "Contact person",
+    "contactPersonName": "Moshe Alper",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "updated": "This policy was last updated on 28 November 2026."
   }
 }

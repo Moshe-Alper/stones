@@ -11,6 +11,7 @@ export default function Footer() {
     { label: t("navAbout"), href: "/about" },
     { label: t("navFaq"), href: "/contact#faq" },
     { label: t("navAccessibility"), href: "/accessibility" },
+    { label: t("navPrivacy"), href: "/privacy" },
   ];
 
   return (

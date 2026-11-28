@@ -39,4 +39,12 @@ describe("Footer", () => {
     render(<Footer />);
     expect(screen.getByRole("link", { name: "אודות" })).toHaveAttribute("href", "/about");
   });
+
+  it("links to the privacy policy (.plan/026)", () => {
+    render(<Footer />);
+    expect(screen.getByRole("link", { name: "מדיניות פרטיות" })).toHaveAttribute(
+      "href",
+      "/privacy",
+    );
+  });
 });
