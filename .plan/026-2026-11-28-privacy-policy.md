@@ -1,6 +1,6 @@
 # 026 — Privacy Policy Page (מדיניות פרטיות)
 
-Status: active
+Status: done
 Owner: Moshik Alper
 Last updated: 2026-11-28
 
@@ -96,7 +96,7 @@ Page, then the footer link, then the form notice, all in one PR. The page is sel
 Revert the PR. It only adds a page, a footer link, one line in the form and messages.
 
 ## Implementation Notes (2026-11-28)
-Branch `plan/026-privacy-policy` (from `origin/main`). Not committed yet.
+Branch `plan/026-privacy-policy`, merged via PR #15 (c2f083f) on 2026-11-28. Live at /privacy.
 
 **Changes**
 - New page `frontend/src/app/[locale]/privacy/` (`page.tsx`, `page.module.css`) with messages `PrivacyPage` in he/en/ru. EN/RU show a note that the Hebrew version is binding (`translationNote`, empty in he). The address keeps `lang="he" dir="rtl"`.
