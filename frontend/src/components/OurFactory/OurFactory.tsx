@@ -1,11 +1,12 @@
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import PhotoPlaceholder from "@/components/PhotoPlaceholder/PhotoPlaceholder"
-import { FACTORY_PHOTOS, getFactoryPhotoSrc } from "@/data/factory-photos"
+import { FACTORY_PHOTOS, getFactoryPhotoSrc, type FactoryPhoto } from "@/data/factory-photos"
 import styles from "./OurFactory.module.css"
 
 // Shows the real working factory in Pardes Hana (vehicles, machines, finished stones).
-export default function OurFactory() {
+// `photos` lets a page show a subset (the about page shows only real photos, .plan/025).
+export default function OurFactory({ photos = FACTORY_PHOTOS }: { photos?: FactoryPhoto[] }) {
   const t = useTranslations("OurFactory")
 
   return (
@@ -17,7 +18,7 @@ export default function OurFactory() {
         <p className={styles.subheading}>{t("subheading")}</p>
       </div>
       <ul className={styles.grid}>
-        {FACTORY_PHOTOS.map((photo) => {
+        {photos.map((photo) => {
           const src = getFactoryPhotoSrc(photo)
           const caption = t(`photos.${photo.id}`)
           return (

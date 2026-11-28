@@ -8,6 +8,7 @@ export default function Header() {
 
   const NAV_LINKS = [
     { href: "/catalog", label: t("navCatalog") },
+    { href: "/about", label: t("navAbout") },
     { href: "/contact#faq", label: t("navFaq") },
   ];
 

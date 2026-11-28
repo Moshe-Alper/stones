@@ -46,4 +46,9 @@ describe("Header", () => {
       "/contact#faq"
     );
   });
+
+  it("links to the about page (.plan/025)", () => {
+    render(<Header />);
+    expect(screen.getByRole("link", { name: "אודות" })).toHaveAttribute("href", "/about");
+  });
 });

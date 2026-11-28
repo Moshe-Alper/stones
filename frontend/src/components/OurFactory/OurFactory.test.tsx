@@ -27,4 +27,11 @@ describe("OurFactory", () => {
       expect(screen.getByRole("img", { name: caption }).tagName).toBe("DIV")
     }
   })
+
+  it("renders only the photos it is given", () => {
+    render(<OurFactory photos={FACTORY_PHOTOS.filter((photo) => photo.file)} />)
+    const tiles = screen.getAllByRole("listitem")
+    expect(tiles).toHaveLength(FACTORY_PHOTOS.filter((photo) => photo.file).length)
+    expect(screen.queryByRole("img", { name: "מנוף בעבודה" })).not.toBeInTheDocument()
+  })
 })
