@@ -71,6 +71,11 @@
 
 ## Change Log
 
+- 2026-11-28: About page (`.plan/025-2026-11-28-about-page.md`). New route `/[locale]/about`
+  (`AboutContent` component, text in the `AboutPage` messages namespace), linked from the header
+  nav and the footer. The `tools` factory photo is now `carving-detail.webp`. `OurFactory` takes
+  an optional `photos` prop; the about page shows the strip only once it has 3+ real photos
+  beyond the two already shown, so it never shows placeholders. axe e2e covers `/about`.
 - 2026-11-26: Accessibility, IS 5568 / WCAG AA (`.plan/024-2026-11-26-accessibility-is5568.md`).
   New static route `/[locale]/accessibility` (accessibility statement, text in the
   `AccessibilityPage` messages), linked from the footer. Every page's `<main>` has

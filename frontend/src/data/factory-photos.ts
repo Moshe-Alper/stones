@@ -19,9 +19,18 @@ export const FACTORY_PHOTOS: FactoryPhoto[] = [
   { id: "crane" },
   { id: "forklift" },
   { id: "cutter" },
-  { id: "tools" },
+  { id: "tools", file: "carving-detail.webp" },
   { id: "finished" },
 ]
+
+// About page (.plan/025): the story section shows the factory yard and the craft section
+// the hand-carving photo, so the factory strip there leaves these out.
+export const ABOUT_STORY_PHOTO_ID: FactoryPhotoId = "truck"
+export const ABOUT_CRAFT_PHOTO_ID: FactoryPhotoId = "tools"
+
+export function getFactoryPhoto(id: FactoryPhotoId): FactoryPhoto | undefined {
+  return FACTORY_PHOTOS.find((photo) => photo.id === id)
+}
 
 export function getFactoryPhotoSrc(photo: FactoryPhoto): string | null {
   return photo.file ? `/images/factory/${photo.file}` : null

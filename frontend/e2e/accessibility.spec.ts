@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test"
 
 // IS 5568 / WCAG AA automated check (.plan/024). Axe catches only part of WCAG;
 // the manual audit in the plan covers the rest.
-const PAGES = ["", "/catalog", "/catalog/hebron-marble", "/contact", "/accessibility"]
+const PAGES = ["", "/catalog", "/catalog/hebron-marble", "/contact", "/about", "/accessibility"]
 const LOCALE_PREFIXES = ["", "/en", "/ru"]
 
 for (const prefix of LOCALE_PREFIXES) {

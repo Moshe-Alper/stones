@@ -48,7 +48,7 @@ In scope (Hebrew only, `frontend/messages/he.json`, existing pages only):
 10. **"The Pardes Hanna business" positioning**: the brand line becomes "שיש אלפר – מובילים את תרבות ההנצחה באזור פרדס חנה-כרכור והסביבה". Add that **the factory and offices are in Pardes Hanna**. Apply it in `Metadata.description`, `Footer.brandBlurb` and `FAQ.q1AnswerTemplate`. Consider "studio" → "factory" wording (Q7).
 
 Out of scope:
-- **New pages** (owner decision 2026-11-25). This includes an about page, a guides/blog section, a press page and a monuments page. The guide topics (funeral → headstone timeline, choosing an inscription, stone comparison) can feed FAQ answers or the category texts instead.
+- **New pages** (owner decision 2026-11-25). This includes an about page (exception: approved 2026-11-28 in `.plan/025-2026-11-28-about-page.md`), a guides/blog section, a press page and a monuments page. The guide topics (funeral → headstone timeline, choosing an inscription, stone comparison) can feed FAQ answers or the category texts instead.
 - Adding long text to the homepage. Plan 020 made the homepage image-first on purpose. The only homepage changes are the photos and the brand line (items 6, 7, 10).
 - EN/RU translation (follow-up plan).
 - Re-adding FAQ items that plan 018 removed on purpose: warranty, additional inscription on an existing headstone, restoration.

@@ -9,6 +9,7 @@
     "brandAriaLabel": "Alper Marble, to the homepage",
     "brand": "Alper Marble",
     "navCatalog": "Catalog",
+    "navAbout": "About",
     "navFaq": "FAQ",
     "ctaContact": "Contact us"
   },
@@ -24,6 +25,7 @@
     "navHeading": "Quick links",
     "navCatalogProducts": "Product catalog",
     "navStoneTypes": "Stone types",
+    "navAbout": "About",
     "navFaq": "FAQ",
     "copyright": "© {year} Alper Marble. All rights reserved.",
     "navAccessibility": "Accessibility statement"
@@ -319,5 +321,21 @@
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "updated": "This statement was last updated on 26 November 2026."
+  },
+  "AboutPage": {
+    "metaTitle": "About | Alper Marble",
+    "metaDescription": "Alper Marble is a family business working marble and stone and making memorial stones since 1965. Our factory is in Pardes Hana, right next to the cemetery.",
+    "title": "About Alper Marble",
+    "intro": "A family business working marble and stone and making memorial stones since 1965.",
+    "storyHeading": "Our story",
+    "storyParagraphs": [
+      "Alper Marble was founded by Moshe Alper in 1965. Since then the business has passed from one generation to the next: today his son runs it, and the grandchildren work alongside him.",
+      "Our factory and offices are in Pardes Hana, right next to the cemetery. This is where we cut, shape and engrave every memorial stone, and from here we set out to install it.",
+      "We know that families come to us at a hard time. That is why we guide every family personally, from the first conversation to the installation."
+    ],
+    "storyImageAlt": "The Alper Marble factory yard in Pardes Hana",
+    "craftHeading": "Handwork",
+    "craftText": "Much of the work is done by hand: engraving letters, carving decorations and finishing the stone. It takes patience and precision, and we don't cut corners.",
+    "craftImageAlt": "Hand-carving a decoration in stone at the Alper Marble factory"
   }
 }

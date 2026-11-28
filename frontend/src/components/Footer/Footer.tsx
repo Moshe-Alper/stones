@@ -8,6 +8,7 @@ export default function Footer() {
   const NAV_LINKS = [
     { label: t("navCatalogProducts"), href: "/catalog" },
     { label: t("navStoneTypes"), href: "/catalog" },
+    { label: t("navAbout"), href: "/about" },
     { label: t("navFaq"), href: "/contact#faq" },
     { label: t("navAccessibility"), href: "/accessibility" },
   ];
