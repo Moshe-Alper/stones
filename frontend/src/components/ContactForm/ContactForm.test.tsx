@@ -203,4 +203,14 @@ describe("ContactForm", () => {
       "פרטי הפנייה חסרים או אינם תקינים.",
     )
   })
+
+  it("tells visitors how their details are used and links to the privacy policy (.plan/026)", () => {
+    render(<ContactForm />)
+
+    expect(screen.getByText(/הפרטים ישמשו רק כדי לחזור אליכם/)).toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "מדיניות פרטיות" })).toHaveAttribute(
+      "href",
+      "/privacy",
+    )
+  })
 })

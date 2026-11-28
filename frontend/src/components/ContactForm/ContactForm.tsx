@@ -2,6 +2,7 @@
 
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { useLocale, useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 import { PREFERRED_TIME_OPTION_IDS, type ContactInquiry } from "@/data/contact"
 import styles from "./ContactForm.module.css"
 
@@ -184,6 +185,13 @@ export default function ContactForm() {
       <button className={styles.submit} type="submit" disabled={isSubmitting}>
         {isSubmitting ? t("submittingLabel") : t("submitLabel")}
       </button>
+
+      {/* Duty to inform under the Privacy Protection Law (.plan/026). */}
+      <p className={styles.privacyNotice}>
+        {t.rich("privacyNotice", {
+          link: (chunks) => <Link href="/privacy">{chunks}</Link>,
+        })}
+      </p>
 
       <p
         id={STATUS_ID}

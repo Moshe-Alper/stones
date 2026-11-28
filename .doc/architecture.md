@@ -71,6 +71,13 @@
 
 ## Change Log
 
+- 2026-11-28: Privacy policy (`.plan/026-2026-11-28-privacy-policy.md`). New static route
+  `/[locale]/privacy` (text in the `PrivacyPage` messages), linked from the footer
+  (`Footer.navPrivacy`) and from a notice under the contact form's submit button
+  (`ContactForm.privacyNotice`). axe e2e covers `/privacy`. **The policy describes what the site
+  actually collects.** Any new third-party script (analytics, pixels), form field or data store
+  must update the `PrivacyPage` text and its `updated` date. Adding analytics or pixels also
+  means reconsidering a cookie consent banner.
 - 2026-11-28: About page (`.plan/025-2026-11-28-about-page.md`). New route `/[locale]/about`
   (`AboutContent` component, text in the `AboutPage` messages namespace), linked from the header
   nav and the footer. The `tools` factory photo is now `carving-detail.webp`. `OurFactory` takes
